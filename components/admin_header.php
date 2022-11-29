@@ -40,7 +40,6 @@ if(isset($message)){
          <p><?= $fetch_profile['name']; ?></p>
          <a href="update_profile.php" class="btn">update profile</a>
          <div class="flex-btn">
-            <a href="admin_login.php" class="option-btn">login</a>
             <a href="register_admin.php" class="option-btn">register</a>
          </div>
          <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
