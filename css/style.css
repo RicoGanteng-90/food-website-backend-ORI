@@ -346,6 +346,11 @@ section{
    overflow: hidden;
 }
 
+.products .box-container .box form .keterangan{
+   font-size: 1.5rem;
+   margin:.5rem 0;
+}
+
 .products .box-container .box img{
    height: 25rem;
    width: 100%;
@@ -894,6 +899,11 @@ section{
 .quick-view form .flex .price span{
    font-size: 2rem;
    color:var(--light-color);
+}
+
+.quick-view form .keterangan{
+   font-size: 1.5rem;
+   margin:.5rem 0;
 }
 
 .quick-view form .flex .qty{

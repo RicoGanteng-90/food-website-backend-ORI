@@ -363,6 +363,12 @@ section{
    padding:1rem 0;
 }
 
+.show-products .box-container .box .keterangan{
+   font-size: 1.5rem;
+   color:var(--black);
+   padding:1rem 0;
+}
+
 .show-products .box-container .box .flex{
    display: flex;
    align-items: center;

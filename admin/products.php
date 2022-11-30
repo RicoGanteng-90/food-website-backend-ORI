@@ -99,7 +99,7 @@ if(isset($_GET['delete'])){
          <option value="drinks">drinks</option>
          <option value="desserts">desserts</option>
       </select>
-      <textarea required placeholder="enter keterangan produk" name="keterangan" maxlength="1000" class="box"></textarea>
+      <textarea required placeholder="enter product description" name="keterangan" maxlength="1000" class="box"></textarea>
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
       <input type="submit" value="add product" name="add_product" class="btn">
    </form>
