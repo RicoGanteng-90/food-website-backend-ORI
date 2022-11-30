@@ -20,6 +20,8 @@ if(isset($_POST['update'])){
    $price = filter_var($price, FILTER_SANITIZE_STRING);
    $category = $_POST['category'];
    $category = filter_var($category, FILTER_SANITIZE_STRING);
+   $keterangan = $_POST['keterangan'];
+   $keterangan = filter_var($keterangan, FILTER_SANITIZE_STRING);
 
    $update_product = $conn->prepare("UPDATE `products` SET name = ?, category = ?, price = ? WHERE id = ?");
    $update_product->execute([$name, $category, $price, $pid]);
@@ -97,6 +99,7 @@ if(isset($_POST['update'])){
          <option value="drinks">drinks</option>
          <option value="desserts">desserts</option>
       </select>
+      <textarea required placeholder="enter keterangan product" name="keterangan" maxlength="1000" class="box" value="<?= $fetch_products['keterangan']; ?>"></textarea>
       <span>update image</span>
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
       <div class="flex-btn">

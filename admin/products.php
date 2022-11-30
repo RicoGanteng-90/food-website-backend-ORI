@@ -18,6 +18,8 @@ if(isset($_POST['add_product'])){
    $price = filter_var($price, FILTER_SANITIZE_STRING);
    $category = $_POST['category'];
    $category = filter_var($category, FILTER_SANITIZE_STRING);
+   $keterangan = $_POST['keterangan'];
+   $keterangan = filter_var($keterangan, FILTER_SANITIZE_STRING);
 
    $image = $_FILES['image']['name'];
    $image = filter_var($image, FILTER_SANITIZE_STRING);
@@ -97,6 +99,7 @@ if(isset($_GET['delete'])){
          <option value="drinks">drinks</option>
          <option value="desserts">desserts</option>
       </select>
+      <textarea required placeholder="enter keterangan produk" name="keterangan" maxlength="1000" class="box"></textarea>
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
       <input type="submit" value="add product" name="add_product" class="btn">
    </form>
@@ -124,6 +127,7 @@ if(isset($_GET['delete'])){
          <div class="category"><?= $fetch_products['category']; ?></div>
       </div>
       <div class="name"><?= $fetch_products['name']; ?></div>
+      <div class="keterangan"><?= $fetch_products['keterangan']; ?></div>
       <div class="flex-btn">
          <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>
          <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
