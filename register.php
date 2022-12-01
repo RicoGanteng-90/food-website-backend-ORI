@@ -82,7 +82,6 @@ if(isset($_POST['submit'])){
       <input type="submit" value="register now" name="submit" class="btn">
       <p>already have an account? <a href="login.php">login now</a></p>
    </form>
-
 </section>
 
 <?php include 'components/footer.php'; ?>
