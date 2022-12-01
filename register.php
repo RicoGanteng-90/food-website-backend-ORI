@@ -68,8 +68,8 @@ if(isset($_POST['submit'])){
    
 <!-- header section starts  -->
 <?php include 'components/user_header.php'; ?>
-<!-- header section ends -->
 
+<!-- header section ends -->
 <section class="form-container">
 
    <form action="" method="post">
