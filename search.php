@@ -70,7 +70,7 @@ include 'components/add_cart.php';
          <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
          <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
          <div class="name"><?= $fetch_products['name']; ?></div>
-         <div class="keterangan"><?= $fetch_products['keterangan']; ?></div>
+         <div class="keterangan"></div>
          <div class="flex">
             <div class="price"><span>$</span><?= $fetch_products['price']; ?></div>
             <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">

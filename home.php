@@ -86,28 +86,28 @@ include 'components/add_cart.php';
 
 <section class="category">
 
-   <h1 class="title">food category</h1>
+   <h1 class="title">Layanan Kami</h1>
 
    <div class="box-container">
 
-      <a href="category.php?category=fast food" class="box">
-         <img src="images/cat-1.png" alt="">
-         <h3>fast food</h3>
+      <a href="category.php?category=Makeup" class="box">
+         <img src="images/cat-makeup.png" alt="">
+         <h3>Makeup</h3>
       </a>
 
-      <a href="category.php?category=main dish" class="box">
-         <img src="images/cat-2.png" alt="">
-         <h3>main dishes</h3>
+      <a href="category.php?category=Paket Wedding" class="box">
+         <img src="images/cat-paket wedding.png" alt="">
+         <h3>Paket Wedding</h3>
       </a>
 
-      <a href="category.php?category=drinks" class="box">
-         <img src="images/cat-3.png" alt="">
-         <h3>drinks</h3>
+      <a href="category.php?category=Extra Wedding" class="box">
+         <img src="images/cat-extra.png" alt="">
+         <h3>Extra Wedding</h3>
       </a>
 
-      <a href="category.php?category=desserts" class="box">
-         <img src="images/cat-4.png" alt="">
-         <h3>desserts</h3>
+      <a href="category.php?category=Paket Foto" class="box">
+         <img src="images/cat-foto.png" alt="">
+         <h3>Paket Foto</h3>
       </a>
 
    </div>
@@ -139,6 +139,7 @@ include 'components/add_cart.php';
          <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
          <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
          <div class="name"><?= $fetch_products['name']; ?></div>
+         <div class="keterangan"><?= $fetch_products['keterangan']; ?></div>
          <div class="flex">
             <div class="price"><span>$</span><?= $fetch_products['price']; ?></div>
             <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">

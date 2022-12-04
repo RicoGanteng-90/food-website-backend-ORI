@@ -94,10 +94,10 @@ if(isset($_POST['update'])){
       <span>update category</span>
       <select name="category" class="box" required>
          <option selected value="<?= $fetch_products['category']; ?>"><?= $fetch_products['category']; ?></option>
-         <option value="main dish">main dish</option>
-         <option value="fast food">fast food</option>
-         <option value="drinks">drinks</option>
-         <option value="desserts">desserts</option>
+         <option value="Makeup">Makeup</option>
+         <option value="Paket Wedding">Paket Wedding</option>
+         <option value="Extra Wedding">Extra Wedding</option>
+         <option value="Paket Foto">Paket Foto</option>
       </select>
       <span>update keterangan</span>
       <textarea required placeholder="enter product description" name="keterangan" maxlength="1000" class="box" value="<?= $fetch_products['keterangan']; ?>"></textarea>
