@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
 
 :root{
+   --color-custom : #E8B4B8;
    --yellow:#fed330;
    --red:#e74c3c;
    --white:#fff;
    --black:#222;
    --light-color:#777;
-   --border:.2rem solid var(--black);
+   --border:.1rem solid var(--black);
 }
 
 *{
@@ -54,8 +55,6 @@ section{
    font-size: 4rem;
    color:var(--black);
    text-transform: uppercase;
-   text-decoration: underline;
-   text-underline-offset: 1rem;
 }
 
 .heading{
@@ -149,9 +148,9 @@ section{
 }
 
 .empty{
-   border:var(--border);
    padding:1.5rem;
    text-align: center;
+   text-decoration: underline;
    width: 100%;
    font-size: 2rem;
    text-transform: capitalize;
@@ -301,7 +300,8 @@ section{
 }
 
 .category .box-container .box{
-   border:var(--border);
+   border-radius: 18px;
+   background-color: rgb(229, 201, 201);
    padding:2rem;
    text-align: center;
 }
@@ -310,6 +310,7 @@ section{
    width: 100%;
    height: 10rem;
    object-fit: contain;
+   transition: all .1s ease-in;
 }
 
 .category .box-container .box h3{
@@ -317,18 +318,22 @@ section{
    margin-top: 1.5rem;
    color:var(--black);
    text-transform: capitalize;
+   transition: all .2s ease-in;
 }
 
 .category .box-container .box:hover{
-   background-color: var(--black);
+   background: linear-gradient(160deg, var(--color-custom), #000000);
 }
 
 .category .box-container .box:hover img{
    filter: invert(1);
+   background-color: transparent;
+   transition: all .3s ease-in;
 }
 
 .category .box-container .box:hover h3{
    color:var(--white);
+   transition: all .2s ease-in;
 }
 
 .products .box-container{
