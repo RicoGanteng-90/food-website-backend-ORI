@@ -25,6 +25,15 @@ if(isset($_SESSION['user_id'])){
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
+   <!-- font google --> 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css" media="all"/>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC%3A400%2C700%7CLato%3A400%2C700%2C400italic%2C700italic&amp;ver=4.9.8"
+      type="text/css" media="screen"/>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
@@ -51,9 +60,9 @@ if(isset($_SESSION['user_id'])){
       </div>
 
       <div class="content">
-         <h3>why choose us?</h3>
-         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt, neque debitis incidunt qui ipsum sed doloremque a molestiae in veritatis ullam similique sunt aliquam dolores dolore? Quasi atque debitis nobis!</p>
-         <a href="menu.html" class="btn">our menu</a>
+         <h3>Mengapa WO Fany?</h3>
+         <p>Anda tidak perlu khawatir, setiap detail tentang acara pernikahan anda adalah perhatian dan tanggung jawab kami. Tim profesional kami siap melayani berbagai kebutuhan pernikahan impian anda, mulai persiapan acara  hingga saat acara berlangsung.</p>
+         <a href="menu.php" class="btn">See Products</a>
       </div>
 
    </div>
@@ -66,26 +75,26 @@ if(isset($_SESSION['user_id'])){
 
 <section class="steps">
 
-   <h1 class="title">simple steps</h1>
+   <h1 class="title">LANGKAH ORDER</h1>
 
    <div class="box-container">
 
       <div class="box">
-         <img src="images/step-1.png" alt="">
-         <h3>choose order</h3>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, dolorem.</p>
+         <img src="images/step pilih.png" alt="">
+         <h3>Pilih Produk</h3>
+         <p>Memilih produk, kemudian melakukan pemesanan.</p>
       </div>
 
       <div class="box">
-         <img src="images/step-2.png" alt="">
-         <h3>fast delivery</h3>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, dolorem.</p>
+         <img src="images/step-waiting admin.png" alt="">
+         <h3>Tunggu Konfirmasi Admin</h3>
+         <p>Admin akan mengkonfirmasi anda melalui status pemesanan.</p>
       </div>
 
       <div class="box">
-         <img src="images/step-3.png" alt="">
-         <h3>enjoy food</h3>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, dolorem.</p>
+         <img src="images/step-pembayaran.png" alt="">
+         <h3>Pembayaran</h3>
+         <p>Ketika status pemesanan “Diterima” maka anda dapat melanjutkan pembayaran. </p>
       </div>
 
    </div>
@@ -93,6 +102,40 @@ if(isset($_SESSION['user_id'])){
 </section>
 
 <!-- steps section ends -->
+
+
+<!-- kontrak section starts  -->
+
+<section class="steps">
+
+   <h1 class="title">SYARAT DAN KONDISI</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <img src="images/kontrak-fotomu fotoku.png" alt="">
+         <h3>Foto anda = Foto kami</h3>
+         <p>Kami berhak menggunakan foto anda sebagai bagian promosi kami</p>
+      </div>
+
+      <div class="box">
+         <img src="images/kontrak-tambah biaya.png" alt="">
+         <h3>Biaya Transportasi</h3>
+         <p>Diluar kecamatan Ambulu, Jember dikenakan biaya transport</p>
+      </div>
+      
+      <div class="box">
+         <img src="images/kontrak-tidak kembali.png" alt="">
+         <h3>Pembayaran</h3>
+         <p>Uang yang sudah telah ditransfer tidak dapat dikembalikan kembali.</p>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- kontrak section ends -->
+
 
 <!-- reviews section starts  -->
 
