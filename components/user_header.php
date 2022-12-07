@@ -18,11 +18,11 @@ if(isset($message)){
       <a href="home.php" class="logo">yum-yum 😋</a>
 
       <nav class="navbar">
-         <a href="home.php">home</a>
-         <a href="about.php">about</a>
-         <a href="menu.php">menu</a>
-         <a href="orders.php">orders</a>
-         <a href="contact.php">contact</a>
+         <a href="home.php">Home</a>
+         <a href="about.php">About</a>
+         <a href="menu.php">Products</a>
+         <a href="orders.php">Orders</a>
+         <a href="contact.php">Contact</a>
       </nav>
 
       <div class="icons">

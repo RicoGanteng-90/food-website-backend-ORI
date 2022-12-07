@@ -11,7 +11,7 @@
 }
 
 *{
-   font-family: 'Rubik', sans-serif;
+   font-family: 'Lato' ,'Rubik', 'sans-serif';
    margin:0; padding:0;
    box-sizing: border-box;
    outline: none; border: none;
@@ -190,7 +190,7 @@ section{
 
 .header .flex .navbar a:hover{
    color:var(--yellow);
-   text-decoration: underline;
+
 }
 
 .header .flex .icons > *{

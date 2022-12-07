@@ -30,7 +30,16 @@ include 'components/add_cart.php';
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
+   <!-- font google --> 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css" media="all"/>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC%3A400%2C700%7CLato%3A400%2C700%2C400italic%2C700italic&amp;ver=4.9.8"
+      type="text/css" media="screen"/>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <?php include 'components/user_header.php'; ?>
@@ -47,7 +56,7 @@ include 'components/add_cart.php';
             <div class="content">
                <span>order online</span>
                <h3>delicious pizza</h3>
-               <a href="menu.html" class="btn">see menus</a>
+               <a href="menu.php" class="btn">see products</a>
             </div>
             <div class="image">
                <img src="images/home-img-1.png" alt="">
@@ -58,7 +67,7 @@ include 'components/add_cart.php';
             <div class="content">
                <span>order online</span>
                <h3>chezzy hamburger</h3>
-               <a href="menu.html" class="btn">see menus</a>
+               <a href="menu.php" class="btn">see products</a>
             </div>
             <div class="image">
                <img src="images/home-img-2.png" alt="">
@@ -69,7 +78,7 @@ include 'components/add_cart.php';
             <div class="content">
                <span>order online</span>
                <h3>rosted chicken</h3>
-               <a href="menu.html" class="btn">see menus</a>
+               <a href="menu.php" class="btn">see products</a>
             </div>
             <div class="image">
                <img src="images/home-img-3.png" alt="">
@@ -114,12 +123,9 @@ include 'components/add_cart.php';
 
 </section>
 
-
-
-
 <section class="products">
 
-   <h1 class="title">latest dishes</h1>
+   <h1 class="title">Produk</h1>
 
    <div class="box-container">
 
@@ -155,7 +161,7 @@ include 'components/add_cart.php';
    </div>
 
    <div class="more-btn">
-      <a href="menu.html" class="btn">veiw all</a>
+      <a href="menu.php" class="btn">veiw all</a>
    </div>
 
 </section>
