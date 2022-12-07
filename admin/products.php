@@ -38,8 +38,8 @@ if(isset($_POST['add_product'])){
       }else{
          move_uploaded_file($image_tmp_name, $image_folder);
 
-         $insert_product = $conn->prepare("INSERT INTO `products`(name, category, price, image) VALUES(?,?,?,?)");
-         $insert_product->execute([$name, $category, $price, $image]);
+         $insert_product = $conn->prepare("INSERT INTO `products`(name, category, keterangan, price, image) VALUES(?,?,?,?,?)");
+         $insert_product->execute([$name, $category, $keterangan, $price, $image]);
 
          $message[] = 'new product added!';
       }
