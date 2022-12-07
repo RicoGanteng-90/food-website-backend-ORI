@@ -957,13 +957,12 @@ section{
 }
 
 .footer .grid .box{
-   border:var(--border);
    padding:2rem;
    text-align: center;
 }
 
 .footer .grid .box img{
-   height: 10rem;
+   height: 8rem;
    width: 100%;
    object-fit: contain;
    margin-bottom: .5rem;
@@ -971,7 +970,7 @@ section{
 
 .footer .grid .box h3{
    margin:1rem 0;
-   font-size: 2rem;
+   font-size: 1.7rem;
    color:var(--black);
    text-transform: capitalize;
 }
@@ -979,7 +978,7 @@ section{
 .footer .grid .box p,
 .footer .grid .box a{
    display: block;
-   font-size: 1.7rem;
+   font-size: 1.5rem;
    color:var(--light-color);
    line-height: 1.8;
 }
@@ -993,7 +992,7 @@ section{
    text-align: center;
    background-color: var(--black);
    color:var(--white);
-   font-size: 2rem;
+   font-size: 1.7rem;
    text-transform: capitalize;
    /* padding-bottom: 10rem; */
 }
