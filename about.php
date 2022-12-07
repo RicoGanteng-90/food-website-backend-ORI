@@ -20,6 +20,10 @@ if(isset($_SESSION['user_id'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>about</title>
 
+ <!-- Logo Title Bar -->
+ <link rel="icon" href="images/logofanny.png"
+    type="image/x-icon" class="LOGO">
+    
    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
    <!-- font awesome cdn link  -->
