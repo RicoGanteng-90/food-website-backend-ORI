@@ -12,7 +12,7 @@
          <img src="images/clock-icon.png" alt="">
          <h3>Our Social Media</h3>
          <a href="https://instagram.com/fanny_makeupwedding?igshid=ZmVmZTY5ZGE=">Instagram : fanny_makeupwedding</a>
-         <a href="https://instagram.com/fanny_makeupwedding?igshid=ZmVmZTY5ZGE=">Instagram : fanny_makeupwedding</a>
+         <a href="https://www.tiktok.com/@fannysulistiowati?_t=8XyWlTeBsn3&_r=1">Tiktok : fanny_makeup</a>
       </div>
 
       <div class="box">
