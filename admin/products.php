@@ -140,7 +140,16 @@ if(isset($_GET['delete'])){
          <div class="category"><?= $fetch_products['category']; ?></div>
       </div>
       <div class="name"><?= $fetch_products['name']; ?></div>
-      <div class="keterangan"><?= $fetch_products['keterangan']; ?></div>
+      <div class="keterangan">
+         <?php
+            $pchenter=explode("\r\n",$fetch_products['keterangan']);
+            $txtout="";
+               for($i=0;$i<=count($pchenter)-1;$i++){
+                  $pchpart=str_replace($pchenter[$i], "<br>".$pchenter[$i],$pchenter[$i]);
+                  $txtout .=$pchpart;
+               }
+            echo $txtout;
+         ?></div>
       <div class="flex-btn">
          <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>
          <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>

@@ -113,7 +113,7 @@ if(isset($_POST['update'])){
          <option value="Paket Foto">Paket Foto</option>
       </select>
       <span>update keterangan</span>
-      <textarea required placeholder="enter product description" name="keterangan" maxlength="1000" class="box" value="<?= $fetch_products['keterangan']; ?>"></textarea>
+      <textarea required placeholder="enter product description" name="keterangan" maxlength="1000" class="box"><?php echo $fetch_products['keterangan'];?></textarea>
       <span>update image</span>
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
       <div class="flex-btn">
