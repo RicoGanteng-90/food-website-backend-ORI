@@ -20,6 +20,7 @@ include 'components/add_cart.php';
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/overlay.css">
    <title>Home</title>
 
        <!-- Logo Title Bar -->
@@ -145,17 +146,35 @@ include 'components/add_cart.php';
          <input type="hidden" name="keterangan" value="<?= $fetch_products['keterangan']; ?>">
          <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
          <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
+         
+         <div class="card">
+         <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
+         <div class="card__overlay">
          <a href="quick_view.php?pid=<?= $fetch_products['id']; ?>" class="fas fa-eye"></a>
          <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
-         <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
+            <div class="overlay__text">
+            <div class="keterangan">
+         <?php
+            $pchenter=explode("\r\n",$fetch_products['keterangan']);
+            $txtout="";
+               for($i=0;$i<=count($pchenter)-1;$i++){
+                  $pchpart=str_replace($pchenter[$i], "<br>".$pchenter[$i],$pchenter[$i]);
+                  $txtout .=$pchpart;
+               }
+            echo $txtout;
+         ?></div>
+            </div>
+          </div>
+         
          <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
          <div class="name"><?= $fetch_products['name']; ?></div>
-         <div class="keterangan"></div>
+         
          <div class="flex">
             <div class="price"><span>Rp. </span><?= $fetch_products['price']; ?></div>
-            <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
-         </div>
+            <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"">
+         </div>                  
       </form>
+      </div>
       <?php
             }
          }else{
