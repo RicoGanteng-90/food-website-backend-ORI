@@ -670,23 +670,25 @@ section{
 
 .search-form form .box{
    width: 100%;
-   border:var(--border);
+   background-color: rgb(229, 201, 201);;
+   border-radius: 14px;
    padding:1.4rem;
-   font-size: 1.8rem;
+   font-size: 1.7rem;
    color:var(--black);
 }
 
 .search-form form .fa-search{
    width: 6rem;
-   background-color: var(--black);
-   color:var(--white);
+   background: rgb(229, 201, 201);
+   border-radius: 14px;
+   color:black;
    cursor: pointer;
-   font-size: 2.5rem;
+   font-size: 2.2rem;
 }
 
 .search-form form .fa-search:hover{
-   background-color: var(--yellow);
-   color:var(--black);
+   background: linear-gradient(160deg, var(--color-custom), #000000);
+   color:white;
 }
 
 .checkout form{
