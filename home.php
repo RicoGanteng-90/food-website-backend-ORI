@@ -64,7 +64,7 @@ include 'components/add_cart.php';
                <a href="menu.php" class="btn">see products</a>
             </div>
             <div class="image">
-               <img src="images/home-img-1.png" alt="">
+               <img src="images/pengantin.png" alt="">
             </div>
          </div>
 
