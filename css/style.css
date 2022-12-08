@@ -8,6 +8,7 @@
    --black:#222;
    --light-color:#777;
    --border:.1rem solid var(--black);
+   --pr-color : #E8B4B8;
 }
 
 *{
@@ -33,7 +34,7 @@
 }
 
 ::-webkit-scrollbar-thumb{
-   background-color: var(--yellow);
+   background-color: var(--pr-color);
 }
 
 html{
@@ -162,12 +163,12 @@ section{
    gap:1rem;
 }
 
+
 .header{
    position: sticky;
    top:0; left:0; right:0;
    z-index: 1000;
-   background-color: var(--white);
-   border-bottom: var(--border);
+   background-color: var(--pr-color);
 }
 
 .header .flex{
@@ -178,7 +179,7 @@ section{
 }
 
 .header .flex .logo{
-   font-size: 2.5rem;
+   font-size: 2.0rem;
    color:var(--black);
 }
 
@@ -189,7 +190,7 @@ section{
 }
 
 .header .flex .navbar a:hover{
-   color:var(--yellow);
+   color:var(--white);
 
 }
 
@@ -201,7 +202,7 @@ section{
 }
 
 .header .flex .icons > *:hover{
-   color: var(--yellow);
+   color: var(--white);
 }
 
 .header .flex .icons span{
