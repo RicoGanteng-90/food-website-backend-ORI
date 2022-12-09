@@ -16,7 +16,7 @@ if(isset($message)){
    <section class="flex">
 
       <a class="logo" href="home.php">
-        <img src="images/logofanny.png" width="35" height="35">
+        <img src="images/logofanny.png" width="33" height="33">
         Fanny Makeup Wedding</a>
         
       <nav class="navbar">
