@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 08:45 AM
+-- Generation Time: Dec 10, 2022 at 05:08 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -63,12 +63,12 @@ CREATE TABLE `cart` (
 --
 
 CREATE TABLE `employees` (
-  `id_karyawan` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `no_telp` varchar(50) NOT NULL,
-  `jabatan` varchar(50) NOT NULL,
-  `alamat` varchar(50) NOT NULL
+  `number` varchar(50) NOT NULL,
+  `position` varchar(50) NOT NULL,
+  `address` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -112,16 +112,16 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `patners`
+-- Table structure for table `partners`
 --
 
-CREATE TABLE `patners` (
-  `id_patner` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
+CREATE TABLE `partners` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `no_telp` varchar(50) NOT NULL,
+  `number` varchar(50) NOT NULL,
   `keterangan` varchar(50) NOT NULL,
-  `alamat` varchar(50) NOT NULL
+  `address` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -138,13 +138,6 @@ CREATE TABLE `products` (
   `price` int(11) NOT NULL,
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `name`, `category`, `keterangan`, `price`, `image`) VALUES
-(1, 'solo', 'main dish', '', 200000, 'solo.jpg');
 
 -- --------------------------------------------------------
 
@@ -166,7 +159,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `number`, `password`, `address`) VALUES
-(1, 'arlinda', 'arlin43@gmail.com', '0852493637', '618dcdfb0cd9ae4481164961c4796dd8e3930c8d', '');
+(1, 'arlinda', 'arlin43@gmail.com', '0852493637', '618dcdfb0cd9ae4481164961c4796dd8e3930c8d', '12, 11, mastrip, lumajang, lumajang, lumajang, lumajang - 12345');
 
 --
 -- Indexes for dumped tables
@@ -190,7 +183,7 @@ ALTER TABLE `cart`
 -- Indexes for table `employees`
 --
 ALTER TABLE `employees`
-  ADD PRIMARY KEY (`id_karyawan`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `messages`
@@ -207,10 +200,10 @@ ALTER TABLE `orders`
   ADD KEY `id_customer` (`user_id`);
 
 --
--- Indexes for table `patners`
+-- Indexes for table `partners`
 --
-ALTER TABLE `patners`
-  ADD PRIMARY KEY (`id_patner`);
+ALTER TABLE `partners`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `products`
@@ -244,7 +237,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -259,16 +252,16 @@ ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `patners`
+-- AUTO_INCREMENT for table `partners`
 --
-ALTER TABLE `patners`
-  MODIFY `id_patner` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `partners`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

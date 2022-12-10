@@ -67,7 +67,7 @@ if(!isset($admin_id)){
             $total_pendings += $fetch_pendings['total_price'];
          }
       ?>
-      <h3><span>Rp. </span><?= $total_pendings; ?><span>/-</span></h3>
+      <h3><span>Rp. </span><?= $total_pendings; ?><span></span></h3>
       <p>total pendings</p>
       <a href="placed_orders.php" class="btn">see orders</a>
    </div>
@@ -81,7 +81,7 @@ if(!isset($admin_id)){
             $total_completes += $fetch_completes['total_price'];
          }
       ?>
-      <h3><span>Rp.</span><?= $total_completes; ?><span>/-</span></h3>
+      <h3><span>Rp. </span><?= $total_completes; ?><span></span></h3>
       <p>total completes</p>
       <a href="placed_orders.php" class="btn">see orders</a>
    </div>
@@ -139,6 +139,28 @@ if(!isset($admin_id)){
       <h3><?= $numbers_of_messages; ?></h3>
       <p>new messages</p>
       <a href="messages.php" class="btn">see messages</a>
+   </div>
+
+   <div class="box">
+      <?php
+         $select_messages = $conn->prepare("SELECT * FROM `employees`");
+         $select_messages->execute();
+         $numbers_of_messages = $select_messages->rowCount();
+      ?>
+      <h3><?= $numbers_of_messages; ?></h3>
+      <p>employees</p>
+      <a href="employees.php" class="btn">see employees</a>
+   </div>
+
+   <div class="box">
+      <?php
+         $select_messages = $conn->prepare("SELECT * FROM `partners`");
+         $select_messages->execute();
+         $numbers_of_messages = $select_messages->rowCount();
+      ?>
+      <h3><?= $numbers_of_messages; ?></h3>
+      <p>partners</p>
+      <a href="partners.php" class="btn">see partners</a>
    </div>
 
    </div>
