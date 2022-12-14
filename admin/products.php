@@ -104,7 +104,7 @@ if(isset($_GET['delete'])){
    <form action="" method="POST" enctype="multipart/form-data">
       <h3>add product</h3>
       <input type="text" required placeholder="enter product name" name="name" maxlength="100" class="box">
-      <input type="number" min="0" max="9999999999" required placeholder="enter product price" name="price" onkeypress="if(this.value.length == 10) return false;" class="box">
+      <input type="number" min="0" max="9999999999" required placeholder="enter product price" name="price" onkeypress="if(this.value.length == 16) return false;" class="box">
       <select name="category" class="box" required>
          <option value="" disabled selected>select category --</option>
          <option value="Makeup">Makeup</option>
