@@ -3,7 +3,7 @@
 :root{
    --color-custom : #E8B4B8;
    --yellow:#fed330;
-   --red:#e74c3c;
+   --red:rgb(158, 0, 0);
    --white:#fff;
    --black:#222;
    --light-color:#777;
@@ -102,13 +102,13 @@ section{
 .btn{
    background-color: #090a0a;
    color:white;
-   border-radius: 14px;
+   border-radius: 10px;
 }
 
 .delete-btn{
    background-color: rgb(158, 0, 0);
    color:var(--white);
-   border-radius: 14px;
+   border-radius: 10px;
 }
 
 .btn:hover,
@@ -132,12 +132,12 @@ section{
    align-items: center;
    gap:1rem;
    justify-content: space-between;
-   background-color: var(--pr-color);
+   background-color: black;
 }
 
 .message span{
    font-size: 2rem;
-   color:var(--black);
+   color:var(--white);
 }
 
 .message i{
@@ -147,7 +147,7 @@ section{
 }
 
 .message i:hover{
-   color:var(--black);
+   color:white;
 }
 
 .empty{
@@ -217,7 +217,7 @@ section{
 
 .header .flex .profile{
    background: linear-gradient(160deg, var(--color-custom), #333333);
-   border-radius: 14px;
+   border-radius: 10px;
    padding:1.5rem;
    text-align: center;
    position: absolute;
@@ -677,7 +677,7 @@ section{
 .search-form form .box{
    width: 100%;
    background-color: rgb(229, 201, 201);;
-   border-radius: 14px;
+   border-radius: 10px;
    padding:1.4rem;
    font-size: 1.7rem;
    color:var(--black);
@@ -686,7 +686,7 @@ section{
 .search-form form .fa-search{
    width: 6rem;
    background: rgb(229, 201, 201);
-   border-radius: 14px;
+   border-radius: 10px;
    color:black;
    cursor: pointer;
    font-size: 2.2rem;
@@ -694,7 +694,7 @@ section{
 
 .search-form form .fa-search:hover{
    background: linear-gradient(160deg, var(--color-custom), #000000);
-   color:white;
+   color:#f4f4f4;
 }
 
 .checkout form{
@@ -799,7 +799,7 @@ section{
 .form-container form{
    border:var(--border);
    margin:0 auto;
-   max-width: 50rem;
+   max-width: 45rem;
    padding:2rem;
    text-align: center;
 }
@@ -814,7 +814,8 @@ section{
 .form-container form .box{
    margin:.7rem 0;
    width: 100%;
-   border:var(--border);
+   background: #f4f4f4;
+   border-radius: 0;
    padding:1.4rem;
    font-size: 1.8rem;
    color:var(--black);

@@ -59,9 +59,9 @@ include 'components/add_cart.php';
 
          <div class="swiper-slide slide">
             <div class="content">
-               <span>order online</span>
-               <h3>delicious pizza</h3>
-               <a href="menu.php" class="btn">see products</a>
+               <span>solusi terbaik</span>
+               <h3>acara impian</h3>
+               <a href="menu.php" class="btn">temukan disini</a>
             </div>
             <div class="image">
                <img src="images/pengantin.png" alt="">
