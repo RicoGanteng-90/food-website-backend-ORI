@@ -69,6 +69,7 @@ if(isset($_SESSION['user_id'])){
    ?>
    <div class="box">
       <p>placed on : <span><?= $fetch_orders['address']; ?></span></p>
+      <p>Event Time : <span><?= $fetch_orders['event_time']; ?></span></p>
       <p>name : <span><?= $fetch_orders['name']; ?></span></p>
       <p>email : <span><?= $fetch_orders['email']; ?></span></p>
       <p>number : <span><?= $fetch_orders['number']; ?></span></p>
@@ -76,6 +77,7 @@ if(isset($_SESSION['user_id'])){
       <p>payment method : <span><?= $fetch_orders['method']; ?></span></p>
       <p>your orders : <span><?= $fetch_orders['total_products']; ?></span></p>
       <p>total price : <span>Rp. <?= $fetch_orders['total_price']; ?></span></p>
+      <p>Order Time : <span><?= $fetch_orders['order_time']; ?></span></p>
       <p> payment status : <span style="color:<?php if($fetch_orders['payment_status'] == 'pending'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span> </p>
    </div>
    <?php
