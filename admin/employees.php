@@ -53,7 +53,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Employees</title>
+   <title>Karyawan</title>
 
 <!-- Logo Title Bar -->
 <link rel="icon" href="images/logofanny.png"
@@ -84,13 +84,13 @@ if(isset($_GET['delete'])){
 <section class="add-employees">
 
    <form action="" method="POST" enctype="multipart/form-data">
-      <h3>add employees</h3>
-      <input type="text" required placeholder="enter employee name" name="name" maxlength="100" class="box">
-      <input type="email" name="email" required placeholder="enter employee email" maxlength="100" class="box">
-      <input type="text" min="0" max="9999999999" required placeholder="enter employee number phone" name="number" onkeypress="if(this.value.length == 16) return false;" class="box">
-      <input type="text" required placeholder="enter employee position" name="position" maxlength="100" class="box">
-      <textarea required placeholder="enter employee address" name="address" maxlength="1000" class="box"></textarea>
-      <input type="submit" value="add employees" name="add_employees" class="btn">
+      <h3>tambahkan karyawan</h3>
+      <input type="text" required placeholder="masukan nama karyawan" name="name" maxlength="100" class="box">
+      <input type="email" name="email" required placeholder="masukan email karyawan" maxlength="100" class="box">
+      <input type="text" min="0" max="9999999999" required placeholder="masukan nomor telepon karyawan" name="number" onkeypress="if(this.value.length == 16) return false;" class="box">
+      <input type="text" required placeholder="masukan posisi / jabatan karyawan" name="position" maxlength="100" class="box">
+      <textarea required placeholder="masukan alamat karyawan" name="address" maxlength="1000" class="box"></textarea>
+      <input type="submit" value="tambahkan" name="add_employees" class="btn">
    </form>
 
 </section>
@@ -110,20 +110,20 @@ if(isset($_GET['delete'])){
          while($fetch_employees = $show_employees->fetch(PDO::FETCH_ASSOC)){  
    ?>
    <div class="box">
-      <p>name : <span><?= $fetch_employees['name']; ?></span></p>
+      <p>nama : <span><?= $fetch_employees['name']; ?></span></p>
       <p>email : <span><?= $fetch_employees['email']; ?></span></p>
-      <p>number : <span><?= $fetch_employees['number']; ?></span></p>
-      <p>position : <span><?= $fetch_employees['position']; ?></span></p>
-      <p>address : <span><?= $fetch_employees['address']; ?></span></p>
+      <p>nomor telepon : <span><?= $fetch_employees['number']; ?></span></p>
+      <p>posisi : <span><?= $fetch_employees['position']; ?></span></p>
+      <p>alamat : <span><?= $fetch_employees['address']; ?></span></p>
       <div class="flex-btn">
-         <a href="update_employees.php?update=<?= $fetch_employees['id']; ?>" class="option-btn">update</a>
-         <a href="employees.php?delete=<?= $fetch_employees['id']; ?>" class="delete-btn" onclick="return confirm('delete this employee?');">delete</a>
+         <a href="update_employees.php?update=<?= $fetch_employees['id']; ?>" class="option-btn">edit</a>
+         <a href="employees.php?delete=<?= $fetch_employees['id']; ?>" class="delete-btn" onclick="return confirm('delete this employee?');">hapus</a>
       </div>
    </div>
    <?php
          }
       }else{
-         echo '<p class="empty">no employees added yet!</p>';
+         echo '<p class="empty">belum ada karyawan yang ditambahkan!</p>';
       }
    ?>
 

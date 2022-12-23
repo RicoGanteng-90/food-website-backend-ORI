@@ -25,7 +25,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Messages</title>
+   <title>Pesan Kustomer</title>
 
    <!-- Logo Title Bar -->
 <link rel="icon" href="images/logofanny.png"
@@ -55,7 +55,7 @@ if(isset($_GET['delete'])){
 
 <section class="messages">
 
-   <h1 class="heading">messages</h1>
+   <h1 class="heading">Pesan Kustomer</h1>
 
    <div class="box-container">
 
@@ -66,16 +66,16 @@ if(isset($_GET['delete'])){
          while($fetch_messages = $select_messages->fetch(PDO::FETCH_ASSOC)){
    ?>
    <div class="box">
-      <p> name : <span><?= $fetch_messages['name']; ?></span> </p>
-      <p> number : <span><?= $fetch_messages['number']; ?></span> </p>
+      <p> nama : <span><?= $fetch_messages['name']; ?></span> </p>
+      <p> nomor telepon : <span><?= $fetch_messages['number']; ?></span> </p>
       <p> email : <span><?= $fetch_messages['email']; ?></span> </p>
-      <p> message : <span><?= $fetch_messages['message']; ?></span> </p>
-      <a href="messages.php?delete=<?= $fetch_messages['id']; ?>" class="delete-btn" onclick="return confirm('delete this message?');">delete</a>
+      <p> pesan : <span><?= $fetch_messages['message']; ?></span> </p>
+      <a href="messages.php?delete=<?= $fetch_messages['id']; ?>" class="delete-btn" onclick="return confirm('delete this message?');">hapus</a>
    </div>
    <?php
          }
       }else{
-         echo '<p class="empty">you have no messages</p>';
+         echo '<p class="empty">tidak ada pesan</p>';
       }
    ?>
 

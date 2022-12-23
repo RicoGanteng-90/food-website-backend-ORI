@@ -27,12 +27,12 @@ if(isset($_POST['add_partners'])){
    $select_partners->execute([$name]);
 
    if($select_partners->rowCount() > 0){
-      $message[] = 'partners name already exists!';
+      $message[] = 'nama partner sudah ada!';
    }else{
          $insert_partners = $conn->prepare("INSERT INTO `partners`(name, email, number, keterangan, address) VALUES(?,?,?,?,?)");
          $insert_partners->execute([$name, $email, $number, $keterangan, $address]);
 
-         $message[] = 'new partners added!';
+         $message[] = 'partner berhasil ditambahkan!';
 
    }
 
@@ -53,7 +53,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Partners</title>
+   <title>Partner / Mitra kerja</title>
 
 <!-- Logo Title Bar -->
 <link rel="icon" href="images/logofanny.png"
@@ -84,13 +84,13 @@ if(isset($_GET['delete'])){
 <section class="add-partners">
 
    <form action="" method="POST" enctype="multipart/form-data">
-      <h3>add partners</h3>
-      <input type="text" required placeholder="enter partner name" name="name" maxlength="100" class="box">
-      <input type="email" name="email" required placeholder="enter partner email" maxlength="100" class="box">
-      <input type="text" min="0" max="9999999999" required placeholder="enter partner number phone" name="number" onkeypress="if(this.value.length == 16) return false;" class="box">
-      <textarea required placeholder="enter partner description" name="keterangan" maxlength="1000" class="box"></textarea>
-      <textarea required placeholder="enter partner address" name="address" maxlength="1000" class="box"></textarea>
-      <input type="submit" value="add partner" name="add_partners" class="btn">
+      <h3>tambahkan partner</h3>
+      <input type="text" required placeholder="masukan nama partner" name="name" maxlength="100" class="box">
+      <input type="email" name="email" required placeholder="masukan email partner" maxlength="100" class="box">
+      <input type="text" min="0" max="9999999999" required placeholder="masukan nomor telepon partner" name="number" onkeypress="if(this.value.length == 16) return false;" class="box">
+      <textarea required placeholder="deskripsi partner" name="keterangan" maxlength="1000" class="box"></textarea>
+      <textarea required placeholder="masukan alamat partner" name="address" maxlength="1000" class="box"></textarea>
+      <input type="submit" value="tambahkan partner" name="add_partners" class="btn">
    </form>
 
 </section>
@@ -110,20 +110,20 @@ if(isset($_GET['delete'])){
          while($fetch_partners = $show_partners->fetch(PDO::FETCH_ASSOC)){  
    ?>
    <div class="box">
-      <p>name : <span><?= $fetch_partners['name']; ?></span></p>
+      <p>nama : <span><?= $fetch_partners['name']; ?></span></p>
       <p>email : <span><?= $fetch_partners['email']; ?></span></p>
-      <p>number : <span><?= $fetch_partners['number']; ?></span></p>
-      <p>description : <span><?= $fetch_partners['keterangan']; ?></span></p>
-      <p>address : <span><?= $fetch_partners['address']; ?></span></p>
+      <p>nomor telepon : <span><?= $fetch_partners['number']; ?></span></p>
+      <p>deskripsi : <span><?= $fetch_partners['keterangan']; ?></span></p>
+      <p>alamat : <span><?= $fetch_partners['address']; ?></span></p>
       <div class="flex-btn">
-         <a href="update_partners.php?update=<?= $fetch_partners['id']; ?>" class="option-btn">update</a>
-         <a href="partners.php?delete=<?= $fetch_partners['id']; ?>" class="delete-btn" onclick="return confirm('delete this partner?');">delete</a>
+         <a href="update_partners.php?update=<?= $fetch_partners['id']; ?>" class="option-btn">edit</a>
+         <a href="partners.php?delete=<?= $fetch_partners['id']; ?>" class="delete-btn" onclick="return confirm('delete this partner?');">hapus</a>
       </div>
    </div>
    <?php
          }
       }else{
-         echo '<p class="empty">no partners added yet!</p>';
+         echo '<p class="empty">belum ada partner yang ditambahkan!</p>';
       }
    ?>
 

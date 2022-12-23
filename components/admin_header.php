@@ -18,12 +18,12 @@ if(isset($message)){
       <a href="dashboard.php" class="logo">Admin<span>Panel</span></a>
 
       <nav class="navbar">
-         <a href="dashboard.php">home</a>
-         <a href="products.php">products</a>
-         <a href="placed_orders.php">orders</a>
-         <a href="admin_accounts.php">admins</a>
-         <a href="users_accounts.php">users</a>
-         <a href="messages.php">messages</a>
+         <a href="dashboard.php">beranda</a>
+         <a href="products.php">produk</a>
+         <a href="placed_orders.php">order</a>
+         <a href="admin_accounts.php">admin</a>
+         <a href="users_accounts.php">user</a>
+         <a href="messages.php">pesan kustomer</a>
       </nav>
 
       <div class="icons">
@@ -38,11 +38,11 @@ if(isset($message)){
             $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
          ?>
          <p><?= $fetch_profile['name']; ?></p>
-         <a href="update_profile.php" class="btn">update profile</a>
+         <a href="update_profile.php" class="btn">edit profil</a>
          <div class="flex-btn">
             <a href="register_admin.php" class="option-btn">register</a>
          </div>
-         <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
+         <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">keluar</a>
       </div>
 
    </section>

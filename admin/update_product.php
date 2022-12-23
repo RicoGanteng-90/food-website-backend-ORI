@@ -26,7 +26,7 @@ if(isset($_POST['update'])){
    $update_product = $conn->prepare("UPDATE `products` SET name = ?, category = ?, keterangan = ?, price = ? WHERE id = ?");
    $update_product->execute([$name, $category, $keterangan, $price, $pid]);
 
-   $message[] = 'product updated!';
+   $message[] = 'produk berhasil diperbarui!';
 
    $old_image = $_POST['old_image'];
    $image = $_FILES['image']['name'];
@@ -37,13 +37,13 @@ if(isset($_POST['update'])){
 
    if(!empty($image)){
       if($image_size > 2000000){
-         $message[] = 'images size is too large!';
+         $message[] = 'ukuran gambar terlalu besar!';
       }else{
          $update_image = $conn->prepare("UPDATE `products` SET image = ? WHERE id = ?");
          $update_image->execute([$image, $pid]);
          move_uploaded_file($image_tmp_name, $image_folder);
          unlink('../uploaded_img/'.$old_image);
-         $message[] = 'image updated!';
+         $message[] = 'gambar berhasil diperbarui!';
       }
    }
 
@@ -57,7 +57,7 @@ if(isset($_POST['update'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Update Product</title>
+   <title>Edit Produk</title>
 
    <!-- Logo Title Bar -->
 <link rel="icon" href="images/logofanny.png"
@@ -87,7 +87,7 @@ if(isset($_POST['update'])){
 
 <section class="update-product">
 
-   <h1 class="heading">update product</h1>
+   <h1 class="heading">Edit Produk</h1>
 
    <?php
       $update_id = $_GET['update'];
@@ -100,11 +100,11 @@ if(isset($_POST['update'])){
       <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
       <input type="hidden" name="old_image" value="<?= $fetch_products['image']; ?>">
       <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
-      <span>update name</span>
+      <span>edit nama</span>
       <input type="text" required placeholder="enter product name" name="name" maxlength="100" class="box" value="<?= $fetch_products['name']; ?>">
-      <span>update price</span>
+      <span>edit harga</span>
       <input type="number" min="0" max="9999999999" required placeholder="enter product price" name="price" onkeypress="if(this.value.length == 10) return false;" class="box" value="<?= $fetch_products['price']; ?>">
-      <span>update category</span>
+      <span>edit kategori</span>
       <select name="category" class="box" required>
          <option selected value="<?= $fetch_products['category']; ?>"><?= $fetch_products['category']; ?></option>
          <option value="Makeup">Makeup</option>
@@ -112,13 +112,13 @@ if(isset($_POST['update'])){
          <option value="Extra Wedding">Extra Wedding</option>
          <option value="Paket Foto">Paket Foto</option>
       </select>
-      <span>update keterangan</span>
+      <span>edit keterangan</span>
       <textarea required placeholder="enter product description" name="keterangan" maxlength="1000" class="box"><?php echo $fetch_products['keterangan'];?></textarea>
-      <span>update image</span>
+      <span>edit gambar</span>
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
       <div class="flex-btn">
-         <input type="submit" value="update" class="btn" name="update">
-         <a href="products.php" class="option-btn">go back</a>
+         <input type="submit" value="perbarui" class="btn" name="update">
+         <a href="products.php" class="option-btn">kembali</a>
       </div>
    </form>
    <?php

@@ -31,17 +31,17 @@ if(isset($_POST['add_product'])){
    $select_products->execute([$name]);
 
    if($select_products->rowCount() > 0){
-      $message[] = 'product name already exists!';
+      $message[] = 'nama produk sudah ada!';
    }else{
       if($image_size > 2000000){
-         $message[] = 'image size is too large';
+         $message[] = 'ukuran gambar terlalu besar';
       }else{
          move_uploaded_file($image_tmp_name, $image_folder);
 
          $insert_product = $conn->prepare("INSERT INTO `products`(name, category, keterangan, price, image) VALUES(?,?,?,?,?)");
          $insert_product->execute([$name, $category, $keterangan, $price, $image]);
 
-         $message[] = 'new product added!';
+         $message[] = 'produk ditambahkan!';
       }
 
    }
@@ -71,7 +71,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Products</title>
+   <title>Product</title>
 
 <!-- Logo Title Bar -->
 <link rel="icon" href="images/logofanny.png"
@@ -102,19 +102,19 @@ if(isset($_GET['delete'])){
 <section class="add-products">
 
    <form action="" method="POST" enctype="multipart/form-data">
-      <h3>add product</h3>
-      <input type="text" required placeholder="enter product name" name="name" maxlength="100" class="box">
-      <input type="number" min="0" max="9999999999" required placeholder="enter product price" name="price" onkeypress="if(this.value.length == 16) return false;" class="box">
+      <h3>tambahkan produk</h3>
+      <input type="text" required placeholder="masukan nama produk" name="name" maxlength="100" class="box">
+      <input type="number" min="0" max="9999999999" required placeholder="masukan harga produk" name="price" onkeypress="if(this.value.length == 16) return false;" class="box">
       <select name="category" class="box" required>
-         <option value="" disabled selected>select category --</option>
+         <option value="" disabled selected>pilih kategori--</option>
          <option value="Makeup">Makeup</option>
          <option value="Paket Wedding">Paket Wedding</option>
          <option value="Extra Wedding">Extra Wedding</option>
          <option value="Paket Foto">Paket Foto</option>
       </select>
-      <textarea required placeholder="enter product description" name="keterangan" maxlength="1000" class="box"></textarea>
+      <textarea required placeholder="masukan deskripsi produk" name="keterangan" maxlength="1000" class="box"></textarea>
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
-      <input type="submit" value="add product" name="add_product" class="btn">
+      <input type="submit" value="tambahkan produk" name="add_product" class="btn">
    </form>
 
 </section>
@@ -151,14 +151,14 @@ if(isset($_GET['delete'])){
             echo $txtout;
          ?></div>
       <div class="flex-btn">
-         <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>
-         <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
+         <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">edit</a>
+         <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">hapus</a>
       </div>
    </div>
    <?php
          }
       }else{
-         echo '<p class="empty">no products added yet!</p>';
+         echo '<p class="empty">belum ada produk yang ditambahkan!</p>';
       }
    ?>
 

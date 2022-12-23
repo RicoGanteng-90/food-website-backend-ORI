@@ -29,7 +29,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Users Accounts</title>
+   <title>Data Akun Kustomer</title>
 
    <!-- Logo Title Bar -->
 <link rel="icon" href="images/logofanny.png"
@@ -59,7 +59,7 @@ if(isset($_GET['delete'])){
 
 <section class="accounts">
 
-   <h1 class="heading">users account</h1>
+   <h1 class="heading">Data Akun Kustomer</h1>
 
    <div class="box-container">
 
@@ -70,14 +70,14 @@ if(isset($_GET['delete'])){
          while($fetch_accounts = $select_account->fetch(PDO::FETCH_ASSOC)){  
    ?>
    <div class="box">
-      <p> user id : <span><?= $fetch_accounts['id']; ?></span> </p>
-      <p> username : <span><?= $fetch_accounts['name']; ?></span> </p>
-      <a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn" onclick="return confirm('delete this account?');">delete</a>
+      <p> id kustomer : <span><?= $fetch_accounts['id']; ?></span> </p>
+      <p> nama : <span><?= $fetch_accounts['name']; ?></span> </p>
+      <a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn" onclick="return confirm('delete this account?');">hapus</a>
    </div>
    <?php
       }
    }else{
-      echo '<p class="empty">no accounts available</p>';
+      echo '<p class="empty">tidak ada akun yang tersedia!</p>';
    }
    ?>
 

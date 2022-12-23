@@ -28,7 +28,7 @@ if(isset($_POST['update'])){
    $update_employees = $conn->prepare("UPDATE `employees` SET name = ?, email = ?, number = ?, position = ?, address = ? WHERE id = ?");
    $update_employees->execute([$name, $email, $number, $position, $address, $id]);
 
-   $message[] = 'employee updated!';
+   $message[] = 'karyawan berhasil diperbarui';
 
 
 }
@@ -41,7 +41,7 @@ if(isset($_POST['update'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Update Employee</title>
+   <title>Edit Karyawan</title>
 
    <!-- Logo Title Bar -->
 <link rel="icon" href="images/logofanny.png"
@@ -71,7 +71,7 @@ if(isset($_POST['update'])){
 
 <section class="update-employees">
 
-   <h1 class="heading">update employee</h1>
+   <h1 class="heading">Edit Karyawan</h1>
 
    <?php
       $update_id = $_GET['update'];
@@ -82,25 +82,25 @@ if(isset($_POST['update'])){
    ?>
    <form action="" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="id" value="<?= $fetch_employees['id']; ?>">
-      <span>update name</span>
-      <input type="text" required placeholder="enter employee name" name="name" maxlength="100" class="box" value="<?= $fetch_employees['name']; ?>">
-      <span>update email</span>
-      <input type="email" name="email" required placeholder="enter employee email" maxlength="100" class="box" value="<?= $fetch_employees['email']; ?>">
-      <span>update number phone</span>
-      <input type="text" min="0" max="9999999999" required placeholder="enter employee number phone" name="number" class="box" onkeypress="if(this.value.length == 16) return false;" class="box" value="<?= $fetch_employees['number']; ?>">
+      <span>edit nama</span>
+      <input type="text" required placeholder="masukan nama karyawan" name="name" maxlength="100" class="box" value="<?= $fetch_employees['name']; ?>">
+      <span>edit email</span>
+      <input type="email" name="email" required placeholder="masukan email karyawan" maxlength="100" class="box" value="<?= $fetch_employees['email']; ?>">
+      <span>edit nomor telepon</span>
+      <input type="text" min="0" max="9999999999" required placeholder="masukan nomor telepon karyawan" name="number" class="box" onkeypress="if(this.value.length == 16) return false;" class="box" value="<?= $fetch_employees['number']; ?>">
       <span>update position</span>
-      <input type="text" required placeholder="enter employee position" name="position" maxlength="100" class="box" value="<?= $fetch_employees['position']; ?>">
-      <span>update address</span>
-      <textarea required placeholder="enter employee address" name="address" maxlength="1000" class="box"><?php echo $fetch_employees['address'];?></textarea>
+      <input type="text" required placeholder="masukan posisi karyawan" name="position" maxlength="100" class="box" value="<?= $fetch_employees['position']; ?>">
+      <span>edit alamat</span>
+      <textarea required placeholder="masukan alamat karyawan" name="address" maxlength="1000" class="box"><?php echo $fetch_employees['address'];?></textarea>
       <div class="flex-btn">
-         <input type="submit" value="update" class="btn" name="update">
-         <a href="employees.php" class="option-btn">go back</a>
+         <input type="submit" value="perbarui" class="btn" name="update">
+         <a href="employees.php" class="option-btn">kembali</a>
       </div>
    </form>
    <?php
          }
       }else{
-         echo '<p class="empty">no employee added yet!</p>';
+         echo '<p class="empty">belum ada karyawan yang ditambahkan!</p>';
       }
    ?>
 

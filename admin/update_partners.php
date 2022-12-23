@@ -28,7 +28,7 @@ if(isset($_POST['update'])){
    $update_partners = $conn->prepare("UPDATE `partners` SET name = ?, email = ?, number = ?, keterangan = ?, address = ? WHERE id = ?");
    $update_partners->execute([$name, $email, $number, $keterangan, $address, $id]);
 
-   $message[] = 'partner updated!';
+   $message[] = 'partner berhasil diperbarui!';
 
 
 }
@@ -41,7 +41,7 @@ if(isset($_POST['update'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Update Partners</title>
+   <title>Edit Partner</title>
 
    <!-- Logo Title Bar -->
 <link rel="icon" href="images/logofanny.png"
@@ -71,7 +71,7 @@ if(isset($_POST['update'])){
 
 <section class="update-partners">
 
-   <h1 class="heading">update partners</h1>
+   <h1 class="heading">edit partner</h1>
 
    <?php
       $update_id = $_GET['update'];
@@ -82,25 +82,25 @@ if(isset($_POST['update'])){
    ?>
    <form action="" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="id" value="<?= $fetch_partners['id']; ?>">
-      <span>update name</span>
+      <span>edit nama</span>
       <input type="text" required placeholder="enter partner name" name="name" maxlength="100" class="box" value="<?= $fetch_partners['name']; ?>">
-      <span>update email</span>
+      <span>edit email</span>
       <input type="email" name="email" required placeholder="enter partner email" maxlength="100" class="box" value="<?= $fetch_partners['email']; ?>">
-      <span>update number phone</span>
+      <span>edit nomor telepon</span>
       <input type="text" min="0" max="9999999999" required placeholder="enter partners number phone" name="number" class="box" onkeypress="if(this.value.length == 16) return false;" class="box" value="<?= $fetch_partners['number']; ?>">
-      <span>update description</span>
+      <span>edit deskripsi</span>
       <textarea required placeholder="enter partner description" name="keterangan" maxlength="1000" class="box"><?php echo $fetch_partners['keterangan'];?></textarea>
-      <span>update address</span>
+      <span>edit alamat</span>
       <textarea required placeholder="enter partner address" name="address" maxlength="1000" class="box"><?php echo $fetch_partners['address'];?></textarea>
       <div class="flex-btn">
-         <input type="submit" value="update" class="btn" name="update">
-         <a href="partners.php" class="option-btn">go back</a>
+         <input type="submit" value="perbarui" class="btn" name="update">
+         <a href="partners.php" class="option-btn">kembali</a>
       </div>
    </form>
    <?php
          }
       }else{
-         echo '<p class="empty">no partners added yet!</p>';
+         echo '<p class="empty">belum ada partner yang ditambahkan!</p>';
       }
    ?>
 
