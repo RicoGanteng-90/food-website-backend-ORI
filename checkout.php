@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
    $address = filter_var($address, FILTER_SANITIZE_STRING);
    $total_products = $_POST['total_products'];
    $total_price = $_POST['total_price'];
-   $order_time = $_POST['order_time'];
+   $event_time = $_POST['event_time'];
 
    $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
    $check_cart->execute([$user_id]);
@@ -36,8 +36,8 @@ if(isset($_POST['submit'])){
          $message[] = 'please add your address!';
       }else{
          
-         $insert_order = $conn->prepare("INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price, order_time) VALUES(?,?,?,?,?,?,?,?,?)");
-         $insert_order->execute([$user_id, $name, $number, $email, $method, $address, $total_products, $total_price, $order_time]);
+         $insert_order = $conn->prepare("INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price, event_time) VALUES(?,?,?,?,?,?,?,?,?)");
+         $insert_order->execute([$user_id, $name, $number, $email, $method, $address, $total_products, $total_price, $event_time]);
 
          $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
          $delete_cart->execute([$user_id]);
@@ -127,7 +127,7 @@ if(isset($_POST['submit'])){
    <input type="hidden" name="name" value="<?= $fetch_profile['name'] ?>">
    <input type="hidden" name="number" value="<?= $fetch_profile['number'] ?>">
    <input type="hidden" name="email" value="<?= $fetch_profile['email'] ?>">
-   <input type="hidden" name="address" value="<?= $fetch_profile['address'] ?>">
+   <input type="hidden" name="address" value="<?= $fetch_profile['address'] ?>">   
 
    <div class="user-info">
 
@@ -141,7 +141,7 @@ if(isset($_POST['submit'])){
       <p><i class="fas fa-map-marker-alt"></i><span><?php if($fetch_profile['address'] == ''){echo 'please enter your address';}else{echo $fetch_profile['address'];} ?></span></p>
       <a href="update_address.php" class="btn">update address</a>
       
-      <h3>Delivery Time</h3>            
+      <h3>Event Time</h3>            
       <input type="datetime-local" class="box" name="event_time">
       
       <h3>Payment</h3>
