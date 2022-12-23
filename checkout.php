@@ -152,7 +152,7 @@ if(isset($_POST['submit'])){
          <option value="paytm">paytm</option>
          <option value="paypal">paypal</option>
       </select>
-      <input type="submit" value="place order" class="btn <?php if($fetch_profile['address'] == ''){echo 'disabled';} ?>" style="width:100%; background:var(--red); color:var(--white);" name="submit">
+      <input type="submit" value="PLACE ORDER" class="btn <?php if($fetch_profile['address'] == ''){echo 'disabled';} ?>" style="width:100%; background: var(--black); color:var(--white);" name="submit">
    </div>
 
 </form>
