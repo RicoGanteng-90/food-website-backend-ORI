@@ -25,8 +25,8 @@
 }
 
 ::-webkit-scrollbar{
-   height: .5rem;
-   width: 1rem;
+   height: .3rem;
+   width: .9rem;
 }
 
 ::-webkit-scrollbar-track{
@@ -34,7 +34,7 @@
 }
 
 ::-webkit-scrollbar-thumb{
-   background-color: var(--pr-color);
+   background-color: #c0a8a8;
 }
 
 html{
@@ -189,10 +189,12 @@ section{
    font-size: 1.8rem;
    color:var(--black);
    margin:0 1rem;
+   transition: all .2s ease-in;
 }
 
 .header .flex .navbar a:hover{
    color:var(--white);
+   transition: all .3s ease-in;
 
 }
 
@@ -201,10 +203,12 @@ section{
    font-size: 2.5rem;
    color:var(--black);
    cursor: pointer;
+   transition: all .2s ease-in;
 }
 
 .header .flex .icons > *:hover{
    color: var(--white);
+   transition: all .3s ease-in;
 }
 
 .header .flex .icons span{
@@ -453,11 +457,13 @@ section{
    font-size: 1.8rem;
    height: 4.5rem;
    border:var(--border);
+   transition: all .1s ease-in;
 }
 
 .products .box-container .box .flex .fa-check:hover{
-   background-color: var(--black);
+   background: linear-gradient(160deg, var(--color-custom), #000000);
    color:var(--white);
+   transition: all .2s ease-in;
 }
 
 .products .box-container .box .fa-times{
@@ -485,7 +491,7 @@ section{
 }
 
 .products .box-container .box .sub-total span{
-   color:var(--red);
+   color:black;
 }
 
 .products .more-btn{
@@ -712,7 +718,7 @@ section{
 }
 
 .checkout form .cart-items{
-   background-color: var(--black);
+   background-color: #c0a8a8;
    padding:2rem;
    padding-top: 0;
 }
@@ -728,15 +734,15 @@ section{
    justify-content: space-between;
    margin:1rem 0;
    line-height: 1.5;
-   font-size: 2rem;
+   font-size: 1.7rem;
 }
 
 .checkout form .cart-items p .name{
-   color:var(--light-color);
+   color:rgb(86, 86, 86);
 }
 
 .checkout form .cart-items p .price{
-   color:var(--pr-color);
+   color:black;
 }
 
 .checkout form .cart-items .grand-total{
@@ -745,7 +751,7 @@ section{
 }
 
 .checkout form .cart-items .grand-total .price{
-   color:var(--red);
+   color:black;
 }
 
 .checkout form .user-info p{ 
@@ -1047,7 +1053,7 @@ section{
       top:99%; left: 0; right: 0;
       border-top: var(--border);
       border-bottom: var(--border);
-      background-color: var(--white);
+      background-color: #c0a8a8;
       transition: .2s linear;
       clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
    }
