@@ -652,7 +652,7 @@ section{
 }
 
 .contact .row form h3{
-   font-size: 2.5rem;
+   font-size: 3rem;
    color:var(--black);
    margin-bottom: 1rem;
    text-transform: capitalize;
@@ -682,7 +682,7 @@ section{
 
 .search-form form .box{
    width: 100%;
-   background-color: rgb(229, 201, 201);;
+   background-color: #ededed;
    border-radius: 10px;
    padding:1.4rem;
    font-size: 1.7rem;
@@ -691,16 +691,18 @@ section{
 
 .search-form form .fa-search{
    width: 6rem;
-   background: rgb(229, 201, 201);
+   background: #ededed;
    border-radius: 10px;
    color:black;
    cursor: pointer;
    font-size: 2.2rem;
+   transition: all .2s ease-in;
 }
 
 .search-form form .fa-search:hover{
    background: linear-gradient(160deg, var(--color-custom), #000000);
    color:#f4f4f4;
+   transition: all .2s ease-in;
 }
 
 .checkout form{
@@ -718,7 +720,7 @@ section{
 }
 
 .checkout form .cart-items{
-   background-color: #c0a8a8;
+   background-color: rgb(48, 48, 48);
    padding:2rem;
    padding-top: 0;
 }
@@ -738,11 +740,11 @@ section{
 }
 
 .checkout form .cart-items p .name{
-   color:rgb(86, 86, 86);
+   color:rgb(147, 147, 147);
 }
 
 .checkout form .cart-items p .price{
-   color:black;
+   color:white;
 }
 
 .checkout form .cart-items .grand-total{
@@ -858,7 +860,7 @@ section{
 .user-details .user p{
    padding:1rem 0;
    line-height: 1.5;
-   font-size: 2rem;
+   font-size: 1.8rem;
 }
 
 .user-details .user p span{
@@ -875,7 +877,7 @@ section{
 }
 
 .quick-view form{
-   max-width: 40rem;
+   max-width: 38rem;
    padding:2rem;
    border:var(--border);
    position: relative;
@@ -942,14 +944,15 @@ section{
    font-size: 2rem;
    color:var(--black);
    cursor: pointer;
-   text-transform: capitalize;
    background: none;
    margin-top: 1rem;
+   transition: all .3s ease-in;
 }
 
 .quick-view form .cart-btn:hover{
    background-color: var(--black);
    color:var(--white);
+   transition: all .3s ease-in;
 }
 
 

@@ -19,7 +19,7 @@ if(isset($_SESSION['user_id'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Profile</title>
+   <title>Profil</title>
 
     <!-- Logo Title Bar -->
     <link rel="icon" href="images/logofanny.png"
@@ -57,9 +57,9 @@ if(isset($_SESSION['user_id'])){
       <p><i class="fas fa-user"></i><span><span><?= $fetch_profile['name']; ?></span></span></p>
       <p><i class="fas fa-phone"></i><span><?= $fetch_profile['number']; ?></span></p>
       <p><i class="fas fa-envelope"></i><span><?= $fetch_profile['email']; ?></span></p>
-      <a href="update_profile.php" class="btn">update info</a>
-      <p class="address"><i class="fas fa-map-marker-alt"></i><span><?php if($fetch_profile['address'] == ''){echo 'please enter your address';}else{echo $fetch_profile['address'];} ?></span></p>
-      <a href="update_address.php" class="btn">update address</a>
+      <a href="update_profile.php" class="btn">edit informasi</a>
+      <p class="address"><i class="fas fa-map-marker-alt"></i><span><?php if($fetch_profile['address'] == ''){echo 'masukan alamat Anda';}else{echo $fetch_profile['address'];} ?></span></p>
+      <a href="update_address.php" class="btn">edit alamat</a>
    </div>
 
 </section>

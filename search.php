@@ -20,7 +20,7 @@ include 'components/add_cart.php';
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Search Page</title>
+   <title>Pencarian</title>
 
     <!-- Logo Title Bar -->
     <link rel="icon" href="images/logofanny.png"
@@ -52,7 +52,7 @@ include 'components/add_cart.php';
 
 <section class="search-form">
    <form method="post" action="">
-      <input type="text" name="search_box" placeholder="search here..." class="box">
+      <input type="text" name="search_box" placeholder="cari disini..." class="box">
       <button type="submit" name="search_btn" class="fas fa-search"></button>
    </form>
 </section>
@@ -92,7 +92,7 @@ include 'components/add_cart.php';
       <?php
             }
          }else{
-            echo '<p class="empty">no products added yet!</p>';
+            echo '<p class="empty">tidak ada produk!</p>';
          }
       }
       ?>

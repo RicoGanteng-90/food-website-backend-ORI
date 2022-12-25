@@ -18,7 +18,7 @@ if(isset($_SESSION['user_id'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>About</title>
+   <title>Tentang</title>
 
 
  <!-- Logo Title Bar -->
@@ -50,8 +50,8 @@ if(isset($_SESSION['user_id'])){
 <!-- header section ends -->
 
 <div class="heading">
-   <h3>about us</h3>
-   <p><a href="home.php">home</a> <span> / about</span></p>
+   <h3>tentang kami</h3>
+   <p><a href="home.php">beranda</a> <span> / tentang</span></p>
 </div>
 
 <!-- about section starts  -->
@@ -66,7 +66,7 @@ if(isset($_SESSION['user_id'])){
 
       <div class="content">
          <h3>Mengapa WO Fany?</h3>
-         <p>Anda tidak perlu khawatir, setiap detail tentang acara pernikahan anda adalah perhatian dan tanggung jawab kami. Tim profesional kami siap melayani berbagai kebutuhan pernikahan impian anda, mulai persiapan acara  hingga saat acara berlangsung.</p>
+         <p>Anda tidak perlu khawatir, setiap detail tentang acara pernikahan Anda adalah perhatian dan tanggung jawab kami. Tim profesional kami siap melayani berbagai kebutuhan pernikahan impian Anda, mulai persiapan acara  hingga saat acara berlangsung.</p>
          <a href="menu.php" class="btn">See Products</a>
       </div>
 
@@ -93,13 +93,13 @@ if(isset($_SESSION['user_id'])){
       <div class="box">
          <img src="images/step-waiting admin.png" alt="">
          <h3>Tunggu Konfirmasi Admin</h3>
-         <p>Admin akan mengkonfirmasi anda melalui status pemesanan.</p>
+         <p>Admin akan mengkonfirmasi Anda melalui status pemesanan.</p>
       </div>
 
       <div class="box">
          <img src="images/step-pembayaran.png" alt="">
          <h3>Pembayaran</h3>
-         <p>Ketika status pemesanan “Diterima” maka anda dapat melanjutkan pembayaran. </p>
+         <p>Ketika status pemesanan “Diterima” maka Anda dapat melanjutkan pembayaran. </p>
       </div>
 
    </div>
@@ -119,8 +119,8 @@ if(isset($_SESSION['user_id'])){
 
       <div class="box">
          <img src="images/kontrak-fotomu fotoku.png" alt="">
-         <h3>Foto anda = Foto kami</h3>
-         <p>Kami berhak menggunakan foto anda sebagai bagian promosi kami</p>
+         <h3>Foto Anda = Foto kami</h3>
+         <p>Kami berhak menggunakan foto Anda sebagai bagian promosi kami</p>
       </div>
 
       <div class="box">

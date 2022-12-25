@@ -28,10 +28,10 @@ if(isset($_POST['submit'])){
    $row = $select_user->fetch(PDO::FETCH_ASSOC);
 
    if($select_user->rowCount() > 0){
-      $message[] = 'email or number already exists!';
+      $message[] = 'email atau nomor sudah ada!';
    }else{
       if($pass != $cpass){
-         $message[] = 'confirm password not matched!';
+         $message[] = 'konfirmasi kata sandi tidak cocok!';
       }else{
          $insert_user = $conn->prepare("INSERT INTO `users`(name, email, number, password) VALUES(?,?,?,?)");
          $insert_user->execute([$name, $email, $number, $cpass]);
@@ -55,7 +55,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Register</title>
+   <title>Pendaftaran</title>
 
     <!-- Logo Title Bar -->
     <link rel="icon" href="images/logofanny.png"
@@ -86,14 +86,14 @@ if(isset($_POST['submit'])){
 <section class="form-container">
 
    <form action="" method="post">
-      <h3>register now</h3>
-      <input type="text" name="name" required placeholder="enter your name" class="box" maxlength="50">
-      <input type="email" name="email" required placeholder="enter your email" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="number" name="number" required placeholder="enter your number" class="box" min="0" max="9999999999" maxlength="14">
-      <input type="password" name="pass" required placeholder="enter your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="cpass" required placeholder="confirm your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="register now" name="submit" class="btn">
-      <p>already have an account? <a href="login.php">login now</a></p>
+      <h3>daftar akun</h3>
+      <input type="text" name="name" required placeholder="Masukan nama" class="box" maxlength="50">
+      <input type="email" name="email" required placeholder="Masukan email" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="number" name="number" required placeholder="Masukan nomor telepon" class="box" min="0" max="9999999999" maxlength="14">
+      <input type="password" name="pass" required placeholder="Masukan kata sandi" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="cpass" required placeholder="konfirmasi kata sandi" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="submit" value="daftar" name="submit" class="btn">
+      <p>sudah memiliki akun? <a href="login.php">masuk sekarang</a></p>
    </form>
 </section>
 

@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
       $select_email = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
       $select_email->execute([$email]);
       if($select_email->rowCount() > 0){
-         $message[] = 'email already taken!';
+         $message[] = 'email sudah ada!';
       }else{
          $update_email = $conn->prepare("UPDATE `users` SET email = ? WHERE id = ?");
          $update_email->execute([$email, $user_id]);
@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
       $select_number = $conn->prepare("SELECT * FROM `users` WHERE number = ?");
       $select_number->execute([$number]);
       if($select_number->rowCount() > 0){
-         $message[] = 'number already taken!';
+         $message[] = 'numor telepon sudah ada!';
       }else{
          $update_number = $conn->prepare("UPDATE `users` SET number = ? WHERE id = ?");
          $update_number->execute([$number, $user_id]);
@@ -62,16 +62,16 @@ if(isset($_POST['submit'])){
 
    if($old_pass != $empty_pass){
       if($old_pass != $prev_pass){
-         $message[] = 'old password not matched!';
+         $message[] = 'kata sandi lama tidak cocok!';
       }elseif($new_pass != $confirm_pass){
-         $message[] = 'confirm password not matched!';
+         $message[] = 'konfirmasi kata sandi tidak cocok!';
       }else{
          if($new_pass != $empty_pass){
             $update_pass = $conn->prepare("UPDATE `users` SET password = ? WHERE id = ?");
             $update_pass->execute([$confirm_pass, $user_id]);
-            $message[] = 'password updated successfully!';
+            $message[] = 'kata sandi berhasil diperbarui!';
          }else{
-            $message[] = 'please enter a new password!';
+            $message[] = 'masaukan kata sandi baru';
          }
       }
    }  
@@ -86,7 +86,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Update Profile</title>
+   <title>Edit Profil</title>
 
     <!-- Logo Title Bar -->
     <link rel="icon" href="images/logofanny.png"
@@ -117,14 +117,14 @@ if(isset($_POST['submit'])){
 <section class="form-container update-form">
 
    <form action="" method="post">
-      <h3>update profile</h3>
+      <h3>edit profil</h3>
       <input type="text" name="name" placeholder="<?= $fetch_profile['name']; ?>" class="box" maxlength="50">
       <input type="email" name="email" placeholder="<?= $fetch_profile['email']; ?>" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="number" name="number" placeholder="<?= $fetch_profile['number']; ?>"" class="box" min="0" max="9999999999" maxlength="10">
-      <input type="password" name="old_pass" placeholder="enter your old password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="new_pass" placeholder="enter your new password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="confirm_pass" placeholder="confirm your new password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="update now" name="submit" class="btn">
+      <input type="number" name="number" placeholder="<?= $fetch_profile['number']; ?>" class="box" min="0" max="9999999999" maxlength="10">
+      <input type="password" name="old_pass" placeholder="masukan kata sandi lama" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="new_pass" placeholder="masukan kata sandi baru" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="confirm_pass" placeholder="konfirmasi kata sandi" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="submit" value="simpan" name="submit" class="btn">
    </form>
 
 </section>

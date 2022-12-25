@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
 
 :root{
-   --main-color:#E8B4B8;
+   --main-color:#282842;
    --red:rgb(158, 0, 0);
-   --orange:#f39c12;
-   --black:#3b5269;
+   --orange:#eca32e;
+   --black:#506478;
    --white:#fff;
    --light-bg:#f5f5f5;
    --light-color:#999;
@@ -13,7 +13,7 @@
 }
 
 *{
-   font-family: 'Montserrat', sans-serif;
+   font-family: 'Lato','Montserrat', sans-serif;
    margin:0; padding:0;
    box-sizing: border-box;
    text-decoration: none;

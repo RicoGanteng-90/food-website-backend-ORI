@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
       header('location:home.php');
       
    }else{
-      $message[] = 'incorrect username or password!';
+      $message[] = 'email atau kata sandi salah!';
    }
 
 }
@@ -78,11 +78,11 @@ if(isset($_POST['submit'])){
 <section class="form-container">
 
    <form action="" method="post">
-      <h3>login now</h3>
-      <input type="email" name="email" required placeholder="enter your email" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="pass" required placeholder="enter your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="login now" name="submit" class="btn">
-      <p>don't have an account? <a href="register.php">register now</a></p>
+      <h3>Masuk sekarang</h3>
+      <input type="email" name="email" required placeholder="masukan email anda" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="password" name="pass" required placeholder="masukan kata sandi anda" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="submit" value="masuk" name="submit" class="btn">
+      <p>tidak memiliki akun? <a href="register.php">daftar sekarang</a></p>
    </form>
 
 </section>

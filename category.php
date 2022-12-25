@@ -20,7 +20,7 @@ include 'components/add_cart.php';
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Category</title>
+   <title>Kategori</title>
 
     <!-- Logo Title Bar -->
     <link rel="icon" href="images/logofanny.png"
@@ -62,7 +62,7 @@ include 'components/add_cart.php';
          <div class="name"><?= $fetch_products['name']; ?></div>
          <div class="keterangan"></div>
          <div class="flex">
-            <div class="price"><span>$</span><?= $fetch_products['price']; ?></div>
+            <div class="price"><span>Rp. </span><?= $fetch_products['price']; ?></div>
             <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
          </div>
       </form>

@@ -20,11 +20,11 @@ if(isset($message)){
       </a>
         
       <nav class="navbar">
-         <a href="home.php">Home</a>
-         <a href="about.php">About</a>
-         <a href="menu.php">Products</a>
-         <a href="orders.php">Orders</a>
-         <a href="contact.php">Contact</a>
+         <a href="home.php">Beranda</a>
+         <a href="about.php">Tentang</a>
+         <a href="menu.php">Produk</a>
+         <a href="orders.php">Order</a>
+         <a href="contact.php">Kontak</a>
       </nav>
 
       <div class="icons">
@@ -48,18 +48,18 @@ if(isset($message)){
          ?>
          <p class="name"><?= $fetch_profile['name']; ?></p>
          <div class="flex">
-            <a href="profile.php" class="btn">Profile</a>
-            <a href="components/user_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
+            <a href="profile.php" class="btn">Profil</a>
+            <a href="components/user_logout.php" onclick="return confirm('keluar dari web WoFy?');" class="delete-btn">keluar</a>
          </div>
          <p class="account">
-            <a href="login.php">Login</a> or
-            <a href="register.php">Register</a>
+            <a href="login.php">Masuk</a>  /  
+            <a href="register.php">Daftar</a>
          </p> 
          <?php
             }else{
          ?>
-            <p class="name">Please login first!</p>
-            <a href="login.php" class="btn">Login</a>
+            <p class="name">Silahkan masuk terlebih dahulu!</p>
+            <a href="login.php" class="btn">Masuk</a>
          <?php
           }
          ?>

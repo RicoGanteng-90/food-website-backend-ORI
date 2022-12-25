@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
    $update_address = $conn->prepare("UPDATE `users` set address = ? WHERE id = ?");
    $update_address->execute([$address, $user_id]);
 
-   $message[] = 'address saved!';
+   $message[] = 'alamat disimpan';
 
 }
 
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Update Address</title>
+   <title>Edit Alamat</title>
 
     <!-- Logo Title Bar -->
     <link rel="icon" href="images/logofanny.png"
@@ -60,9 +60,9 @@ if(isset($_POST['submit'])){
 <section class="form-container">
 
    <form action="" method="post">
-      <h3>your address</h3>
-      <textarea type="text" class="box" placeholder="enter your address" required maxlength="1000" name="address"></textarea>
-      <input type="submit" value="save address" name="submit" class="btn">
+      <h3>alamat anda</h3>
+      <textarea type="text" class="box" placeholder="masukan alamat anda" required maxlength="1000" name="address"></textarea>
+      <input type="submit" value="simpan" name="submit" class="btn">
    </form>
 
 </section>

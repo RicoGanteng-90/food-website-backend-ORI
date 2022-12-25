@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
    if($check_cart->rowCount() > 0){
 
       if($address == ''){
-         $message[] = 'please add your address!';
+         $message[] = 'tambahkan alamat anda!';
       }else{
          
          $insert_order = $conn->prepare("INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price, event_time) VALUES(?,?,?,?,?,?,?,?,?)");
@@ -42,11 +42,11 @@ if(isset($_POST['submit'])){
          $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
          $delete_cart->execute([$user_id]);
 
-         $message[] = 'order placed successfully!';
+         $message[] = 'pesanan berhasil dilakukan!';
       }
       
    }else{
-      $message[] = 'your cart is empty';
+      $message[] = 'keranjang Anda kosong';
    }
 
 }
@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Checkout</title>
+   <title>Belanja</title>
 
     <!-- Logo Title Bar -->
     <link rel="icon" href="images/logofanny.png"
@@ -88,18 +88,18 @@ if(isset($_POST['submit'])){
 <!-- header section ends -->
 
 <div class="heading">
-   <h3>checkout</h3>
-   <p><a href="home.php">home</a> <span> / checkout</span></p>
+   <h3>belanja</h3>
+   <p><a href="home.php">beranda</a> <span> / belanja</span></p>
 </div>
 
 <section class="checkout">
 
-   <h1 class="title">order summary</h1>
+   <h2 class="title">ringkasan pesanan</h2>
 
 <form action="" method="post">
 
    <div class="cart-items">
-      <h3>cart items</h3>
+      <h3>produk keranjang</h3>
       <?php
          $grand_total = 0;
          $cart_items[] = '';
@@ -115,11 +115,11 @@ if(isset($_POST['submit'])){
       <?php
             }
          }else{
-            echo '<p class="empty">your cart is empty!</p>';
+            echo '<p class="empty">keranjang Anda kosong!</p>';
          }
       ?>
-      <p class="grand-total"><span class="name">grand total :</span><span class="price">Rp. <?= $grand_total; ?></span></p>
-      <a href="cart.php" class="btn">veiw cart</a>
+      <p class="grand-total"><span class="name">total :</span><span class="price">Rp. <?= $grand_total; ?></span></p>
+      <a href="cart.php" class="btn">lihat keranjang</a>
    </div>
 
    <input type="hidden" name="total_products" value="<?= $total_products; ?>">
@@ -131,17 +131,17 @@ if(isset($_POST['submit'])){
 
    <div class="user-info">
 
-      <h3>Your Info</h3>
+      <h3>Informasi Anda</h3>
       <p><i class="fas fa-user"></i><span><?= $fetch_profile['name'] ?></span></p>
       <p><i class="fas fa-phone"></i><span><?= $fetch_profile['number'] ?></span></p>
       <p><i class="fas fa-envelope"></i><span><?= $fetch_profile['email'] ?></span></p>
-      <a href="update_profile.php" class="btn">update info</a>
+      <a href="update_profile.php" class="btn">edit informasi</a>
 
-      <h3>Delivery Address</h3>
-      <p><i class="fas fa-map-marker-alt"></i><span><?php if($fetch_profile['address'] == ''){echo 'please enter your address';}else{echo $fetch_profile['address'];} ?></span></p>
-      <a href="update_address.php" class="btn">update address</a>
+      <h3>Alamat</h3>
+      <p><i class="fas fa-map-marker-alt"></i><span><?php if($fetch_profile['address'] == ''){echo 'masukan alamat Anda';}else{echo $fetch_profile['address'];} ?></span></p>
+      <a href="update_address.php" class="btn">edit alamat</a>
       
-      <h3>Event Time</h3>            
+      <h3>Waktu Acara Anda</h3>            
       <input type="datetime-local" class="box" name="event_time">
       
       <h3>Payment</h3>
@@ -152,7 +152,7 @@ if(isset($_POST['submit'])){
          <option value="paytm">paytm</option>
          <option value="paypal">paypal</option>
       </select>
-      <input type="submit" value="PLACE ORDER" class="btn <?php if($fetch_profile['address'] == ''){echo 'disabled';} ?>" style="width:100%; background: var(--black); color:var(--white);" name="submit">
+      <input type="submit" value="ORDER" class="btn <?php if($fetch_profile['address'] == ''){echo 'alamat kosong';} ?>" style="width:100%; background: var(--black); color:var(--white);" name="submit">
    </div>
 
 </form>

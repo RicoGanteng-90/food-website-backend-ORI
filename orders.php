@@ -19,7 +19,7 @@ if(isset($_SESSION['user_id'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Orders</title>
+   <title>Order</title>
 
  <!-- Logo Title Bar -->
  <link rel="icon" href="images/logofanny.png"
@@ -48,19 +48,19 @@ if(isset($_SESSION['user_id'])){
 <!-- header section ends -->
 
 <div class="heading">
-   <h3>orders</h3>
-   <p><a href="html.php">home</a> <span> / orders</span></p>
+   <h3>order</h3>
+   <p><a href="html.php">beranda</a> <span> / order</span></p>
 </div>
 
 <section class="orders">
 
-   <h1 class="title">your orders</h1>
+   <h3 class="title">Pesanan Anda </h3>
 
    <div class="box-container">
 
    <?php
       if($user_id == ''){
-         echo '<p class="empty">please login to see your orders</p>';
+         echo '<p class="empty">silahkan login untuk melihat pesanan Anda</p>';
       }else{
          $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE user_id = ?");
          $select_orders->execute([$user_id]);
@@ -83,7 +83,7 @@ if(isset($_SESSION['user_id'])){
    <?php
       }
       }else{
-         echo '<p class="empty">no orders placed yet!</p>';
+         echo '<p class="empty">tidak ada pesanan!</p>';
       }
       }
    ?>

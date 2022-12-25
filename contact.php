@@ -25,13 +25,13 @@ if(isset($_POST['send'])){
    $select_message->execute([$name, $email, $number, $msg]);
 
    if($select_message->rowCount() > 0){
-      $message[] = 'already sent message!';
+      $message[] = 'sudah mengirim pesan!';
    }else{
 
       $insert_message = $conn->prepare("INSERT INTO `messages`(user_id, name, email, number, message) VALUES(?,?,?,?,?)");
       $insert_message->execute([$user_id, $name, $email, $number, $msg]);
 
-      $message[] = 'sent message successfully!';
+      $message[] = 'pesan terkirim!';
 
    }
 
@@ -45,7 +45,7 @@ if(isset($_POST['send'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Contact</title>
+   <title>Kontak</title>
 
     <!-- Logo Title Bar -->
     <link rel="icon" href="images/logofanny.png"
@@ -74,8 +74,8 @@ if(isset($_POST['send'])){
 <!-- header section ends -->
 
 <div class="heading">
-   <h3>contact us</h3>
-   <p><a href="home.php">home</a> <span> / contact</span></p>
+   <h3>kontak kami</h3>
+   <p><a href="home.php">beranda</a> <span> / kontak</span></p>
 </div>
 
 <!-- contact section starts  -->
@@ -89,12 +89,12 @@ if(isset($_POST['send'])){
       </div>
 
       <form action="" method="post">
-         <h3>tell us something!</h3>
-         <input type="text" name="name" maxlength="50" class="box" placeholder="enter your name" required>
-         <input type="text" name="number" min="0" max="9999999999" class="box" placeholder="enter your number" required maxlength="16">
-         <input type="email" name="email" maxlength="50" class="box" placeholder="enter your email" required>
-         <textarea name="msg" class="box" required placeholder="enter your message" maxlength="500" cols="30" rows="10"></textarea>
-         <input type="submit" value="send message" name="send" class="btn">
+         <h3>ada pertanyaan?</h3>
+         <input type="text" name="name" maxlength="50" class="box" placeholder="Masukan nama Anda" required>
+         <input type="text" name="number" min="0" max="9999999999" class="box" placeholder="Masukan alamat Anda" required maxlength="16">
+         <input type="email" name="email" maxlength="50" class="box" placeholder="Masukan email Anda" required>
+         <textarea name="msg" class="box" required placeholder="Masukan pesan Anda" maxlength="500" cols="30" rows="10"></textarea>
+         <input type="submit" value="kirim" name="send" class="btn">
       </form>
 
    </div>

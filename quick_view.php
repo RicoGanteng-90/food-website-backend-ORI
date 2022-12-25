@@ -20,7 +20,7 @@ include 'components/add_cart.php';
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Quick View</title>
+   <title>Lihat Produk</title>
 
     <!-- Logo Title Bar -->
     <link rel="icon" href="images/logofanny.png"
@@ -48,7 +48,7 @@ include 'components/add_cart.php';
 
 <section class="quick-view">
 
-   <h1 class="title">quick view</h1>
+   <h1 class="title">lihat produk</h1>
 
    <?php
       $pid = $_GET['pid'];
@@ -80,12 +80,12 @@ include 'components/add_cart.php';
          <div class="price"><span>Rp. </span><?= $fetch_products['price']; ?></div>
          <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
       </div>
-      <button type="submit" name="add_to_cart" class="cart-btn">add to cart</button>
+      <button type="submit" name="add_to_cart" class="cart-btn">Tambahkan Keranjang</button>
    </form>
    <?php
          }
       }else{
-         echo '<p class="empty">no products added yet!</p>';
+         echo '<p class="empty">tidak ada produk yang ditambahkan</p>';
       }
    ?>
 

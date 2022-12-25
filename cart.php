@@ -15,14 +15,14 @@ if(isset($_POST['delete'])){
    $cart_id = $_POST['cart_id'];
    $delete_cart_item = $conn->prepare("DELETE FROM `cart` WHERE id = ?");
    $delete_cart_item->execute([$cart_id]);
-   $message[] = 'cart item deleted!';
+   $message[] = 'produk di keranjang dihapus!';
 }
 
 if(isset($_POST['delete_all'])){
    $delete_cart_item = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
    $delete_cart_item->execute([$user_id]);
    // header('location:cart.php');
-   $message[] = 'deleted all from cart!';
+   $message[] = 'dihapus semua produk di keranjang!';
 }
 
 if(isset($_POST['update_qty'])){
@@ -31,7 +31,7 @@ if(isset($_POST['update_qty'])){
    $qty = filter_var($qty, FILTER_SANITIZE_STRING);
    $update_qty = $conn->prepare("UPDATE `cart` SET quantity = ? WHERE id = ?");
    $update_qty->execute([$qty, $cart_id]);
-   $message[] = 'cart quantity updated';
+   $message[] = 'jumlah produk di keranjang diperbarui';
 }
 
 $grand_total = 0;
@@ -44,7 +44,7 @@ $grand_total = 0;
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Cart</title>
+   <title>Keranjang</title>
 
  <!-- Logo Title Bar -->
  <link rel="icon" href="images/logofanny.png"
@@ -74,15 +74,13 @@ $grand_total = 0;
 <!-- header section ends -->
 
 <div class="heading">
-   <h3>shopping cart</h3>
-   <p><a href="home.php">home</a> <span> / cart</span></p>
+   <h3>Keranjang Belanja</h3>
+   <p><a href="home.php">beranda</a> <span> / keranjang</span></p>
 </div>
 
 <!-- shopping cart section starts  -->
 
 <section class="products">
-
-   <h1 class="title">your cart</h1>
 
    <div class="box-container">
 
@@ -96,7 +94,7 @@ $grand_total = 0;
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
          <a href="quick_view.php?pid=<?= $fetch_cart['pid']; ?>" class="fas fa-eye"></a>
-         <button type="submit" class="fas fa-times" name="delete" onclick="return confirm('delete this item?');"></button>
+         <button type="submit" class="fas fa-times" name="delete" onclick="return confirm('hapus produk ini?');"></button>
          <img src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
          <div class="name"><?= $fetch_cart['name']; ?></div>
          <div class="flex">
@@ -110,22 +108,22 @@ $grand_total = 0;
                $grand_total += $sub_total;
             }
          }else{
-            echo '<p class="empty">your cart is empty</p>';
+            echo '<p class="empty">keranjang kosong</p>';
          }
       ?>
 
    </div>
 
    <div class="cart-total">
-      <p>cart total : <span>Rp.<?= $grand_total; ?></span></p>
-      <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">proceed to checkout</a>
+      <p>total : <span>Rp.<?= $grand_total; ?></span></p>
+      <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">beli sekarang</a>
    </div>
 
    <div class="more-btn">
       <form action="" method="post">
-         <button type="submit" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" name="delete_all" onclick="return confirm('delete all from cart?');">delete all</button>
+         <button type="submit" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" name="delete_all" onclick="return confirm('hapus semua produk dikeranjang?');">hapus semua</button>
       </form>
-      <a href="menu.php" class="btn">continue shopping</a>
+      <a href="menu.php" class="btn">lanjut belanja</a>
    </div>
 
 </section>

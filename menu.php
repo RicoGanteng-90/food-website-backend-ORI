@@ -22,7 +22,7 @@ include 'components/add_cart.php';
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="css/overlay.css">
-   <title>Products</title>
+   <title>Produk</title>
 
  <!-- Logo Title Bar -->
  <link rel="icon" href="images/logofanny.png"
@@ -51,15 +51,13 @@ include 'components/add_cart.php';
 <!-- header section ends -->
 
 <div class="heading">
-   <h3>our menu</h3>
-   <p><a href="home.php">home</a> <span> / menu</span></p>
+   <h3>Produk Kami</h3>
+   <p><a href="home.php">beranda</a> <span> / produk</span></p>
 </div>
 
 <!-- menu section starts  -->
 
 <section class="products">
-
-   <h1 class="title">latest dishes</h1>
 
    <div class="box-container">
 
@@ -101,14 +99,14 @@ include 'components/add_cart.php';
          
          <div class="flex">
             <div class="price"><span>Rp. </span><?= $fetch_products['price']; ?></div>
-            <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"">
+            <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
          </div>                  
       </form>
       </div>
       <?php
             }
          }else{
-            echo '<p class="empty">no products added yet!</p>';
+            echo '<p class="empty">tidak ada produk yang ditambahkan!</p>';
          }
       ?>
 
