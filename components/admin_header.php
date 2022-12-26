@@ -42,7 +42,7 @@ if(isset($message)){
          <div class="flex-btn">
             <a href="register_admin.php" class="option-btn">daftar</a>
          </div>
-         <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">keluar</a>
+         <a href="../components/admin_logout.php" onclick="return confirm('keluar dari web admin WoFy?');" class="delete-btn">keluar</a>
       </div>
 
    </section>

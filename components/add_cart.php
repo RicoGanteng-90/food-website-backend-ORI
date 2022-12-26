@@ -23,8 +23,8 @@ if(isset($_POST['add_to_cart'])){
       if($check_cart_numbers->rowCount() > 0){
          $message[] = 'sudah ditambakan ke keranjang!';
       }else{
-         $insert_cart = $conn->prepare("INSERT INTO `cart`(user_id, pid, name, keterangan, price, quantity, image) VALUES(?,?,?,?,?,?,?)");
-         $insert_cart->execute([$user_id, $pid, $name, $keterangan, $price, $qty, $image]);
+         $insert_cart = $conn->prepare("INSERT INTO `cart`(user_id, pid, name, price, quantity, image) VALUES(?,?,?,?,?,?)");
+         $insert_cart->execute([$user_id, $pid, $name, $price, $qty, $image]);
          $message[] = 'ditambakan ke keranjang!';
          
       }
