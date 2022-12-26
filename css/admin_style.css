@@ -792,3 +792,11 @@ section{
    }
 
 }
+
+p.c {
+   word-break: break-all;
+ }
+
+ p {
+   width:fit-content; 
+ }

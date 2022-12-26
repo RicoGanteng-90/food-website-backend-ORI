@@ -72,6 +72,7 @@ if(isset($_GET['delete'])){
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Product</title>
+   
 
 <!-- Logo Title Bar -->
 <link rel="icon" href="images/logofanny.png"
@@ -139,17 +140,8 @@ if(isset($_GET['delete'])){
          <div class="price"><span>Rp. </span><?= $fetch_products['price']; ?><span>/-</span></div>
          <div class="category"><?= $fetch_products['category']; ?></div>
       </div>
-      <div class="name"><?= $fetch_products['name']; ?></div>
-      <div class="keterangan">
-         <?php
-            $pchenter=explode("\r\n",$fetch_products['keterangan']);
-            $txtout="";
-               for($i=0;$i<=count($pchenter)-1;$i++){
-                  $pchpart=str_replace($pchenter[$i], "<br>".$pchenter[$i],$pchenter[$i]);
-                  $txtout .=$pchpart;
-               }
-            echo $txtout;
-         ?></div>
+      <div class="name"><p class="c"><?= $fetch_products['name']; ?></p></div>
+      <div class="keterangan"><p class="c"><?= $fetch_products['keterangan'];?></p></div>   
       <div class="flex-btn">
          <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">edit</a>
          <a href="products.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">hapus</a>
