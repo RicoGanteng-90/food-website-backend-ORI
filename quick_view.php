@@ -84,12 +84,10 @@ include 'components/add_cart.php';
 
 <?php include 'components/footer.php'; ?>
 
-
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
-
 
 </body>
 </html>

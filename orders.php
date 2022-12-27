@@ -92,23 +92,9 @@ if(isset($_SESSION['user_id'])){
 
 </section>
 
-
-
-
-
-
-
-
-
-
 <!-- footer section starts  -->
 <?php include 'components/footer.php'; ?>
 <!-- footer section ends -->
-
-
-
-
-
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>

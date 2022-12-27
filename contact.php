@@ -103,25 +103,9 @@ if(isset($_POST['send'])){
 
 <!-- contact section ends -->
 
-
-
-
-
-
-
-
-
-
 <!-- footer section starts  -->
 <?php include 'components/footer.php'; ?>
 <!-- footer section ends -->
-
-
-
-
-
-
-
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>

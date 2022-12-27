@@ -240,32 +240,9 @@ if(isset($_SESSION['user_id'])){
 
 <!-- reviews section ends -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- footer section starts  -->
 <?php include 'components/footer.php'; ?>
 <!-- footer section ends -->=
-
-
-
-
-
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
