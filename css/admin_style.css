@@ -367,6 +367,8 @@ section{
    font-size: 1.5rem;
    color:var(--black);
    padding:1rem 0;
+   width:fit-content;
+   word-break: break-all;
 }
 
 .show-products .box-container .box .flex{
@@ -792,11 +794,3 @@ section{
    }
 
 }
-
-p.c {
-   word-break: break-all;
- }
-
- p {
-   width:fit-content; 
- }

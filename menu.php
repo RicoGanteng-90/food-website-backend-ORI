@@ -21,7 +21,6 @@ include 'components/add_cart.php';
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/overlay.css">
    <title>Produk</title>
 
  <!-- Logo Title Bar -->
@@ -42,6 +41,7 @@ include 'components/add_cart.php';
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/overlay.css">
 
 </head>
 <body>
@@ -80,17 +80,8 @@ include 'components/add_cart.php';
          <div class="card__overlay">
          <a href="quick_view.php?pid=<?= $fetch_products['id']; ?>" class="fas fa-eye"></a>
          <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
-            <div class="overlay__text">
-            <div class="keterangan">
-         <?php
-            $pchenter=explode("\r\n",$fetch_products['keterangan']);
-            $txtout="";
-               for($i=0;$i<=count($pchenter)-1;$i++){
-                  $pchpart=str_replace($pchenter[$i], "<br>".$pchenter[$i],$pchenter[$i]);
-                  $txtout .=$pchpart;
-               }
-            echo $txtout;
-         ?></div>
+            <div class="overlay__text">            
+            <div class="keterangan"><?= $fetch_products['keterangan'];?></div>
             </div>
           </div>
          

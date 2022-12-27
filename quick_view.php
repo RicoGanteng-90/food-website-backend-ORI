@@ -39,8 +39,8 @@ include 'components/add_cart.php';
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
    
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
-
+   <link rel="stylesheet" href="./css/style.css">
+   
 </head>
 <body>
    
@@ -66,16 +66,7 @@ include 'components/add_cart.php';
       <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
       <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
       <div class="name"><?= $fetch_products['name']; ?></div>
-      <div class="keterangan">
-         <?php
-            $pchenter=explode("\r\n",$fetch_products['keterangan']);
-            $txtout="";
-               for($i=0;$i<=count($pchenter)-1;$i++){
-                  $pchpart=str_replace($pchenter[$i], "<br>".$pchenter[$i],$pchenter[$i]);
-                  $txtout .=$pchpart;
-               }
-            echo $txtout;
-         ?></div>
+      <div class="keterangan"><?= $fetch_products['keterangan'];?></div>
       <div class="flex">
          <div class="price"><span>Rp. </span><?= $fetch_products['price']; ?></div>
          <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
@@ -90,21 +81,6 @@ include 'components/add_cart.php';
    ?>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php include 'components/footer.php'; ?>
 
