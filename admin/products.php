@@ -73,7 +73,6 @@ if(isset($_GET['delete'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Product</title>
    
-
 <!-- Logo Title Bar -->
 <link rel="icon" href="images/logofanny.png"
   type="image/x-icon" class="LOGO">
