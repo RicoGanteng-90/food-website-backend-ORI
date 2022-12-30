@@ -18,12 +18,12 @@ if(isset($message)){
       <a href="dashboard.php" class="logo">Admin<span>Panel</span></a>
 
       <nav class="navbar">
-         <a href="dashboard.php">beranda</a>
-         <a href="products.php">produk</a>
-         <a href="placed_orders.php">order</a>
-         <a href="admin_accounts.php">admin</a>
-         <a href="users_accounts.php">pengguna</a>
-         <a href="messages.php">pesan</a>
+         <a href="dashboard.php">Beranda</a>
+         <a href="products.php">Produk</a>
+         <a href="placed_orders.php">Order</a>
+         <a href="admin_accounts.php">Admin</a>
+         <a href="users_accounts.php">Pengguna</a>
+         <a href="messages.php">Pesan</a>
       </nav>
 
       <div class="icons">
