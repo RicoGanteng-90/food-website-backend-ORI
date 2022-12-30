@@ -113,7 +113,7 @@ if(isset($_SESSION['user_id'])){
          <tr>
             <td>Total Price</td>
             <td>:</td>
-            <td><span><?= $fetch_orders['total_price']; ?></span></td>
+            <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>
          </tr>
          <tr>
             <td>Order Status</td>

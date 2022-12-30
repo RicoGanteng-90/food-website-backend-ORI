@@ -111,14 +111,14 @@ if(isset($_POST['submit'])){
                $total_products = implode($cart_items);
                $grand_total += ($fetch_cart['price'] * $fetch_cart['quantity']);
       ?>
-      <p><span class="name"><?= $fetch_cart['name']; ?></span><span class="price">Rp. <?= $fetch_cart['price']; ?> x <?= $fetch_cart['quantity']; ?></span></p>
+      <p><span class="name"><?= $fetch_cart['name']; ?></span><span class="price">Rp. <?php echo " " . number_format($fetch_cart['price'],0,',','.'); ?> x <?= $fetch_cart['quantity']; ?></span></p>
       <?php
             }
          }else{
             echo '<p class="empty">keranjang Anda kosong!</p>';
          }
       ?>
-      <p class="grand-total"><span class="name">total :</span><span class="price">Rp. <?= $grand_total; ?></span></p>
+      <p class="grand-total"><span class="name">total :</span><span class="price">Rp.  <?php echo " " . number_format($grand_total,0,',','.'); ?></span></p>
       <a href="cart.php" class="btn">lihat keranjang</a>
    </div>
 

@@ -67,7 +67,7 @@ if(!isset($admin_id)){
             $total_pendings += $fetch_pendings['total_price'];
          }
       ?>
-      <h3><span>Rp. </span><?= $total_pendings; ?><span></span></h3>
+      <h3><span>Rp. </span><?php echo " " . number_format ($total_pendings,0,',','.'); ?><span></span></h3>
       <p>total belum lunas</p>
       <a href="placed_orders.php" class="btn">Lihat Order</a>
    </div>
@@ -81,7 +81,7 @@ if(!isset($admin_id)){
             $total_completes += $fetch_completes['total_price'];
          }
       ?>
-      <h3><span>Rp. </span><?= $total_completes; ?><span></span></h3>
+      <h3><span>Rp. </span><?php echo " " . number_format ($total_completes,0,',','.'); ?><span></span></h3>
       <p>total lunas</p>
       <a href="placed_orders.php" class="btn">Lihat Order</a>
    </div>

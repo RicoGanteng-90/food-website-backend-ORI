@@ -102,7 +102,7 @@ if(isset($_GET['delete'])){
             <td><span><?= $fetch_orders['address']; ?></span></td>
             <td><span><?= $fetch_orders['event_time']; ?></span></td>
             <td><span><?= $fetch_orders['total_products']; ?></span></td>
-            <td><span><?= $fetch_orders['total_price']; ?></span></td>
+            <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>
             <td><span><?= $fetch_orders['order_status']; ?></span></td>
             <td><span><?= $fetch_orders['proof_payment']; ?></span></td>
             <td><form action="" method="POST">

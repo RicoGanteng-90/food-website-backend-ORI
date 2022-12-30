@@ -80,7 +80,7 @@ if(isset($_GET['delete'])){
          <tr>
             <td><span><?= $fetch_accounts['id']; ?></span></td>
             <td><span><?= $fetch_accounts['name']; ?></span></td>
-            <td><a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn" onclick="return confirm('delete this account?');">hapus</a></td>
+            <td><a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn-akun" onclick="return confirm('delete this account?');">hapus</a></td>
          </tr>
          <?php
             $fetch_accounts['id']++;

@@ -91,7 +91,7 @@ if(isset($_POST['send'])){
       <form action="" method="post">
          <h3>ada pertanyaan?</h3>
          <input type="text" name="name" maxlength="50" class="box" placeholder="Masukan nama Anda" required>
-         <input type="text" name="number" min="0" max="9999999999" class="box" placeholder="Masukan alamat Anda" required maxlength="16">
+         <input type="number" name="number" class="box" placeholder="Masukan alamat Anda" required maxlength="16">
          <input type="email" name="email" maxlength="50" class="box" placeholder="Masukan email Anda" required>
          <textarea name="msg" class="box" required placeholder="Masukan pesan Anda" maxlength="500" cols="30" rows="10"></textarea>
          <input type="submit" value="kirim" name="send" class="btn">

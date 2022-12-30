@@ -80,7 +80,7 @@ include 'components/add_cart.php';
          <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>        
          <div class="name"><?= $fetch_products['name']; ?></div>         
          <div class="flex">
-            <div class="price"><span>Rp. </span><?= $fetch_products['price']; ?></div>
+            <div class="price"><span>Rp. </span><?php echo " " . number_format($fetch_products['price'],0,',','.'); ?></div>
             <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
          </div>                  
       </form>      
