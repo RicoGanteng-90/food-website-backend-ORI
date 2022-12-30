@@ -296,7 +296,7 @@ section{
 }
 
 .swiper-pagination-bullet-active{
-   background-color: var(--pr-color);
+   background-color: black;
 }
 
 .category .box-container{
@@ -516,7 +516,7 @@ section{
 }
 
 .products .cart-total p span{
-   color:var(--red);
+   color:black;
 }
 
 .products .cart-total .btn{
@@ -572,7 +572,7 @@ section{
 }
 
 .steps .box-container .box img{
-   height: 10rem;
+   height: 8rem;
    width: 100%;
    object-fit: contain;
    margin-bottom: 1rem;
@@ -619,7 +619,7 @@ section{
 
 .reviews .slide .stars i{
    font-size: 1.8rem;
-   color:var(--pr-color);
+   color:var(--yellow);
 }
 
 .reviews .slide h3{
@@ -628,7 +628,6 @@ section{
    text-transform: capitalize;
    color:var(--black);
 }
-
 .contact .row{
    display: flex;
    align-items: center;

@@ -75,8 +75,8 @@ if(isset($message)){
 
    <form action="" method="POST">
       <h3>login</h3>
-      <p>email = <span>admin@gmail.com</span> & kata sandi = <span>111</span></p>
-      <input type="text" name="name" maxlength="20" required placeholder="masukan email anda" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <p>email = <span>admin</span> & kata sandi = <span>111</span></p>
+      <input type="text" name="name" maxlength="50" required placeholder="masukan email anda" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="pass" maxlength="20" required placeholder="masukan kata sandi anda" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="submit" value="login" name="submit" class="btn">
    </form>

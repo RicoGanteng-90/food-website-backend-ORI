@@ -127,7 +127,7 @@ if(!isset($admin_id)){
       ?>
       <h3><?= $numbers_of_admins; ?></h3>
       <p>admin</p>
-      <a href="admin_accounts.php" class="btn">data kustomer</a>
+      <a href="admin_accounts.php" class="btn">data admin</a>
    </div>
 
    <div class="box">

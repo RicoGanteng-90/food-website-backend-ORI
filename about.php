@@ -65,8 +65,8 @@ if(isset($_SESSION['user_id'])){
       </div>
 
       <div class="content">
-         <h3>Mengapa WO Fany?</h3>
-         <p>Anda tidak perlu khawatir, setiap detail tentang acara pernikahan Anda adalah perhatian dan tanggung jawab kami. Tim profesional kami siap melayani berbagai kebutuhan pernikahan impian Anda, mulai persiapan acara  hingga saat acara berlangsung.</p>
+         <h3>Mengapa Harus Kami?</h3>
+         <p>Karena Anda tidak perlu khawatir, setiap detail tentang acara pernikahan Anda adalah perhatian dan tanggung jawab kami. Tim profesional kami siap melayani berbagai kebutuhan pernikahan impian Anda, mulai persiapan acara  hingga saat acara berlangsung.</p>
          <a href="menu.php" class="btn">Layanan Produk</a>
       </div>
 

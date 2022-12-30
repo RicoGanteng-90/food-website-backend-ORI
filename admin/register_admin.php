@@ -76,7 +76,7 @@ if(isset($_POST['submit'])){
 
    <form action="" method="POST">
       <h3>register</h3>
-      <input type="text" name="name" maxlength="20" required placeholder="masukan email anda" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="text" name="name" maxlength="50" required placeholder="masukan email anda" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="pass" maxlength="20" required placeholder="masukan kata sandi anda" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="cpass" maxlength="20" required placeholder="konfirmasi kata sandi" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="submit" value="register" name="submit" class="btn">
