@@ -38,8 +38,8 @@ if(isset($_GET['delete'])){
    <title>Order</title>
 
    <!-- Logo Title Bar -->
-<link rel="icon" href="images/logofanny.png"
-  type="image/x-icon" class="LOGO">
+   <link rel="icon" href="../images/logofanny.png"
+   type="image/x-icon" class="LOGO">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -69,44 +69,65 @@ if(isset($_GET['delete'])){
 
    <div class="box-container">
 
-   <?php
-      $select_orders = $conn->prepare("SELECT * FROM `orders`");
+   
+   <div class="box">
+   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <thead>
+         <tr>
+            <th>No</th>
+            <th>nama</th>
+            <th>email</th>
+            <th>nomor telepon</th>
+            <th>alamat</th>
+            <th>waktu acara</th>
+            <th>total produk</th>
+            <th>total harga</th>
+            <th>status order</th>
+            <th>bukti pembayaran</th>
+            <th>status pembayaran</th>
+            <th>action</th>
+         </tr>
+      </thead>
+      <?php
+      $select_orders = $conn->prepare("SELECT * FROM `orders` ORDER BY id DESC");
       $select_orders->execute();
       if($select_orders->rowCount() > 0){
          while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
    ?>
-   <div class="box">
-      <p> id kustomer : <span><?= $fetch_orders['user_id']; ?></span> </p>
-      <p> alamat : <span><?= $fetch_orders['address']; ?></span> </p>
-      <p> nama : <span><?= $fetch_orders['name']; ?></span> </p>
-      <p> email : <span><?= $fetch_orders['email']; ?></span> </p>
-      <p> nomor telepon : <span><?= $fetch_orders['number']; ?></span> </p>
-      <p> alamat : <span><?= $fetch_orders['address']; ?></span> </p>
-      <p> total product : <span><?= $fetch_orders['total_products']; ?></span> </p>
-      <p> total harga : <span>Rp. <?= $fetch_orders['total_price']; ?></span> </p>
-      <p> payment method : <span><?= $fetch_orders['method']; ?></span> </p>
-      <form action="" method="POST">
-         <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
-         <select name="payment_status" class="drop-down">
-            <option value="" selected disabled><?= $fetch_orders['payment_status']; ?></option>
-            <option value="pending">pending</option>
-            <option value="completed">completed</option>
-         </select>
-         <div class="flex-btn">
-            <input type="submit" value="update" class="btn" name="update_payment">
-            <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('delete this order?');">hapus</a>
-         </div>
-      </form>
-   </div>
+         <tr>
+            <td><span><?= $fetch_orders['id']; ?></td>
+            <td><span><?= $fetch_orders['name']; ?></span></td>
+            <td><span><?= $fetch_orders['email']; ?></span></td>
+            <td><span><?= $fetch_orders['number']; ?></span></td>
+            <td><span><?= $fetch_orders['address']; ?></span></td>
+            <td><span><?= $fetch_orders['event_time']; ?></span></td>
+            <td><span><?= $fetch_orders['total_products']; ?></span></td>
+            <td><span><?= $fetch_orders['total_price']; ?></span></td>
+            <td><span><?= $fetch_orders['order_status']; ?></span></td>
+            <td><span><?= $fetch_orders['proof_payment']; ?></span></td>
+            <td><form action="" method="POST">
+               <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
+               <select name="payment_status" class="drop-down">
+                  <option value="" selected disabled><?= $fetch_orders['payment_status']; ?></option>
+                  <option value="belum lunas">belum lunas</option>
+                  <option value="lunas">lunas</option>
+               </select></td>
+            <td><div class="flex-btn">
+               <input type="submit" value="update" class="btn-order" name="update_payment">
+               <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn-order" onclick="return confirm('delete this order?');">hapus</a>
+               </div>
+         </td>
+         </tr>
+
    <?php
       }
    }else{
       echo '<p class="empty">tidak ada order!</p>';
    }
    ?>
-
+      </table>
    </div>
-
+</div>
 </section>
 
 <!-- placed orders section ends -->

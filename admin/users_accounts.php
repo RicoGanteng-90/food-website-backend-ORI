@@ -32,8 +32,8 @@ if(isset($_GET['delete'])){
    <title>Data Akun Kustomer</title>
 
    <!-- Logo Title Bar -->
-<link rel="icon" href="images/logofanny.png"
-  type="image/x-icon" class="LOGO">
+   <link rel="icon" href="../images/logofanny.png"
+   type="image/x-icon" class="LOGO">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -59,28 +59,40 @@ if(isset($_GET['delete'])){
 
 <section class="accounts">
 
-   <h1 class="heading">Data Akun Kustomer</h1>
+   <h1 class="heading">Data Akun Pengguna</h1>
 
    <div class="box-container">
-
-   <?php
+   <div class="box">
+   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <tr>
+         <tr>
+            <td>id pengguna</td>
+            <td>nama</td>
+            <td>aksi</td>
+         </tr>
+      </tr>
+      <?php
       $select_account = $conn->prepare("SELECT * FROM `users`");
       $select_account->execute();
       if($select_account->rowCount() > 0){
          while($fetch_accounts = $select_account->fetch(PDO::FETCH_ASSOC)){  
-   ?>
-   <div class="box">
-      <p> id kustomer : <span><?= $fetch_accounts['id']; ?></span> </p>
-      <p> nama : <span><?= $fetch_accounts['name']; ?></span> </p>
-      <a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn" onclick="return confirm('delete this account?');">hapus</a>
-   </div>
-   <?php
+      ?>
+         <tr>
+            <td><span><?= $fetch_accounts['id']; ?></span></td>
+            <td><span><?= $fetch_accounts['name']; ?></span></td>
+            <td><a href="users_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn" onclick="return confirm('delete this account?');">hapus</a></td>
+         </tr>
+         <?php
+            $fetch_accounts['id']++;
+         ?>
+      <?php
       }
-   }else{
+      }else{
       echo '<p class="empty">tidak ada akun yang tersedia!</p>';
-   }
+      }
    ?>
-
+   </table>
+   </div>
    </div>
 
 </section>

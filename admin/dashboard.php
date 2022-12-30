@@ -21,8 +21,8 @@ if(!isset($admin_id)){
    <title>Beranda</title>
 
    <!-- Logo Title Bar -->
-<link rel="icon" href="images/logofanny.png"
-  type="image/x-icon" class="LOGO">
+   <link rel="icon" href="../images/logofanny.png"
+   type="image/x-icon" class="LOGO">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -62,28 +62,28 @@ if(!isset($admin_id)){
       <?php
          $total_pendings = 0;
          $select_pendings = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
-         $select_pendings->execute(['pending']);
+         $select_pendings->execute(['belum lunas']);
          while($fetch_pendings = $select_pendings->fetch(PDO::FETCH_ASSOC)){
             $total_pendings += $fetch_pendings['total_price'];
          }
       ?>
       <h3><span>Rp. </span><?= $total_pendings; ?><span></span></h3>
-      <p>total pendings</p>
-      <a href="placed_orders.php" class="btn">lihat order</a>
+      <p>total belum lunas</p>
+      <a href="placed_orders.php" class="btn">lihat pesanan</a>
    </div>
 
    <div class="box">
       <?php
          $total_completes = 0;
          $select_completes = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
-         $select_completes->execute(['completed']);
+         $select_completes->execute(['lunas']);
          while($fetch_completes = $select_completes->fetch(PDO::FETCH_ASSOC)){
             $total_completes += $fetch_completes['total_price'];
          }
       ?>
       <h3><span>Rp. </span><?= $total_completes; ?><span></span></h3>
-      <p>total completes</p>
-      <a href="placed_orders.php" class="btn">lihat order</a>
+      <p>total lunas</p>
+      <a href="placed_orders.php" class="btn">lihat pesanan</a>
    </div>
 
    <div class="box">
@@ -93,8 +93,8 @@ if(!isset($admin_id)){
          $numbers_of_orders = $select_orders->rowCount();
       ?>
       <h3><?= $numbers_of_orders; ?></h3>
-      <p>total orders</p>
-      <a href="placed_orders.php" class="btn">lihat order</a>
+      <p>total pesanan</p>
+      <a href="placed_orders.php" class="btn">lihat pesanan</a>
    </div>
 
    <div class="box">
@@ -115,8 +115,8 @@ if(!isset($admin_id)){
          $numbers_of_users = $select_users->rowCount();
       ?>
       <h3><?= $numbers_of_users; ?></h3>
-      <p>akun user / kustomer</p>
-      <a href="users_accounts.php" class="btn">data kustomer</a>
+      <p>pelanggan</p>
+      <a href="users_accounts.php" class="btn">data pelanggan</a>
    </div>
 
    <div class="box">
@@ -137,7 +137,7 @@ if(!isset($admin_id)){
          $numbers_of_messages = $select_messages->rowCount();
       ?>
       <h3><?= $numbers_of_messages; ?></h3>
-      <p>pesan kustomer</p>
+      <p>pesan</p>
       <a href="messages.php" class="btn">lihat pesan</a>
    </div>
 

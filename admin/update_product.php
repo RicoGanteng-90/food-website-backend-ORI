@@ -60,8 +60,8 @@ if(isset($_POST['update'])){
    <title>Edit Produk</title>
 
    <!-- Logo Title Bar -->
-<link rel="icon" href="images/logofanny.png"
-  type="image/x-icon" class="LOGO">
+   <link rel="icon" href="../images/logofanny.png"
+   type="image/x-icon" class="LOGO">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">

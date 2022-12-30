@@ -28,8 +28,8 @@ if(isset($_GET['delete'])){
    <title>Data Akun Admin</title>
 
    <!-- Logo Title Bar -->
-<link rel="icon" href="images/logofanny.png"
-  type="image/x-icon" class="LOGO">
+   <link rel="icon" href="../images/logofanny.png"
+   type="image/x-icon" class="LOGO">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -60,35 +60,45 @@ if(isset($_GET['delete'])){
    <div class="box-container">
 
    <div class="box">
-      <p>register admin</p>
-      <a href="register_admin.php" class="option-btn">register</a>
-   </div>
-
-   <?php
+   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+         <tr>
+            <td>id admin</td>
+            <td>email</td>
+            <td>aksi</td>
+         </tr>
+      <?php
       $select_account = $conn->prepare("SELECT * FROM `admin`");
       $select_account->execute();
       if($select_account->rowCount() > 0){
          while($fetch_accounts = $select_account->fetch(PDO::FETCH_ASSOC)){  
-   ?>
-   <div class="box">
-      <p> id admin : <span><?= $fetch_accounts['id']; ?></span> </p>
-      <p> email : <span><?= $fetch_accounts['name']; ?></span> </p>
-      <div class="flex-btn">
-         <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn" onclick="return confirm('delete this account?');">hapus</a>
+      ?>
+         <tr>
+            <td><span><?= $fetch_accounts['id']; ?></span></td>
+            <td><span><?= $fetch_accounts['name']; ?></span></td>
+            <td><div class="flex-btn">
+               <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn-akun" onclick="return confirm('delete this account?');">hapus</a>
+            <?php
+               if($fetch_accounts['id'] == $admin_id){
+                  echo '<a href="update_profile.php" class="option-btn-akun">update</a>';
+               }
+            ?>
+            </div></td>
+         </tr>
          <?php
-            if($fetch_accounts['id'] == $admin_id){
-               echo '<a href="update_profile.php" class="option-btn">update</a>';
-            }
+            $fetch_accounts['id']++;
          ?>
-      </div>
-   </div>
-   <?php
+      <?php
       }
-   }else{
-      echo '<p class="empty">tidak ada akun yang tersedia</p>';
-   }
-   ?>
-
+      }else{
+         echo '<p class="empty">tidak ada akun yang tersedia</p>';
+      }
+      ?>
+   </table>
+   <div class="box">
+      <h2>register admin</h2>
+      <a href="register_admin.php" class="option-btn">register</a>
+   </div>
+   </div>
    </div>
 
 </section>

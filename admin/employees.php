@@ -55,9 +55,9 @@ if(isset($_GET['delete'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Karyawan</title>
 
-<!-- Logo Title Bar -->
-<link rel="icon" href="images/logofanny.png"
-  type="image/x-icon" class="LOGO">
+   <!-- Logo Title Bar -->
+   <link rel="icon" href="../images/logofanny.png"
+   type="image/x-icon" class="LOGO">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -87,7 +87,7 @@ if(isset($_GET['delete'])){
       <h3>tambahkan karyawan</h3>
       <input type="text" required placeholder="masukan nama karyawan" name="name" maxlength="100" class="box">
       <input type="email" name="email" required placeholder="masukan email karyawan" maxlength="100" class="box">
-      <input type="text" min="0" max="9999999999" required placeholder="masukan nomor telepon karyawan" name="number" onkeypress="if(this.value.length == 16) return false;" class="box">
+      <input type="number" name="number" required placeholder="masukan nomor telepon karyawan" class="box" maxlength="14">
       <input type="text" required placeholder="masukan posisi / jabatan karyawan" name="position" maxlength="100" class="box">
       <textarea required placeholder="masukan alamat karyawan" name="address" maxlength="1000" class="box"></textarea>
       <input type="submit" value="tambahkan" name="add_employees" class="btn">
@@ -102,31 +102,46 @@ if(isset($_GET['delete'])){
 <section class="show-employees" style="padding-top: 0;">
 
    <div class="box-container">
-
-   <?php
+      <div class="box">
+         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+         <thead>
+            <tr>
+               <th>nama</th>
+               <th>email</th>
+               <th>nomor telepon</th>
+               <th>posisi</th>
+               <th>alamat</th>
+               <th>aksi</th>
+            </tr>
+         </thead>
+      <?php
       $show_employees = $conn->prepare("SELECT * FROM `employees`");
       $show_employees->execute();
       if($show_employees->rowCount() > 0){
          while($fetch_employees = $show_employees->fetch(PDO::FETCH_ASSOC)){  
-   ?>
-   <div class="box">
-      <p>nama : <span><?= $fetch_employees['name']; ?></span></p>
-      <p>email : <span><?= $fetch_employees['email']; ?></span></p>
-      <p>nomor telepon : <span><?= $fetch_employees['number']; ?></span></p>
-      <p>posisi : <span><?= $fetch_employees['position']; ?></span></p>
-      <p>alamat : <span><?= $fetch_employees['address']; ?></span></p>
-      <div class="flex-btn">
-         <a href="update_employees.php?update=<?= $fetch_employees['id']; ?>" class="option-btn">edit</a>
-         <a href="employees.php?delete=<?= $fetch_employees['id']; ?>" class="delete-btn" onclick="return confirm('delete this employee?');">hapus</a>
-      </div>
-   </div>
-   <?php
+      ?>
+         <tr>
+            <td><span><?= $fetch_employees['name']; ?></span></td>
+            <td><span><?= $fetch_employees['email']; ?></span></td>
+            <td><span><?= $fetch_employees['number']; ?></span></td>
+            <td><span><?= $fetch_employees['position']; ?></span></td>
+            <td><span><?= $fetch_employees['address']; ?></span></td>
+            <td><div class="flex-btn">
+         <a href="update_employees.php?update=<?= $fetch_employees['id']; ?>" class="option-btn-aksi">edit</a>
+         <a href="employees.php?delete=<?= $fetch_employees['id']; ?>" class="delete-btn-aksi" onclick="return confirm('delete this employee?');">hapus</a>
+      </div></td>
+         </tr>
+         <?php
+            $fetch_employees['id']++;
+         ?>
+      <?php
          }
       }else{
          echo '<p class="empty">belum ada karyawan yang ditambahkan!</p>';
       }
-   ?>
-
+      ?>
+   </table>
+   </div>
    </div>
 
 </section>

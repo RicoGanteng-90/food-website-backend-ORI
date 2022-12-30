@@ -87,6 +87,72 @@ section{
    background-color: var(--black);
 }
 
+.delete-btn-order,
+.btn-order{
+   display: block;
+   margin-top: 1rem;
+   border-radius: .5rem;
+   cursor: pointer;
+   width: 50%;
+   font-size: 1rem;
+   color:var(--white);
+   padding:0.5rem 0.5rem;
+   text-transform: capitalize;
+   text-align: center;
+}
+
+.btn-order{
+   background-color: var(--main-color);
+}
+
+.delete-btn-order {
+background-color: var(--red);
+}
+
+.delete-btn-akun,
+.option-btn-akun{
+   display: block;
+   margin-top: 1rem;
+   border-radius: .5rem;
+   cursor: pointer;
+   width: 50%;
+   font-size: 1rem;
+   color:var(--white);
+   padding:1rem 1rem;
+   text-transform: capitalize;
+   text-align: center;
+}
+
+.option-btn-akun {
+   background-color: var(--main-color);
+}
+
+.delete-btn-akun {
+   background-color: var(--red);
+}
+
+.delete-btn-aksi,
+.option-btn-aksi{
+   display: block;
+   margin-top: 1rem;
+   border-radius: .5rem;
+   cursor: pointer;
+   width: 50%;
+   font-size: 1rem;
+   color:var(--white);
+   padding:1rem 1rem;
+   text-transform: capitalize;
+   text-align: center;
+}
+
+.option-btn-aksi {
+   background-color: var(--orange);
+}
+
+.delete-btn-aksi {
+   background-color: var(--red);
+}
+
 .flex-btn{
    display: flex;
    gap:1rem;
@@ -430,9 +496,29 @@ section{
    color:var(--black);
 }
 
+.table {
+   width: 100%;
+   margin-bottom: 1rem;
+   color: #858796;
+ }
+
+.table-bordered {
+   border: 1px solid #e3e6f0;
+ }
+ 
+ .table-bordered th,
+ .table-bordered td {
+   border: 1px solid #e3e6f0;
+ }
+ 
+ .table-bordered thead th,
+ .table-bordered thead td {
+   border-bottom-width: 2px;
+ }
+
 .placed-orders .box-container{
    display: grid;
-   grid-template-columns: repeat(auto-fit, 33rem);
+   grid-template-columns: repeat(auto-fit, 120rem);
    gap:1.5rem;
    justify-content: center;
    align-items: flex-start;
@@ -447,23 +533,24 @@ section{
    padding-top: 1rem;
 }
 
-.placed-orders .box-container .box p{
+.placed-orders .box-container .box tr td{
    padding: .5rem 0;
    line-height: 1.5;
-   font-size: 1.8rem;
+   font-size: 1rem;
    color:var(--black);
+   text-align: center;
 }
 
-.placed-orders .box-container .box p span{
+.placed-orders .box-container .box tr td span{
    color:var(--main-color);
 }
 
 .placed-orders .box-container .box .drop-down{
-   width: 100%;
+   width: 70%;
    margin:1rem 0;
    background-color: var(--light-bg);
-   padding:1rem 1.4rem;
-   font-size: 2rem;
+   padding:1rem 1rem;
+   font-size: 1rem;
    color:var(--black);
    border:var(--border);
    border-radius: .5rem;
@@ -471,7 +558,7 @@ section{
 
 .accounts .box-container{
    display: grid;
-   grid-template-columns: repeat(auto-fit, 33rem);
+   grid-template-columns: repeat(auto-fit, 80rem);
    gap:1.5rem;
    justify-content: center;
    align-items: flex-start;
@@ -487,13 +574,14 @@ section{
    text-align: center;
 }
 
-.accounts .box-container .box p{
+.accounts .box-container .box tr td{
    padding: .5rem 0;
-   font-size: 1.8rem;
+   font-size: 1.5rem;
    color:var(--black);
+   text-align: center;
 }
 
-.accounts .box-container .box p span{
+.accounts .box-container .box tr td span{
    color:var(--main-color);
 }
 
@@ -561,7 +649,7 @@ section{
 
 .show-employees .box-container{
    display: grid;
-   grid-template-columns: repeat(auto-fit, 33rem);
+   grid-template-columns: repeat(auto-fit, 80rem);
    gap:1.5rem;
    justify-content: center;
    align-items: flex-start;
@@ -577,13 +665,13 @@ section{
    text-align: center;
 }
 
-.show-employees .box-container .box p{
+.show-employees .box-container .box tr td{
    padding: .5rem 0;
-   font-size: 1.8rem;
+   font-size: 1.5rem;
    color:var(--black);
 }
 
-.show-employees .box-container .box p span{
+.show-employees .box-container .box tr td span{
    color:var(--main-color);
 }
 
@@ -655,7 +743,7 @@ section{
 
 .show-partners .box-container{
    display: grid;
-   grid-template-columns: repeat(auto-fit, 33rem);
+   grid-template-columns: repeat(auto-fit, 80rem);
    gap:1.5rem;
    justify-content: center;
    align-items: flex-start;
@@ -671,13 +759,13 @@ section{
    text-align: center;
 }
 
-.show-partners .box-container .box p{
+.show-partners .box-container .box tr td{
    padding: .5rem 0;
-   font-size: 1.8rem;
+   font-size: 1.5rem;
    color:var(--black);
 }
 
-.show-partners .box-container .box p span{
+.show-partners .box-container .box tr td span{
    color:var(--main-color);
 }
 

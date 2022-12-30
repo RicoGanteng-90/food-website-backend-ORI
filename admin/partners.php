@@ -55,9 +55,9 @@ if(isset($_GET['delete'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Partner / Mitra kerja</title>
 
-<!-- Logo Title Bar -->
-<link rel="icon" href="images/logofanny.png"
-  type="image/x-icon" class="LOGO">
+   <!-- Logo Title Bar -->
+   <link rel="icon" href="../images/logofanny.png"
+   type="image/x-icon" class="LOGO">
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -87,7 +87,7 @@ if(isset($_GET['delete'])){
       <h3>tambahkan partner</h3>
       <input type="text" required placeholder="masukan nama partner" name="name" maxlength="100" class="box">
       <input type="email" name="email" required placeholder="masukan email partner" maxlength="100" class="box">
-      <input type="text" min="0" max="9999999999" required placeholder="masukan nomor telepon partner" name="number" onkeypress="if(this.value.length == 16) return false;" class="box">
+      <input type="text" required placeholder="masukan nomor telepon partner" name="number" onkeypress="if(this.value.length == 16) return false;" class="box">
       <textarea required placeholder="deskripsi partner" name="keterangan" maxlength="1000" class="box"></textarea>
       <textarea required placeholder="masukan alamat partner" name="address" maxlength="1000" class="box"></textarea>
       <input type="submit" value="tambahkan partner" name="add_partners" class="btn">
@@ -101,34 +101,50 @@ if(isset($_GET['delete'])){
 
 <section class="show-partners" style="padding-top: 0;">
 
-   <div class="box-container">
-
-   <?php
+<div class="box-container">
+   <div class="box">
+   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <tr>
+         <thead>
+            <tr>
+               <th>nama</th>
+               <th>email</th>
+               <th>nomor telepon</th>
+               <th>deskripsi</th>
+               <th>alamat</th>
+               <th>aksi</th>
+         </tr>
+         </thead>
+      </tr>
+      <?php
       $show_partners = $conn->prepare("SELECT * FROM `partners`");
       $show_partners->execute();
       if($show_partners->rowCount() > 0){
          while($fetch_partners = $show_partners->fetch(PDO::FETCH_ASSOC)){  
-   ?>
-   <div class="box">
-      <p>nama : <span><?= $fetch_partners['name']; ?></span></p>
-      <p>email : <span><?= $fetch_partners['email']; ?></span></p>
-      <p>nomor telepon : <span><?= $fetch_partners['number']; ?></span></p>
-      <p>deskripsi : <span><?= $fetch_partners['keterangan']; ?></span></p>
-      <p>alamat : <span><?= $fetch_partners['address']; ?></span></p>
-      <div class="flex-btn">
-         <a href="update_partners.php?update=<?= $fetch_partners['id']; ?>" class="option-btn">edit</a>
-         <a href="partners.php?delete=<?= $fetch_partners['id']; ?>" class="delete-btn" onclick="return confirm('delete this partner?');">hapus</a>
-      </div>
-   </div>
-   <?php
+      ?>
+         <tr>
+            <td><span><?= $fetch_partners['name']; ?></span></td>
+            <td><span><?= $fetch_partners['email']; ?></span></td>
+            <td><span><?= $fetch_partners['number']; ?></span></td>
+            <td><span><?= $fetch_partners['keterangan']; ?></span></td>
+            <td><span><?= $fetch_partners['address']; ?></span></td>
+            <td><div class="flex-btn">
+               <a href="update_partners.php?update=<?= $fetch_partners['id']; ?>" class="option-btn-aksi">edit</a>
+               <a href="partners.php?delete=<?= $fetch_partners['id']; ?>" class="delete-btn-aksi" onclick="return confirm('delete this partner?');">hapus</a>
+            </div></td>
+         </tr>
+         <?php
+            $fetch_partners['id']++;
+         ?>
+      <?php
          }
       }else{
          echo '<p class="empty">belum ada partner yang ditambahkan!</p>';
       }
-   ?>
-
+      ?>
+   </table>
    </div>
-
+</div>
 </section>
 
 <!-- show products section ends -->
