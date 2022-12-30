@@ -53,7 +53,7 @@ if(!isset($admin_id)){
    <div class="box-container">
 
    <div class="box">
-      <h3>halo🤩</h3>
+      <h3>selamat datang☺️</h3>
       <p><?= $fetch_profile['name']; ?></p>
       <a href="update_profile.php" class="btn">edit profil</a>
    </div>
