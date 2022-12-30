@@ -86,7 +86,7 @@ include 'components/add_cart.php';
                <a href="menu.php" class="btn">see products</a>
             </div>
             <div class="image">
-               <img src="images/hero3.png" alt="">
+               <img src="images/herooo3.png" alt="">
             </div>
          </div>
 
