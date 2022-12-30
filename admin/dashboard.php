@@ -69,7 +69,7 @@ if(!isset($admin_id)){
       ?>
       <h3><span>Rp. </span><?= $total_pendings; ?><span></span></h3>
       <p>total belum lunas</p>
-      <a href="placed_orders.php" class="btn">lihat pesanan</a>
+      <a href="placed_orders.php" class="btn">Lihat Order</a>
    </div>
 
    <div class="box">
@@ -83,7 +83,7 @@ if(!isset($admin_id)){
       ?>
       <h3><span>Rp. </span><?= $total_completes; ?><span></span></h3>
       <p>total lunas</p>
-      <a href="placed_orders.php" class="btn">lihat pesanan</a>
+      <a href="placed_orders.php" class="btn">Lihat Order</a>
    </div>
 
    <div class="box">
@@ -93,8 +93,8 @@ if(!isset($admin_id)){
          $numbers_of_orders = $select_orders->rowCount();
       ?>
       <h3><?= $numbers_of_orders; ?></h3>
-      <p>total pesanan</p>
-      <a href="placed_orders.php" class="btn">lihat pesanan</a>
+      <p>Total Order</p>
+      <a href="placed_orders.php" class="btn">Lihat Order</a>
    </div>
 
    <div class="box">

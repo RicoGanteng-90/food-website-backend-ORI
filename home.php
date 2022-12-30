@@ -59,7 +59,7 @@ include 'components/add_cart.php';
 
          <div class="swiper-slide slide">
             <div class="content">
-               <span>solusi terbaik</span>
+               <span>Solusi Terbaik</span>
                <h3>acara impian</h3>
                <a href="menu.php" class="btn">temukan disini</a>
             </div>

@@ -75,17 +75,17 @@ if(isset($_GET['delete'])){
       <thead>
          <tr>
             <th>No</th>
-            <th>nama</th>
-            <th>email</th>
-            <th>nomor telepon</th>
-            <th>alamat</th>
-            <th>waktu acara</th>
-            <th>total produk</th>
-            <th>total harga</th>
-            <th>status order</th>
-            <th>bukti pembayaran</th>
-            <th>status pembayaran</th>
-            <th>action</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Nomor Telepon</th>
+            <th>Alamat</th>
+            <th>waktu Acara</th>
+            <th>Total Produk</th>
+            <th>Total Harga</th>
+            <th>Status Order</th>
+            <th>Bukti Pembayaran</th>
+            <th>Status Pembayaran</th>
+            <th>Action</th>
          </tr>
       </thead>
       <?php

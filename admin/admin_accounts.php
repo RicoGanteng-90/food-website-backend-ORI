@@ -62,9 +62,9 @@ if(isset($_GET['delete'])){
    <div class="box">
    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
          <tr>
-            <td>id admin</td>
-            <td>email</td>
-            <td>aksi</td>
+            <td>Id Admin</td>
+            <td>Email</td>
+            <td>Aksi</td>
          </tr>
       <?php
       $select_account = $conn->prepare("SELECT * FROM `admin`");
@@ -95,7 +95,7 @@ if(isset($_GET['delete'])){
       ?>
    </table>
    <div class="box">
-      <h2>register admin</h2>
+      <h2>Register admin</h2>
       <a href="register_admin.php" class="option-btn">register</a>
    </div>
    </div>
