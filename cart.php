@@ -98,11 +98,11 @@ $grand_total = 0;
          <img src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
          <div class="name"><?= $fetch_cart['name']; ?></div>
          <div class="flex">
-            <div class="price"><span>Rp. </span><?= $fetch_cart['price']; ?></div>
+            <div class="price"><span>Rp. </span><?php echo " " . number_format($fetch_cart['price'],0,',','.'); ?></div>
             <input type="number" name="qty" class="qty" min="1" max="99" value="<?= $fetch_cart['quantity']; ?>" maxlength="2">
             <button type="submit" class="fas fa-check" name="update_qty"></button>
          </div>
-         <div class="sub-total"> sub total : <span>Rp. <?= $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?></span> </div>
+         <div class="sub-total"> sub total : <span>Rp. <?php echo " " . number_format($sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']),0,',','.'); ?></span> </div>
       </form>
       <?php
                $grand_total += $sub_total;
@@ -115,7 +115,7 @@ $grand_total = 0;
    </div>
 
    <div class="cart-total">
-      <p>total : <span>Rp.<?= $grand_total; ?></span></p>
+      <p>total : <span>Rp.<?php echo " " . number_format ($grand_total,0,',','.'); ?></span></p>
       <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">beli sekarang</a>
    </div>
 

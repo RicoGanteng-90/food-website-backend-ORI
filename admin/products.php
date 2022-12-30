@@ -128,7 +128,7 @@ if(isset($_GET['delete'])){
    <div class="box-container">
 
    <?php
-      $show_products = $conn->prepare("SELECT * FROM `products`");
+      $show_products = $conn->prepare("SELECT * FROM `products` ORDER BY id DESC");
       $show_products->execute();
       if($show_products->rowCount() > 0){
          while($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)){  
@@ -136,7 +136,7 @@ if(isset($_GET['delete'])){
    <div class="box">
       <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
       <div class="flex">
-         <div class="price"><span>Rp. </span><?= $fetch_products['price']; ?><span>/-</span></div>
+         <div class="price"><span>Rp. </span><?php echo " " . number_format($fetch_products['price'],0,',','.'); ?><span></span></div>
          <div class="category"><?= $fetch_products['category']; ?></div>
       </div>
       <div class="name"><p class="c"><?= $fetch_products['name']; ?></p></div>
