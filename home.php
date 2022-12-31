@@ -46,7 +46,7 @@ include 'components/add_cart.php';
    <style>
       .hero{
          background: linear-gradient(160deg, var(--pr-color), #000);
-         
+         padding-top: 1%;
       }
    </style>
 </head>

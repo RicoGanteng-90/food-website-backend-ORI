@@ -288,6 +288,7 @@ section{
 
 .hero .slide .image img{
    width: 100%;
+   height: fit-content;
 }
 
 .hero .slide .content{
