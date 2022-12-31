@@ -73,11 +73,7 @@ include 'components/add_cart.php';
                <img src="images/haro.png" alt="">
             </div>
          </div>
-      </div>
-
-      <div class="swiper-pagination"></div>
-
-   
+      </div>      
 
 </div>
 
