@@ -34,7 +34,7 @@
 }
 
 ::-webkit-scrollbar-thumb{
-   background-color: #c0a8a8;
+   background-color: var(--pr-color);
 }
 
 html{
