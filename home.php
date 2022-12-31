@@ -43,6 +43,12 @@ include 'components/add_cart.php';
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+   <style>
+      .hero{
+         background: linear-gradient(160deg, var(--pr-color), #000);
+         
+      }
+   </style>
 </head>
 
 <body>
@@ -51,9 +57,9 @@ include 'components/add_cart.php';
 
 
 
-<section class="hero">
+<div class="hero">
 
-   <div class="swiper hero-slider">
+   
 
       <div class="swiper-wrapper">
 
@@ -64,39 +70,16 @@ include 'components/add_cart.php';
                <a href="menu.php" class="btn">temukan disini</a>
             </div>
             <div class="image">
-               <img src="images/pengantin.png" alt="">
+               <img src="images/haro.png" alt="">
             </div>
          </div>
-
-         <div class="swiper-slide slide">
-            <div class="content">
-               <span>order online</span>
-               <h3>chezzy hamburger</h3>
-               <a href="menu.php" class="btn">see products</a>
-            </div>
-            <div class="image">
-               <img src="images/hero2.png" alt="">
-            </div>
-         </div>
-
-         <div class="swiper-slide slide">
-            <div class="content">
-               <span>order online</span>
-               <h3>rosted chicken</h3>
-               <a href="menu.php" class="btn">see products</a>
-            </div>
-            <div class="image">
-               <img src="images/herooo3.png" alt="">
-            </div>
-         </div>
-
       </div>
 
       <div class="swiper-pagination"></div>
 
-   </div>
+   
 
-</section>
+</div>
 
 <section class="category">
 

@@ -170,19 +170,20 @@ section{
    position: sticky;
    top:0; left:0; right:0;
    z-index: 1000;
-   background-color: #c0a8a8;
+   background: var(--pr-color);
 }
 
 .header .flex{
-   display: flex;
+   display:flex;
    align-items: center;
    justify-content: space-between;
    position: relative;
+   float: none;
 }
 
 .header .flex .logo{
-   font-size: 1.8rem;
    color:var(--black);
+   font-size: large;
 }
 
 .header .flex .navbar a{
@@ -194,7 +195,7 @@ section{
 
 .header .flex .navbar a:hover{
    color:var(--white);
-   transition: all .3s ease-in;
+   transition: all .1s ease-in;
 
 }
 
@@ -208,7 +209,7 @@ section{
 
 .header .flex .icons > *:hover{
    color: var(--white);
-   transition: all .3s ease-in;
+   transition: all .1s ease-in;
 }
 
 .header .flex .icons span{
@@ -265,27 +266,21 @@ section{
 .hero .slide{
    display: flex;
    align-items: center;
-   flex-wrap: wrap-reverse;
-   gap:2rem;
-   margin-bottom: 4rem;
-}
-
-.hero .slide .image{
-   flex:1 1 40rem;
 }
 
 .hero .slide .image img{
-   width: 100%;
+   width: 111%;
 }
 
 .hero .slide .content{
-   flex:1 1 40rem;
+   flex:1 1 40rem;   
    text-align: center;
+   background-color: linear-gradient(160deg, var(--pr-color), #000);
 }
 
 .hero .slide .content span{
    font-size: 2.5rem;
-   color:var(--light-color);
+   color:var(--dark-color);
 }
 
 .hero .slide .content h3{
@@ -293,10 +288,6 @@ section{
    font-size: 6rem;
    color:var(--black);
    text-transform: capitalize;
-}
-
-.swiper-pagination-bullet-active{
-   background-color: black;
 }
 
 .category .box-container{
@@ -955,18 +946,6 @@ section{
    color:var(--white);
    transition: all .3s ease-in;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .footer .grid{
    display: grid;

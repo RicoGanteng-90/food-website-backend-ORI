@@ -87,7 +87,7 @@ if(isset($_SESSION['user_id'])){
       <div class="box">
          <img src="images/step pilih.png" alt="">
          <h3>Pilih Produk</h3>
-         <p>Memilih produk, kemudian melakukan pemesanan.</p>
+         <p>Memilih produk yang diinginkan, kemudian melakukan pemesanan.</p>
       </div>
 
       <div class="box">
@@ -242,7 +242,7 @@ if(isset($_SESSION['user_id'])){
 
 <!-- footer section starts  -->
 <?php include 'components/footer.php'; ?>
-<!-- footer section ends -->=
+<!-- footer section ends -->
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
