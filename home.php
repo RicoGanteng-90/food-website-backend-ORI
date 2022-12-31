@@ -65,9 +65,9 @@ include 'components/add_cart.php';
 
          <div class="swiper-slide slide">
             <div class="content">
-               <span>Solusi Terbaik</span>
-               <h3>acara impian</h3>
-               <a href="menu.php" class="btn">temukan disini</a>
+               <span>Temukan Solusi Terbaik</span>
+               <h3>acara impian Anda</h3>
+               <a href="menu.php" class="btn-hero">temukan disini</a>
             </div>
             <div class="image">
                <img src="images/haro.png" alt="">
