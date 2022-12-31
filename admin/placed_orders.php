@@ -110,8 +110,8 @@ if(isset($_GET['delete'])){
                <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
                <select name="payment_status" class="drop-down">
                   <option value="" selected disabled><?= $fetch_orders['payment_status']; ?></option>
-                  <option value="belum lunas">belum lunas</option>
-                  <option value="lunas">lunas</option>
+                  <option value="Belum lunas">Belum lunas</option>
+                  <option value="Lunas">Lunas</option>
                </select></td>
             <td><div class="flex-btn">
                <input type="submit" value="update" class="btn-order" name="update_payment">
@@ -127,9 +127,9 @@ if(isset($_GET['delete'])){
       echo '<p class="empty">tidak ada order!</p>';
    }
    ?>
-      </table>
+   </table>
    </div>
-</div>
+   </div>
 </section>
 
 <!-- placed orders section ends -->

@@ -67,7 +67,7 @@ if(isset($_SESSION['user_id'])){
          if($select_orders->rowCount() > 0){
             while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
                $stat=$fetch_orders["payment_status"];
-               if($stat=="belum lunas"){
+               if($stat=="Belum lunas"){
                   $status="<button>cetak</button>";
                }else{
                   $status="";
@@ -84,7 +84,7 @@ if(isset($_SESSION['user_id'])){
       <p>your orders : <span><?= $fetch_orders['total_products']; ?></span></p>
       <p>total price : <span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></p>
       <p>Order Time : <span><?= $fetch_orders['order_time']; ?></span></p>
-      <p> payment status : <span style="color:<?php if($fetch_orders['payment_status'] == 'belum lunas'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span><p><?php echo $status; ?></p></p>
+      <p> payment status : <span style="color:<?php if($fetch_orders['payment_status'] == 'Belum lunas'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span><p><?php echo $status; ?></p></p>
    </div>
    <?php
       }
