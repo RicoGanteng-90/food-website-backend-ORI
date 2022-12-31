@@ -67,71 +67,24 @@ if(isset($_SESSION['user_id'])){
          if($select_orders->rowCount() > 0){
             while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
                $stat=$fetch_orders["payment_status"];
-               if($stat==1){
+               if($stat=="belum lunas"){
                   $status="<button>cetak</button>";
                }else{
                   $status="";
                }
    ?>
    <div class="box">
-      <table>
-         <tr>
-            <td>Name</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['name']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Email</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['email']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Number Phone</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['number']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Address</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['address']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Order Time</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['order_time']; ?> </span></td>
-         </tr>
-         <tr>
-            <td>Event Time</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['event_time']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Your Orders</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['total_products']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Total Price</td>
-            <td>:</td>
-            <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>
-         </tr>
-         <tr>
-            <td>Order Status</td>
-            <td>:</td>
-            <td><span style="color:<?php if($fetch_orders['order_status'] == 'pending'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['order_status']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Payment Method</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['method']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Payment Status</td>
-            <td>:</td>
-            <td><span style="color:<?php if($fetch_orders['payment_status'] == 'pending'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span><p><?php echo $status; ?></p></td>
-         </tr>
-      </table>
-      
+      <p>placed on : <span><?= $fetch_orders['address']; ?></span></p>
+      <p>Event Time : <span><?= $fetch_orders['event_time']; ?></span></p>
+      <p>name : <span><?= $fetch_orders['name']; ?></span></p>
+      <p>email : <span><?= $fetch_orders['email']; ?></span></p>
+      <p>number : <span><?= $fetch_orders['number']; ?></span></p>
+      <p>address : <span><?= $fetch_orders['address']; ?></span></p>
+      <p>payment method : <span><?= $fetch_orders['method']; ?></span></p>
+      <p>your orders : <span><?= $fetch_orders['total_products']; ?></span></p>
+      <p>total price : <span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></p>
+      <p>Order Time : <span><?= $fetch_orders['order_time']; ?></span></p>
+      <p> payment status : <span style="color:<?php if($fetch_orders['payment_status'] == 'belum lunas'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span><p><?php echo $status; ?></p></p>
    </div>
    <?php
       }

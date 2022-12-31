@@ -35,7 +35,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Order</title>
+   <title>Placed Order</title>
 
    <!-- Logo Title Bar -->
    <link rel="icon" href="../images/logofanny.png"
@@ -74,18 +74,18 @@ if(isset($_GET['delete'])){
    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
       <thead>
          <tr>
-            <th>No</th>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>Nomor Telepon</th>
-            <th>Alamat</th>
-            <th>waktu Acara</th>
-            <th>Total Produk</th>
-            <th>Total Harga</th>
-            <th>Status Order</th>
-            <th>Bukti Pembayaran</th>
-            <th>Status Pembayaran</th>
-            <th>Action</th>
+            <td>No</td>
+            <td>Nama</td>
+            <td>Email</td>
+            <td>Nomor Telepon</td>
+            <td>Alamat</td>
+            <td>waktu Acara</td>
+            <td>Total Produk</td>
+            <td>Total Harga</td>
+            <td>Status Order</td>
+            <td>Bukti Pembayaran</td>
+            <td>Status Pembayaran</td>
+            <td>Action</td>
          </tr>
       </thead>
       <?php
@@ -105,7 +105,8 @@ if(isset($_GET['delete'])){
             <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>
             <td><span><?= $fetch_orders['order_status']; ?></span></td>
             <td><span><?= $fetch_orders['proof_payment']; ?></span></td>
-            <td><form action="" method="POST">
+            <form action="" method="POST">
+            <td>
                <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
                <select name="payment_status" class="drop-down">
                   <option value="" selected disabled><?= $fetch_orders['payment_status']; ?></option>
@@ -115,8 +116,9 @@ if(isset($_GET['delete'])){
             <td><div class="flex-btn">
                <input type="submit" value="update" class="btn-order" name="update_payment">
                <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn-order" onclick="return confirm('delete this order?');">hapus</a>
-               </div>
+               </div>               
          </td>
+         </form>
          </tr>
 
    <?php

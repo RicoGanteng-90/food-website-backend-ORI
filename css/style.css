@@ -801,14 +801,14 @@ section{
    flex:1 1 40rem;
 }
 
-.orders .box-container .box tr td{
+.orders .box-container .box p{
    line-height: 1.5;
    margin:1rem 0;
-   font-size: 1rem;
+   font-size: 2rem;
    color:var(--light-color);
 }
 
-.orders .box-container .box tr td span{
+.orders .box-container .box p span{
    color:var(--black);
 }
 
