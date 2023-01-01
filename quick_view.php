@@ -66,9 +66,18 @@ include 'components/add_cart.php';
       <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
       <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
       <div class="name"><?= $fetch_products['name']; ?></div>
-      <div class="keterangan"><?= $fetch_products['keterangan'];?></div>
+      <div class="keterangan">
+         <?php
+            $pchenter=explode("\r\n",$fetch_products['keterangan']);
+            $txtout="";
+               for($i=0;$i<=count($pchenter)-1;$i++){
+                  $pchpart=str_replace($pchenter[$i], "<br>".$pchenter[$i],$pchenter[$i]);
+                  $txtout .=$pchpart;
+               }
+            echo $txtout;
+         ?></div>
       <div class="flex">
-         <div class="price"><span>Rp. </span><?php echo " " . number_format($fetch_products['price'],3,',','.'); ?></div>
+         <div class="price"><span>Rp. </span><?php echo " " . number_format($fetch_products['price'],0,',','.'); ?></div>
          <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
       </div>
       <button type="submit" name="add_to_cart" class="cart-btn">Tambahkan Keranjang</button>
