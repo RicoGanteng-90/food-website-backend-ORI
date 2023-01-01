@@ -86,7 +86,6 @@ if(isset($_SESSION['user_id'])){
    
 
    <div class="box">
-<<<<<<< HEAD
       <p>nama : <span><?= $fetch_orders['name']; ?></span></p>
       <p>email : <span><?= $fetch_orders['email']; ?></span></p>
       <p>nomor telepon : <span><?= $fetch_orders['number']; ?></span></p>
