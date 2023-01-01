@@ -46,7 +46,7 @@ include 'components/add_cart.php';
    <style>
       .hero{
          background: linear-gradient(160deg, var(--pr-color), #000);
-         padding-top: 1%;
+         padding-top: 2%;
       }
    </style>
 </head>
@@ -55,14 +55,9 @@ include 'components/add_cart.php';
 
 <?php include 'components/user_header.php'; ?>
 
-
-
 <div class="hero">
 
-   
-
       <div class="swiper-wrapper">
-
          <div class="swiper-slide slide">
             <div class="content">
                <span>Temukan Solusi Terbaik</span>
@@ -74,7 +69,6 @@ include 'components/add_cart.php';
             </div>
          </div>
       </div>      
-
 </div>
 
 <section class="category">

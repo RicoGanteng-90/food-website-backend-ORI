@@ -124,8 +124,7 @@ if(isset($_GET['delete'])){
             <td>
                <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
                <select name="payment_status" class="drop-down">
-                  <option hidden value="<?= $fetch_orders['payment_status']; ?>" selected><?= $fetch_orders['payment_status']; ?></option>
-                  <option value="Diproses">Diproses</option>
+                  <option hidden value="<?= $fetch_orders['payment_status']; ?>" selected><?= $fetch_orders['payment_status']; ?></option>                  
                   <option value="Belum lunas">Belum lunas</option>
                   <option value="Lunas">Lunas</option>                  
                </select>

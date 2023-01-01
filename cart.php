@@ -116,14 +116,14 @@ $grand_total = 0;
 
    <div class="cart-total">
       <p>total : <span>Rp.<?php echo " " . number_format ($grand_total,0,',','.'); ?></span></p>
-      <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">beli sekarang</a>
+      <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">Beli sekarang</a>
    </div>
 
    <div class="more-btn">
       <form action="" method="post">
          <button type="submit" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" name="delete_all" onclick="return confirm('hapus semua produk dikeranjang?');">hapus semua</button>
       </form>
-      <a href="menu.php" class="btn">lanjut belanja</a>
+      <a href="menu.php" class="btn">Lanjut belanja</a>
    </div>
 
 </section>
