@@ -53,9 +53,10 @@ section{
 .title{
    text-align: center;
    margin-bottom: 2.5rem;
-   font-size: 4rem;
+   font-size: 3.5rem;
    color:var(--black);
    text-transform: uppercase;
+   padding-top: 5rem;
 }
 
 .heading{
@@ -639,7 +640,6 @@ section{
    color:var(--black);
 }
 
-
 .info .slide{
    margin-bottom: 3rem;
    text-align: center;
@@ -652,6 +652,7 @@ section{
    height: 10rem;
    width: 10rem;
    border-radius: 50%;
+   
 }
 
 .info .slide p{
@@ -1010,6 +1011,7 @@ section{
    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
    gap:1.5rem;
    align-items: flex-start;
+   padding-top: 5rem;
 }
 
 .footer .grid .box{

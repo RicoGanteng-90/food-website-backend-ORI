@@ -70,7 +70,7 @@ include 'components/add_cart.php';
                <a href="menu.php" class="btn-hero">temukan disini</a>
             </div>
             <div class="image">
-               <img src="images/haro.png" alt="">
+               <img src="images/hero2.png" alt="">
             </div>
          </div>
       </div>      
