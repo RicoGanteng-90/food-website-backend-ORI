@@ -62,7 +62,7 @@ section{
    border-radius: .5rem;
    cursor: pointer;
    width: 100%;
-   font-size: 1.8rem;
+   font-size: 1rem;
    color:var(--white);
    padding:1.2rem 3rem;
    text-transform: capitalize;
@@ -587,7 +587,7 @@ background-color: var(--red);
 
 .messages .box-container{
    display: grid;
-   grid-template-columns: repeat(auto-fit, 33rem);
+   grid-template-columns: repeat(auto-fit, 80rem);
    gap:1.5rem;
    justify-content: center;
    align-items: flex-start;
@@ -600,15 +600,17 @@ background-color: var(--red);
    border:var(--border);
    padding:2rem;
    padding-top: 1rem;
+   text-align: center;
 }
 
-.messages .box-container .box p{
+.messages .box-container .box tr td{
    padding: .5rem 0;
    font-size: 1.8rem;
    color:var(--black);
+   text-align: center;
 }
 
-.messages .box-container .box p span{
+.messages .box-container .box tr td span{
    color:var(--main-color);
 }
 

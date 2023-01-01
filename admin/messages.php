@@ -58,27 +58,42 @@ if(isset($_GET['delete'])){
    <h1 class="heading">Pesan Kustomer</h1>
 
    <div class="box-container">
-
-   <?php
+   <div class="box">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <tr>
+         <tr>
+            <td>Nama</td>
+            <td>Nomor Telepon</td>
+            <td>Email</td>
+            <td>Pesan</td>
+            <td>Aksi</td>
+         </tr>
+      </tr>
+      <?php
       $select_messages = $conn->prepare("SELECT * FROM `messages` ORDER BY id DESC");
       $select_messages->execute();
       if($select_messages->rowCount() > 0){
          while($fetch_messages = $select_messages->fetch(PDO::FETCH_ASSOC)){
-   ?>
-   <div class="box">
-      <p> nama : <span><?= $fetch_messages['name']; ?></span> </p>
-      <p> nomor telepon : <span><?= $fetch_messages['number']; ?></span> </p>
-      <p> email : <span><?= $fetch_messages['email']; ?></span> </p>
-      <p> pesan : <span><?= $fetch_messages['message']; ?></span> </p>
-      <a href="messages.php?delete=<?= $fetch_messages['id']; ?>" class="delete-btn" onclick="return confirm('delete this message?');">hapus</a>
-   </div>
-   <?php
-         }
-      }else{
-         echo '<p class="empty">tidak ada pesan</p>';
+    ?>
+    <tr>
+            <td><span><?= $fetch_messages['name']; ?></span></td>
+            <td><span><?= $fetch_messages['number']; ?></span></td>
+            <td><span><?= $fetch_messages['email']; ?></span></td>
+            <td><span><?= $fetch_messages['message']; ?></span></td>
+            <td><a href="messages.php?delete=<?= $fetch_messages['id']; ?>" class="delete-btn" onclick="return confirm('delete this message?');">hapus</a></td>
+         </tr>
+         <?php
+            $fetch_messages['id']++;
+         ?>
+      <?php
       }
-   ?>
+      }else{
+      echo '<p class="empty">tidak ada akun yang tersedia!</p>';
+      }
+      ?>
+      <table>
 
+   </div>
    </div>
 
 </section>
