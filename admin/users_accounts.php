@@ -72,7 +72,7 @@ if(isset($_GET['delete'])){
          </tr>
       </tr>
       <?php
-      $select_account = $conn->prepare("SELECT * FROM `users`");
+      $select_account = $conn->prepare("SELECT * FROM `users` ORDER BY id DESC");
       $select_account->execute();
       if($select_account->rowCount() > 0){
          while($fetch_accounts = $select_account->fetch(PDO::FETCH_ASSOC)){  
