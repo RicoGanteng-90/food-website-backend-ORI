@@ -81,7 +81,7 @@ if(isset($_GET['delete'])){
             <td>Alamat</td>
             <td>waktu Acara</td>
             <td>Total Produk</td>
-            <td>Total Harga</td>
+            <td>Total Pembayaran</td>
             <td>Status Order</td>
             <td>Bukti Pembayaran</td>
             <td>Status Pembayaran</td>
