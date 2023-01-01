@@ -76,12 +76,12 @@ if(isset($_SESSION['user_id'])){
    <div class="box">
    <table>
          <tr>
-            <td>nama</td>
+            <td>Nama</td>
             <td>:</td>
             <td><span><?= $fetch_orders['name']; ?></span></td>
          </tr>
          <tr>
-            <td>email</td>
+            <td>Email</td>
             <td>:</td>
             <td><span><?= $fetch_orders['email']; ?></span></td>
          </tr>
