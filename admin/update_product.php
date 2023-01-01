@@ -32,6 +32,7 @@ if(isset($_POST['update'])){
    $image = $_FILES['image']['name'];
    $image = filter_var($image, FILTER_SANITIZE_STRING);
    $image_size = $_FILES['image']['size'];
+   
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = '../uploaded_img/'.$image;
 
@@ -94,7 +95,7 @@ if(isset($_POST['update'])){
       $show_products = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
       $show_products->execute([$update_id]);
       if($show_products->rowCount() > 0){
-         while($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)){  
+         while($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)){
    ?>
    <form action="" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">

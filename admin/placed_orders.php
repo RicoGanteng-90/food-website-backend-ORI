@@ -13,11 +13,18 @@ if(!isset($admin_id)){
 if(isset($_POST['update_payment'])){
 
    $order_id = $_POST['order_id'];
-   $payment_status = $_POST['payment_status'];
-   $update_status = $conn->prepare("UPDATE `orders` SET payment_status = ? WHERE id = ?");
-   $update_status->execute([$payment_status, $order_id]);
-   $message[] = 'status diperbarui';
+   $order_id = filter_var($order_id, FILTER_SANITIZE_STRING);
 
+   $order_status = $_POST['order_status'];
+   $order_status = filter_var($order_status, FILTER_SANITIZE_STRING);
+
+   $payment_status = $_POST['payment_status'];
+   $payment_status = filter_var($payment_status, FILTER_SANITIZE_STRING);
+
+   $update_status = $conn->prepare("UPDATE `orders` SET order_status = ?, payment_status = ? WHERE id = ?");
+   $update_status->execute([$order_status, $payment_status, $order_id]);
+
+   $message[] = 'status diperbarui';
 }
 
 if(isset($_GET['delete'])){
@@ -81,14 +88,15 @@ if(isset($_GET['delete'])){
             <td>Alamat</td>
             <td>waktu Acara</td>
             <td>Total Produk</td>
-            <td>Total Pembayaran</td>
+            <td>Total Pembayaran</td>            
             <td>Status Order</td>
             <td>Bukti Pembayaran</td>
-            <td>Status Pembayaran</td>
+            <td>Status Pembayaran</td>            
             <td>Action</td>
          </tr>
       </thead>
-      <?php
+      
+      <?php      
       $select_orders = $conn->prepare("SELECT * FROM `orders` ORDER BY id DESC");
       $select_orders->execute();
       if($select_orders->rowCount() > 0){
@@ -102,23 +110,33 @@ if(isset($_GET['delete'])){
             <td><span><?= $fetch_orders['address']; ?></span></td>
             <td><span><?= $fetch_orders['event_time']; ?></span></td>
             <td><span><?= $fetch_orders['total_products']; ?></span></td>
-            <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>
-            <td><span><?= $fetch_orders['order_status']; ?></span></td>
+            <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>            
+            <form action="" method="POST" enctype="multipart/form-data">
+            <td>
+               <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
+               <select name="order_status" class="drop-down">                  
+                  <option hidden selected value="<?= $fetch_orders['order_status']; ?>" ><?= $fetch_orders['order_status']; ?></option>
+                  <option value="Diproses">Diproses</option>
+                  <option value="Diterima">Diterima</option>
+               </select>
+            </td>
             <td><span><?= $fetch_orders['proof_payment']; ?></span></td>
-            <form action="" method="POST">
             <td>
                <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
                <select name="payment_status" class="drop-down">
-                  <option value="" selected disabled><?= $fetch_orders['payment_status']; ?></option>
+                  <option hidden value="<?= $fetch_orders['payment_status']; ?>" selected><?= $fetch_orders['payment_status']; ?></option>
+                  <option value="Diproses">Diproses</option>
                   <option value="Belum lunas">Belum lunas</option>
-                  <option value="Lunas">Lunas</option>
-               </select></td>
-            <td><div class="flex-btn">
+                  <option value="Lunas">Lunas</option>                  
+               </select>
+            </td>               
+            <td>
+               <div class="flex-btn">
                <input type="submit" value="update" class="btn-order" name="update_payment">
                <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn-order" onclick="return confirm('delete this order?');">hapus</a>
                </div>               
-         </td>
-         </form>
+            </td>
+            </form>
          </tr>
 
    <?php

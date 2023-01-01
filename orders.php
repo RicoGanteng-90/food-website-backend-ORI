@@ -66,25 +66,38 @@ if(isset($_SESSION['user_id'])){
          $select_orders->execute([$user_id]);
          if($select_orders->rowCount() > 0){
             while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
-               $stat=$fetch_orders["payment_status"];
-               if($stat=="Belum lunas"){
-                  $status="<button>cetak</button>";
-               }else{
-                  $status="";
-               }
+               $stat=$fetch_orders["order_status"];
+               $pay=$fetch_orders["payment_status"];
+            if ($stat == "Diterima") {
+               $bukti = "<input type=file name=image class=box>";
+               $tomb = "<button>Kirim Bukti</button>";
+            }else{
+               $bukti = "";
+               $tomb = "";
+            }
+
+            if($pay == "Lunas"){
+               $nota = "<button>Cetak nota</button>";
+            }else{
+               $nota = "";
+            }
    ?>
+
+   
+
    <div class="box">
-      <p>tanggal order : <span><?= $fetch_orders['order_time']; ?></span></p>
       <p>nama : <span><?= $fetch_orders['name']; ?></span></p>
       <p>email : <span><?= $fetch_orders['email']; ?></span></p>
       <p>nomor telepon : <span><?= $fetch_orders['number']; ?></span></p>
       <p>waktu acara : <span><?= $fetch_orders['event_time']; ?></span></p>
       <p>alamat : <span><?= $fetch_orders['address']; ?></span></p>
+      <p>tanggal order : <span><?= $fetch_orders['order_time']; ?></span></p>
       <p>metode pembayaran : <span><?= $fetch_orders['method']; ?></span></p>
       <p>total produk : <span><?= $fetch_orders['total_products']; ?></span></p>
       <p>total pembayaran : <span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></p>
-      <p>status order : <span style="color:<?php if($fetch_orders['order_status'] == ' '){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['order_status']; ?></span> </p>
-      <p>status pembayaran : <span style="color:<?php if($fetch_orders['payment_status'] == 'Belum lunas'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span><p><?php echo $status; ?></p></p>
+      <p>status order : <span style="color:<?php if($fetch_orders['order_status'] == 'Diproses'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['order_status']; ?></span> </p>
+      <p>status pembayaran : <span style="color:<?php if($fetch_orders['payment_status'] == 'Belum lunas'){ echo 'red'; }elseif($fetch_orders['payment_status'] == 'Diproses'){ echo 'black'; } else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span><br><p><?php echo $bukti; ?> &nbsp; <?php echo $tomb; ?> </p><br><?php echo $nota; ?></p>
+      
    </div>
    <?php
       }
