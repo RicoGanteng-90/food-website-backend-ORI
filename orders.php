@@ -62,7 +62,7 @@ if(isset($_SESSION['user_id'])){
       if($user_id == ''){
          echo '<p class="empty">silahkan login untuk melihat pesanan Anda</p>';
       }else{
-         $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE user_id = ?");
+         $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE user_id = ? ORDER BY id DESC");
          $select_orders->execute([$user_id]);
          if($select_orders->rowCount() > 0){
             while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
@@ -86,6 +86,7 @@ if(isset($_SESSION['user_id'])){
    
 
    <div class="box">
+<<<<<<< HEAD
       <p>nama : <span><?= $fetch_orders['name']; ?></span></p>
       <p>email : <span><?= $fetch_orders['email']; ?></span></p>
       <p>nomor telepon : <span><?= $fetch_orders['number']; ?></span></p>
@@ -97,7 +98,6 @@ if(isset($_SESSION['user_id'])){
       <p>total pembayaran : <span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></p>
       <p>status order : <span style="color:<?php if($fetch_orders['order_status'] == 'Diproses'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['order_status']; ?></span> </p>
       <p>status pembayaran : <span style="color:<?php if($fetch_orders['payment_status'] == 'Belum lunas'){ echo 'red'; }elseif($fetch_orders['payment_status'] == 'Diproses'){ echo 'black'; } else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span><br><p><?php echo $bukti; ?> &nbsp; <?php echo $tomb; ?> </p><br><?php echo $nota; ?></p>
-      
    </div>
    <?php
       }

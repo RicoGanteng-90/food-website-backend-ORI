@@ -115,7 +115,7 @@ if(isset($_GET['delete'])){
             </tr>
          </thead>
       <?php
-      $show_employees = $conn->prepare("SELECT * FROM `employees`");
+      $show_employees = $conn->prepare("SELECT * FROM `employees` ORDER BY id DESC");
       $show_employees->execute();
       if($show_employees->rowCount() > 0){
          while($fetch_employees = $show_employees->fetch(PDO::FETCH_ASSOC)){  

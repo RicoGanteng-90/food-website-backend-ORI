@@ -117,7 +117,7 @@ if(isset($_GET['delete'])){
          </thead>
       </tr>
       <?php
-      $show_partners = $conn->prepare("SELECT * FROM `partners`");
+      $show_partners = $conn->prepare("SELECT * FROM `partners` ORDER BY id DESC");
       $show_partners->execute();
       if($show_partners->rowCount() > 0){
          while($fetch_partners = $show_partners->fetch(PDO::FETCH_ASSOC)){  

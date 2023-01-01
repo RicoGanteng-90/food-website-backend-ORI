@@ -70,7 +70,7 @@ include 'components/add_cart.php';
                <a href="menu.php" class="btn-hero">temukan disini</a>
             </div>
             <div class="image">
-               <img src="images/haro.png" alt="">
+               <img src="images/hero2.png" alt="">
             </div>
          </div>
       </div>      
@@ -107,6 +107,106 @@ include 'components/add_cart.php';
 
 </section>
 
+<!-- info section starts  -->
+
+<section class="info">
+
+   <h1 class="title">Seputar Pernikahan</h1>
+
+   <div class="swiper info-slider">
+
+      <div class="swiper-wrapper">
+
+         <div class="swiper-slide slide">
+            <h3>Gedung atau Rumah? </h3>
+            <h3>Perhatikan!</h3>
+            <h3> </h3>
+            <p>jumlah undangan ataupun kendaraan</p>
+            <p>kapasitas listrik dilokasi pernikahan</p>
+            <p>penginapan untuk keluarga yang menginap</p>
+            <p> </p>
+            <p>
+               <div class="stars">
+                  <i class="fas fa-eject"></i>
+                  <i class="fas fa-eject-half-alt"></i>
+               </div>
+            </p>
+         </div>
+
+         <div class="swiper-slide slide">
+            <h3>Sovenir dan Undangan</h3>
+            <h3>Jangan Lupa!</h3>
+            <h3> </h3>
+            <p>dipesan jauh-jauh hari</p>
+            <p>sesuaikan dengan tema pernikahan</p>
+            <p> </p>
+            <p>
+               <div class="stars">
+                  <i class="fas fa-cube"></i>
+                  <i class="fas fa-cube-half-alt"></i>
+               </div>
+            </p>
+         </div>
+
+         <div class="swiper-slide slide">
+            <h3>Persiapan calon pengantin sebelum</h3>
+            <h3>acara pernikahan... </h3>
+            <h3> </h3>
+            <p>menjaga kesehatan</p>
+            <p>fokus pada pasangan</p>
+            <p>minum ramuan sehat</p>
+            <p>wedding mood boards</p>
+            <p> </p>
+            <p>
+               <div class="stars">
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart-half-alt"></i>
+               </div>
+            </p>
+         </div>
+
+         <div class="swiper-slide slide">
+            <h3>Tips foto prewedding casual</h3>
+            <h3> </h3>
+            <p>menentukan tema</p>
+            <p>menentukan jenis makeup</p>
+            <p>menentukan lighting</p>
+            <p> </p>
+            <p>
+               <div class="stars">
+                  <i class="fas fa-camera"></i>
+                  <i class="fas fa-camera-half-alt"></i>
+               </div>
+            </p>
+         </div>
+
+         <div class="swiper-slide slide">
+            <h3>make up tahan lama</h3>
+            <h3> </h3>
+            <p>hindari perawatan dokter sebulan sebelumnya</p>
+            <p>memakai skincare yang melembapkan</p>
+            <p>minum air putih secukupnya</p>
+            <p>berdiskusi dengan MUA</p>
+            <p>tidur cukup</p>
+            <p> </p>
+            <p>
+               <div class="stars">
+                  <i class="fas fa-gem"></i>
+                  <i class="fas fa-gem-half-alt"></i>
+               </div>
+            </p>
+         </div>
+
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+   </div>
+
+</section>
+
+<!-- reviews section ends -->
+
 <?php include 'components/footer.php'; ?>
 
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
@@ -123,6 +223,36 @@ var swiper = new Swiper(".hero-slider", {
    pagination: {
       el: ".swiper-pagination",
       clickable:true,
+   },
+});
+
+</script>
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<script>
+
+var swiper = new Swiper(".info-slider", {
+   loop:true,
+   grabCursor: true,
+   spaceBetween: 20,
+   pagination: {
+      el: ".swiper-pagination",
+      clickable:true,
+   },
+   breakpoints: {
+      0: {
+      slidesPerView: 1,
+      },
+      700: {
+      slidesPerView: 2,
+      },
+      1024: {
+      slidesPerView: 3,
+      },
    },
 });
 
