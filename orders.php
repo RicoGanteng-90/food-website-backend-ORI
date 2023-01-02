@@ -111,7 +111,6 @@ if (isset($_POST['add_img'])) {
             }
    ?>
    
-   <form action="" method="POST" enctype="multipart/form-data">
    <div class="box">
    <input type="hidden" name="mid" value="<?= $fetch_products['mid']; ?>">      
    <table>
@@ -159,7 +158,9 @@ if (isset($_POST['add_img'])) {
             <td>Metode Pembayaran</td>
             <td>:</td>
             <td><span><?= $fetch_orders['method']; ?></span></td>
-         </tr><tr>
+         </tr>
+         <form action="" method="POST" enctype="multipart/form-data">
+         <tr>
             <td>Status Pesanan</td>
             <td>:</td>
             <td><span style="color:<?php if($fetch_orders['order_status'] == 'Diproses'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['order_status']; ?></span></td>
@@ -173,7 +174,6 @@ if (isset($_POST['add_img'])) {
       </table>
       <?php echo $bukti; ?> &nbsp; <?php echo $tomb; ?><br>
       <?php echo $nota; ?>
->>>>>>> 2d39bd6aa8186654fa9b803abd7a2b0d511c47ee
    </div>
    </form>
 
