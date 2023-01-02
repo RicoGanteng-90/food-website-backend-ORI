@@ -112,83 +112,61 @@ include 'components/add_cart.php';
       <div class="swiper-wrapper">
 
          <div class="swiper-slide slide">
-            <h3>Gedung atau Rumah? </h3>
-            <h3>Perhatikan!</h3>
+            <h3>Gedung atau Rumah? <br>
+                Perhatikan!</h3>
             <h3> </h3>
-            <p>jumlah undangan ataupun kendaraan</p>
-            <p>kapasitas listrik dilokasi pernikahan</p>
-            <p>penginapan untuk keluarga yang menginap</p>
+            <ul><li>Jumlah undangan ataupun kendaraan</li>
+             <li>Kapasitas listrik dilokasi pernikahan</li>
+            <li>Penginapan untuk keluarga yang menginap</li></ul>
             <p> </p>
-            <p>
-               <div class="stars">
-                  <i class="fas fa-eject"></i>
-                  <i class="fas fa-eject-half-alt"></i>
-               </div>
-            </p>
+            
          </div>
 
          <div class="swiper-slide slide">
-            <h3>Sovenir dan Undangan</h3>
-            <h3>Jangan Lupa!</h3>
+            <h3>Sovenir dan Undangan<br>
+               Jangan Lupa!</h3>
             <h3> </h3>
-            <p>dipesan jauh-jauh hari</p>
-            <p>sesuaikan dengan tema pernikahan</p>
+            <p><ul><li>Dipesan jauh-jauh hari</li>
+            <li>Sesuaikan dengan tema pernikahan</li></ul></p>
             <p> </p>
-            <p>
-               <div class="stars">
-                  <i class="fas fa-cube"></i>
-                  <i class="fas fa-cube-half-alt"></i>
-               </div>
-            </p>
+            
          </div>
 
          <div class="swiper-slide slide">
-            <h3>Persiapan calon pengantin sebelum</h3>
-            <h3>acara pernikahan... </h3>
+            <h3>Persiapan calon pengantin sebelum<br>
+            acara pernikahan... </h3>
             <h3> </h3>
-            <p>menjaga kesehatan</p>
-            <p>fokus pada pasangan</p>
-            <p>minum ramuan sehat</p>
-            <p>wedding mood boards</p>
+            <p><ul><li>Menjaga kesehatan</li>
+            <li>Fokus pada pasangan</li>
+            <li>Minum ramuan sehat</li>
+            <li>Wedding mood boards</li></ul></p>
             <p> </p>
-            <p>
-               <div class="stars">
-                  <i class="fas fa-heart"></i>
-                  <i class="fas fa-heart-half-alt"></i>
-               </div>
-            </p>
+            
          </div>
 
          <div class="swiper-slide slide">
             <h3>Tips foto prewedding casual</h3>
             <h3> </h3>
-            <p>menentukan tema</p>
-            <p>menentukan jenis makeup</p>
-            <p>menentukan lighting</p>
+            <p><ul><li>Menentukan tema</li>
+            <li>Menentukan jenis makeup</li>
+            <li>Menentukan lighting</li></ul></p>
             <p> </p>
-            <p>
-               <div class="stars">
-                  <i class="fas fa-camera"></i>
-                  <i class="fas fa-camera-half-alt"></i>
-               </div>
-            </p>
+           
+            
          </div>
 
          <div class="swiper-slide slide">
-            <h3>make up tahan lama</h3>
+            <h3>Tips make up tahan lama</h3>
             <h3> </h3>
-            <p>hindari perawatan dokter sebulan sebelumnya</p>
-            <p>memakai skincare yang melembapkan</p>
-            <p>minum air putih secukupnya</p>
-            <p>berdiskusi dengan MUA</p>
-            <p>tidur cukup</p>
+            <p><ul>
+            <li>Hindari perawatan dokter sebulan<br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp sebelumnya</li>
+            <li>Memakai skincare yang melembapkan</li>
+            <li>Minum air putih secukupnya</li>
+            <li>Berdiskusi dengan MUA</li>
+            <li>Tidur yang cukup</li></ul></p>
             <p> </p>
-            <p>
-               <div class="stars">
-                  <i class="fas fa-gem"></i>
-                  <i class="fas fa-gem-half-alt"></i>
-               </div>
-            </p>
+            
          </div>
 
       </div>
