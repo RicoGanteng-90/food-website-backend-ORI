@@ -59,28 +59,28 @@ if(!isset($admin_id)){
 
    <div class="box">
       <?php
-         $total_pendings = 0;
-         $select_pendings = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
-         $select_pendings->execute(['belum lunas']);
-         while($fetch_pendings = $select_pendings->fetch(PDO::FETCH_ASSOC)){
-            $total_pendings += $fetch_pendings['total_price'];
+         $total_belum = 0;
+         $select_belum = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
+         $select_belum->execute(['Belum Lunas']);
+         while($fetch_belum = $select_belum->fetch(PDO::FETCH_ASSOC)){
+            $total_belum += $fetch_belum['total_price'];
          }
       ?>
-      <h3><span>Rp. </span><?php echo " " . number_format ($total_pendings,0,',','.'); ?><span></span></h3>
-      <a href="placed_orders.php" class="btn">Lihat Order</a>
+      <h3><span>Rp. </span><?php echo " " . number_format ($total_belum,0,',','.'); ?><span></span></h3>
+      <a href="belum_lunas.php" class="btn">Order Belum Lunas</a>
    </div>
 
    <div class="box">
       <?php
-         $total_completes = 0;
-         $select_completes = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
-         $select_completes->execute(['lunas']);
-         while($fetch_completes = $select_completes->fetch(PDO::FETCH_ASSOC)){
-            $total_completes += $fetch_completes['total_price'];
+         $total_lunas = 0;
+         $select_lunas = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
+         $select_lunas->execute(['lunas']);
+         while($fetch_lunas = $select_lunas->fetch(PDO::FETCH_ASSOC)){
+            $total_lunas += $fetch_lunas['total_price'];
          }
       ?>
-      <h3><span>Rp. </span><?php echo " " . number_format ($total_completes,0,',','.'); ?><span></span></h3>
-      <a href="placed_orders.php" class="btn">Lihat Order</a>
+      <h3><span>Rp. </span><?php echo " " . number_format ($total_lunas,0,',','.'); ?><span></span></h3>
+      <a href="lunas.php" class="btn">Order Lunas</a>
    </div>
 
    <div class="box">
