@@ -29,7 +29,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Data Akun Kustomer</title>
+   <title>Pengguna</title>
 
    <!-- Logo Title Bar -->
    <link rel="icon" href="../images/logofanny.png"
@@ -66,13 +66,13 @@ if(isset($_GET['delete'])){
    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
       <tr>
          <tr>
-            <td>id pengguna</td>
-            <td>nama</td>
-            <td>aksi</td>
+            <td>Id Pengguna</td>
+            <td>Nama</td>
+            <td>Aksi</td>
          </tr>
       </tr>
       <?php
-      $select_account = $conn->prepare("SELECT * FROM `users`");
+      $select_account = $conn->prepare("SELECT * FROM `users` ORDER BY id DESC");
       $select_account->execute();
       if($select_account->rowCount() > 0){
          while($fetch_accounts = $select_account->fetch(PDO::FETCH_ASSOC)){  

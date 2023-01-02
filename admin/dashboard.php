@@ -53,37 +53,34 @@ if(!isset($admin_id)){
    <div class="box-container">
 
    <div class="box">
-      <h3>selamat datang☺️</h3>
-      <p><?= $fetch_profile['name']; ?></p>
+      <h3>Selamat Datang &nbsp <?= $fetch_profile['name']; ?>☺️ </h3>
       <a href="update_profile.php" class="btn">edit profil</a>
    </div>
 
    <div class="box">
       <?php
-         $total_pendings = 0;
-         $select_pendings = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
-         $select_pendings->execute(['belum lunas']);
-         while($fetch_pendings = $select_pendings->fetch(PDO::FETCH_ASSOC)){
-            $total_pendings += $fetch_pendings['total_price'];
+         $total_belum = 0;
+         $select_belum = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
+         $select_belum->execute(['Belum Lunas']);
+         while($fetch_belum = $select_belum->fetch(PDO::FETCH_ASSOC)){
+            $total_belum += $fetch_belum['total_price'];
          }
       ?>
-      <h3><span>Rp. </span><?php echo " " . number_format ($total_pendings,0,',','.'); ?><span></span></h3>
-      <p>total belum lunas</p>
-      <a href="placed_orders.php" class="btn">Lihat Order</a>
+      <h3><span>Rp. </span><?php echo " " . number_format ($total_belum,0,',','.'); ?><span></span></h3>
+      <a href="belum_lunas.php" class="btn">Order Belum Lunas</a>
    </div>
 
    <div class="box">
       <?php
-         $total_completes = 0;
-         $select_completes = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
-         $select_completes->execute(['lunas']);
-         while($fetch_completes = $select_completes->fetch(PDO::FETCH_ASSOC)){
-            $total_completes += $fetch_completes['total_price'];
+         $total_lunas = 0;
+         $select_lunas = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
+         $select_lunas->execute(['lunas']);
+         while($fetch_lunas = $select_lunas->fetch(PDO::FETCH_ASSOC)){
+            $total_lunas += $fetch_lunas['total_price'];
          }
       ?>
-      <h3><span>Rp. </span><?php echo " " . number_format ($total_completes,0,',','.'); ?><span></span></h3>
-      <p>total lunas</p>
-      <a href="placed_orders.php" class="btn">Lihat Order</a>
+      <h3><span>Rp. </span><?php echo " " . number_format ($total_lunas,0,',','.'); ?><span></span></h3>
+      <a href="lunas.php" class="btn">Order Lunas</a>
    </div>
 
    <div class="box">
@@ -93,7 +90,6 @@ if(!isset($admin_id)){
          $numbers_of_orders = $select_orders->rowCount();
       ?>
       <h3><?= $numbers_of_orders; ?></h3>
-      <p>Total Order</p>
       <a href="placed_orders.php" class="btn">Lihat Order</a>
    </div>
 
@@ -104,7 +100,6 @@ if(!isset($admin_id)){
          $numbers_of_products = $select_products->rowCount();
       ?>
       <h3><?= $numbers_of_products; ?></h3>
-      <p>produk</p>
       <a href="products.php" class="btn">lihat produk</a>
    </div>
 
@@ -115,8 +110,7 @@ if(!isset($admin_id)){
          $numbers_of_users = $select_users->rowCount();
       ?>
       <h3><?= $numbers_of_users; ?></h3>
-      <p>pelanggan</p>
-      <a href="users_accounts.php" class="btn">data pelanggan</a>
+      <a href="users_accounts.php" class="btn">data pengguna</a>
    </div>
 
    <div class="box">
@@ -126,7 +120,7 @@ if(!isset($admin_id)){
          $numbers_of_admins = $select_admins->rowCount();
       ?>
       <h3><?= $numbers_of_admins; ?></h3>
-      <p>admin</p>
+     
       <a href="admin_accounts.php" class="btn">data admin</a>
    </div>
 
@@ -137,29 +131,26 @@ if(!isset($admin_id)){
          $numbers_of_messages = $select_messages->rowCount();
       ?>
       <h3><?= $numbers_of_messages; ?></h3>
-      <p>pesan</p>
       <a href="messages.php" class="btn">lihat pesan</a>
    </div>
 
    <div class="box">
       <?php
-         $select_messages = $conn->prepare("SELECT * FROM `employees`");
-         $select_messages->execute();
-         $numbers_of_messages = $select_messages->rowCount();
+         $select_employees = $conn->prepare("SELECT * FROM `employees`");
+         $select_employees->execute();
+         $numbers_of_employees = $select_employees->rowCount();
       ?>
-      <h3><?= $numbers_of_messages; ?></h3>
-      <p>karyawan</p>
+      <h3><?= $numbers_of_employees; ?></h3>
       <a href="employees.php" class="btn">data karyawan</a>
    </div>
 
    <div class="box">
       <?php
-         $select_messages = $conn->prepare("SELECT * FROM `partners`");
-         $select_messages->execute();
-         $numbers_of_messages = $select_messages->rowCount();
+         $select_partners = $conn->prepare("SELECT * FROM `partners`");
+         $select_partners->execute();
+         $numbers_of_partners = $select_partners->rowCount();
       ?>
-      <h3><?= $numbers_of_messages; ?></h3>
-      <p>partner / mitra kerja</p>
+      <h3><?= $numbers_of_partners; ?></h3>
       <a href="partners.php" class="btn">data partner</a>
    </div>
 

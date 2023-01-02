@@ -115,7 +115,7 @@ if(isset($_GET['delete'])){
             </tr>
          </thead>
       <?php
-      $show_employees = $conn->prepare("SELECT * FROM `employees`");
+      $show_employees = $conn->prepare("SELECT * FROM `employees` ORDER BY id DESC");
       $show_employees->execute();
       if($show_employees->rowCount() > 0){
          while($fetch_employees = $show_employees->fetch(PDO::FETCH_ASSOC)){  
@@ -134,14 +134,15 @@ if(isset($_GET['delete'])){
          <?php
             $fetch_employees['id']++;
          ?>
-      <?php
-         }
-      }else{
-         echo '<p class="empty">belum ada karyawan yang ditambahkan!</p>';
-      }
-      ?>
+     
    </table>
    </div>
+   <?php
+         }
+      }else{
+         echo '';
+      }
+      ?>
    </div>
 
 </section>

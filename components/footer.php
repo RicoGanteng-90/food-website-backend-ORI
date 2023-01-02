@@ -18,8 +18,8 @@
       <div class="box">
          <img src="images/alamat whatsapp.png" alt="">
          <h3>Whatsapp Kami</h3>
-         <a href="whatsapp://send?text=Halo Kak&phone=+6282161171191">082161171191</a>
-         <a href="whatsapp://send?text=Halo Kak&phone=+6282244442422">082244442422</a>
+         <a href="whatsapp://send?&phone=+6282161171191">082161171191</a>
+         <a href="whatsapp://send?&phone=+6282244442422">082244442422</a>
       </div>
 
       <div class="box">
