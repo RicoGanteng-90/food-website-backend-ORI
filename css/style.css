@@ -1082,7 +1082,27 @@ section{
    height: 20rem;
 }
 
+.review form h3{
+   font-size: 2.5rem;
+   color:var(--black);
+   text-transform: capitalize;
+   margin-bottom: 1rem;
+}
 
+.review form .box{
+   margin:.7rem 0;
+   width: 100%;
+   background: #f4f4f4;
+   padding:1.4rem;
+   font-size: 1.8rem;
+   color:var(--black);
+}
+
+.review form p{
+   margin-top: 1.5rem;
+   font-size: 2rem;
+   color:var(--light-color);
+}
 
 /* media queries  */
 
