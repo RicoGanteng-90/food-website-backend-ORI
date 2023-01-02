@@ -62,7 +62,7 @@ section{
    border-radius: .5rem;
    cursor: pointer;
    width: 100%;
-   font-size: 1rem;
+   font-size: 2rem;
    color:var(--white);
    padding:1.2rem 3rem;
    text-transform: capitalize;
@@ -545,8 +545,19 @@ background-color: var(--red);
    color:var(--main-color);
 }
 
-.placed-orders .box-container .box .drop-down{
-   width: 70%;
+.placed-orders .box-container .box .drop-down-order{
+   width: 100%;
+   margin:1rem 0;
+   background-color: var(--light-bg);
+   padding:1rem 1rem;
+   font-size: 1rem;
+   color:var(--black);
+   border:var(--border);
+   border-radius: .5rem;
+}
+
+.placed-orders .box-container .box .drop-down-bayar{
+   width: 80%;
    margin:1rem 0;
    background-color: var(--light-bg);
    padding:1rem 1rem;

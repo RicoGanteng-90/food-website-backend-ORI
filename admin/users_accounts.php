@@ -66,9 +66,9 @@ if(isset($_GET['delete'])){
    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
       <tr>
          <tr>
-            <td>id pengguna</td>
-            <td>nama</td>
-            <td>aksi</td>
+            <td>Id Pengguna</td>
+            <td>Nama</td>
+            <td>Aksi</td>
          </tr>
       </tr>
       <?php

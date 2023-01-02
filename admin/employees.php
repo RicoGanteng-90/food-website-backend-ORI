@@ -134,14 +134,15 @@ if(isset($_GET['delete'])){
          <?php
             $fetch_employees['id']++;
          ?>
-      <?php
+     
+   </table>
+   </div>
+   <?php
          }
       }else{
          echo '<p class="empty">belum ada karyawan yang ditambahkan!</p>';
       }
       ?>
-   </table>
-   </div>
    </div>
 
 </section>
