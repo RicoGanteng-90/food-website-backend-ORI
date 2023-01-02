@@ -120,7 +120,8 @@ if(isset($_GET['delete'])){
                   <option value="Diterima">Diterima</option>
                </select>
             </td>
-            <td><span><?= $fetch_orders['proof_payment']; ?></span></td>
+            <td>               
+               <span><img src="admin_img/" alt=""><?= $fetch_orders['proof_payment']; ?></span></td>
             <td>
                <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
                <select name="payment_status" class="drop-down-bayar">

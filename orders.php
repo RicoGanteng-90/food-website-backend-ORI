@@ -12,28 +12,28 @@ if(isset($_SESSION['user_id'])){
 };
 
 
-if (isset($_POST['add_product'])) {
-   $image = $_FILES['image']['name'];
+if (isset($_POST['add_img'])) {
+
+   $mid = $_POST['mid'];
+   $mid = filter_var($mid, FILTER_SANITIZE_STRING);
+
+   $old_image = $_POST['old_image'];
+
+   $image = $_FILES['img']['name'];
    $image = filter_var($image, FILTER_SANITIZE_STRING);
-   $image_size = $_FILES['image']['size'];
-   $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folder = '../admin_img/' . $image;
+   $image_size = $_FILES['img']['size'];
+   $image_tmp_name = $_FILES['img']['tmp_name'];
+   $image_folder = 'admin_img/' . $image;
 
-   $select_products = $conn->prepare("SELECT * FROM `products` WHERE name = ?");
-   $select_products->execute([$name]);
-
-   if ($select_products->rowCount() > 0) {
-      $message[] = 'nama produk sudah ada!';
-   } else {
+   if (!empty($image)) {
       if ($image_size > 2000000) {
          $message[] = 'ukuran gambar terlalu besar';
       } else {
+         $update_image = $conn->prepare("UPDATE `orders` SET proof_payment = ? WHERE id = ?");
+         $update_image->execute([$image, $mid]);
          move_uploaded_file($image_tmp_name, $image_folder);
-
-         $insert_product = $conn->prepare("INSERT INTO `products`(name, category, keterangan, price, image) VALUES(?,?,?,?,?)");
-         $insert_product->execute([$name, $category, $keterangan, $price, $image]);
-
-         $message[] = 'produk ditambahkan!';
+         unlink('admin_img/' .$old_image);
+         $message[] = 'gambar berhasil diperbarui!';
       }
    }
 }
@@ -84,8 +84,7 @@ if (isset($_POST['add_product'])) {
 
    <h3 class="title">Pesanan Anda </h3>
 
-   <div class="box-container">
-
+   <div class="box-container">   
    <?php
       if($user_id == ''){
          echo '<p class="empty">silahkan login untuk melihat pesanan Anda</p>';
@@ -96,10 +95,10 @@ if (isset($_POST['add_product'])) {
             while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
                $stat=$fetch_orders["order_status"];
                $pay=$fetch_orders["payment_status"];
-               
+
             if ($stat == "Diterima") {
-               $bukti = "<input type=file name=image class=box accept=image/jpg, image/jpeg, image/png, image/webp required>";
-               $tomb = "<button>Kirim Bukti</button>";
+               $bukti = "<input type=file name=img class=box accept=image/jpg, image/jpeg, image/png, image/webp required>";
+               $tomb = "<button type=submit name=add_img>Upload</button>";
             }else{
                $bukti = "";
                $tomb = "";
@@ -111,10 +110,10 @@ if (isset($_POST['add_product'])) {
                $nota = "";
             }
    ?>
-
-
-
+   
+   <form action="" method="POST" enctype="multipart/form-data">
    <div class="box">
+   <input type="hidden" name="mid" value="<?= $fetch_products['mid']; ?>">      
    <table>
          <tr>
             <td>Nama</td>
@@ -174,7 +173,10 @@ if (isset($_POST['add_product'])) {
       </table>
       <?php echo $bukti; ?> &nbsp; <?php echo $tomb; ?><br>
       <?php echo $nota; ?>
+>>>>>>> 2d39bd6aa8186654fa9b803abd7a2b0d511c47ee
    </div>
+   </form>
+
    <?php
       }
       }else{
@@ -186,7 +188,7 @@ if (isset($_POST['add_product'])) {
    </div>
 
 </section>
-
+   
 <!-- footer section starts  -->
 <?php include 'components/footer.php'; ?>
 <!-- footer section ends -->
