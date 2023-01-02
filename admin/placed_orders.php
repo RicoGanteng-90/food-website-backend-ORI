@@ -42,7 +42,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Placed Order</title>
+   <title>Order</title>
 
    <!-- Logo Title Bar -->
    <link rel="icon" href="../images/logofanny.png"
@@ -86,10 +86,10 @@ if(isset($_GET['delete'])){
             <td>Email</td>
             <td>Nomor Telepon</td>
             <td>Alamat</td>
-            <td>waktu Acara</td>
+            <td>Waktu Acara</td>
             <td>Total Produk</td>
             <td>Total Pembayaran</td>            
-            <td>Status Order</td>
+            <td>Status Pesanan</td>
             <td>Bukti Pembayaran</td>
             <td>Status Pembayaran</td>            
             <td>Action</td>
@@ -114,7 +114,7 @@ if(isset($_GET['delete'])){
             <form action="" method="POST" enctype="multipart/form-data">
             <td>
                <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
-               <select name="order_status" class="drop-down">                  
+               <select name="order_status" class="drop-down-order">                  
                   <option hidden selected value="<?= $fetch_orders['order_status']; ?>" ><?= $fetch_orders['order_status']; ?></option>
                   <option value="Diproses">Diproses</option>
                   <option value="Diterima">Diterima</option>
@@ -124,7 +124,7 @@ if(isset($_GET['delete'])){
                <span><img src="admin_img/" alt=""><?= $fetch_orders['proof_payment']; ?></span></td>
             <td>
                <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
-               <select name="payment_status" class="drop-down">
+               <select name="payment_status" class="drop-down-bayar">
                   <option hidden value="<?= $fetch_orders['payment_status']; ?>" selected><?= $fetch_orders['payment_status']; ?></option>                  
                   <option value="Belum lunas">Belum lunas</option>
                   <option value="Lunas">Lunas</option>                  
@@ -142,7 +142,7 @@ if(isset($_GET['delete'])){
    <?php
       }
    }else{
-      echo '<p class="empty">tidak ada order!</p>';
+      echo '';
    }
    ?>
    </table>

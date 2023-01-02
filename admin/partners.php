@@ -139,7 +139,7 @@ if(isset($_GET['delete'])){
       <?php
          }
       }else{
-         echo '<p class="empty">belum ada partner yang ditambahkan!</p>';
+         echo '';
       }
       ?>
    </table>

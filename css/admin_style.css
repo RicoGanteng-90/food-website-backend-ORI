@@ -62,7 +62,7 @@ section{
    border-radius: .5rem;
    cursor: pointer;
    width: 100%;
-   font-size: 1rem;
+   font-size: 2rem;
    color:var(--white);
    padding:1.2rem 3rem;
    text-transform: capitalize;
@@ -435,6 +435,9 @@ background-color: var(--red);
    padding:1rem 0;
    width:fit-content;
    word-break: break-all;
+   line-height: 1.7;
+   letter-spacing: .7px;
+   word-spacing: 1px;
 }
 
 .show-products .box-container .box .flex{
@@ -545,8 +548,19 @@ background-color: var(--red);
    color:var(--main-color);
 }
 
-.placed-orders .box-container .box .drop-down{
-   width: 70%;
+.placed-orders .box-container .box .drop-down-order{
+   width: 100%;
+   margin:1rem 0;
+   background-color: var(--light-bg);
+   padding:1rem 1rem;
+   font-size: 1rem;
+   color:var(--black);
+   border:var(--border);
+   border-radius: .5rem;
+}
+
+.placed-orders .box-container .box .drop-down-bayar{
+   width: 80%;
    margin:1rem 0;
    background-color: var(--light-bg);
    padding:1rem 1rem;
@@ -605,7 +619,7 @@ background-color: var(--red);
 
 .messages .box-container .box tr td{
    padding: .5rem 0;
-   font-size: 1.8rem;
+   font-size: 1.5rem;
    color:var(--black);
    text-align: center;
 }
