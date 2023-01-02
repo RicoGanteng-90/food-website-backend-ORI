@@ -32,7 +32,7 @@ if (isset($_POST['add_img'])) {
          $update_image = $conn->prepare("UPDATE `orders` SET proof_payment = ? WHERE id = ?");
          $update_image->execute([$image, $mid]);
          move_uploaded_file($image_tmp_name, $image_folder);
-         unlink('admin_img/'.$old_image);
+         unlink('admin_img/' .$old_image);
          $message[] = 'gambar berhasil diperbarui!';
       }
    }
