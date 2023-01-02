@@ -87,7 +87,7 @@ include 'components/add_cart.php';
       <?php
             }
          }else{
-            echo '<p class="empty">tidak ada produk yang ditambahkan!</p>';
+            echo '<p class="empty">tidak ada produk</p>';
          }
       ?>
       </div>

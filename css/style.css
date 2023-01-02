@@ -934,10 +934,11 @@ section{
 }
 
 .quick-view form .keterangan{
-   font-size: 1.5rem;
+   font-size: 1.6rem;
    margin:.5rem 0;
    width:fit-content;
    word-break: break-all;
+   line-height: 1.7;
 }
 
 .quick-view form .flex .qty{
