@@ -136,21 +136,21 @@ if(!isset($admin_id)){
 
    <div class="box">
       <?php
-         $select_messages = $conn->prepare("SELECT * FROM `employees`");
-         $select_messages->execute();
-         $numbers_of_messages = $select_messages->rowCount();
+         $select_employees = $conn->prepare("SELECT * FROM `employees`");
+         $select_employees->execute();
+         $numbers_of_employees = $select_employees->rowCount();
       ?>
-      <h3><?= $numbers_of_messages; ?></h3>
+      <h3><?= $numbers_of_employees; ?></h3>
       <a href="employees.php" class="btn">data karyawan</a>
    </div>
 
    <div class="box">
       <?php
-         $select_messages = $conn->prepare("SELECT * FROM `partners`");
-         $select_messages->execute();
-         $numbers_of_messages = $select_messages->rowCount();
+         $select_partners = $conn->prepare("SELECT * FROM `partners`");
+         $select_partners->execute();
+         $numbers_of_partners = $select_partners->rowCount();
       ?>
-      <h3><?= $numbers_of_messages; ?></h3>
+      <h3><?= $numbers_of_partners; ?></h3>
       <a href="partners.php" class="btn">data partner</a>
    </div>
 
