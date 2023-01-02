@@ -90,7 +90,7 @@ if(isset($_GET['delete'])){
       <?php
       }
       }else{
-         echo '<p class="empty">tidak ada akun yang tersedia</p>';
+         echo '';
       }
       ?>
    </table>

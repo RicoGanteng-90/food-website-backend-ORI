@@ -141,7 +141,7 @@ if(isset($_GET['delete'])){
    <?php
       }
    }else{
-      echo '<p class="empty">tidak ada order!</p>';
+      echo '';
    }
    ?>
    </table>

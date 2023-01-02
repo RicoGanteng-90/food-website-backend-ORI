@@ -616,7 +616,7 @@ background-color: var(--red);
 
 .messages .box-container .box tr td{
    padding: .5rem 0;
-   font-size: 1.8rem;
+   font-size: 1.5rem;
    color:var(--black);
    text-align: center;
 }

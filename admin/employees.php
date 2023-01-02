@@ -140,7 +140,7 @@ if(isset($_GET['delete'])){
    <?php
          }
       }else{
-         echo '<p class="empty">belum ada karyawan yang ditambahkan!</p>';
+         echo '';
       }
       ?>
    </div>
