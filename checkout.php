@@ -144,13 +144,10 @@ if(isset($_POST['submit'])){
       <h3>Waktu Acara Anda</h3>            
       <input type="datetime-local" class="box" name="event_time">
       
-      <h3>Payment</h3>
+      <h3>metode pembayaran</h3>
       <select name="method" class="box" required>
-         <option value="" disabled selected>select payment method --</option>
-         <option value="cash on delivery">cash on delivery</option>
-         <option value="credit card">credit card</option>
-         <option value="paytm">paytm</option>
-         <option value="paypal">paypal</option>
+         <option value="" disabled selected>pilih metode pembayaran --</option>
+         <option value="BCA : 3320468646 (An. Fani Sulistiowati)">BCA : 3320468646 (An. Fani Sulistiowati)</option>
       </select>
       <input type="submit" value="ORDER" class="btn <?php if($fetch_profile['address'] == ''){echo 'alamat kosong';} ?>" style="width:100%; background: var(--black); color:var(--white);" name="submit">
    </div>
