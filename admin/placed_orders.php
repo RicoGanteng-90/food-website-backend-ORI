@@ -131,6 +131,7 @@ if(isset($_GET['delete'])){
                <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
                <select name="order_status" class="drop-down-order">                  
                   <option hidden selected value="<?= $fetch_orders['order_status']; ?>" ><?= $fetch_orders['order_status']; ?></option>
+                  <option value=""></option>
                   <option value="Diproses">Diproses</option>
                   <option value="Diterima">Diterima</option>
                </select>
@@ -142,6 +143,7 @@ if(isset($_GET['delete'])){
             <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
                <select name="payment_status" class="drop-down-bayar">
                   <option hidden value="<?= $fetch_orders['payment_status']; ?>" selected><?= $fetch_orders['payment_status']; ?></option>                  
+                  <option value=""></option>
                   <option value="Belum lunas">Belum lunas</option>
                   <option value="Lunas">Lunas</option>                  
                </select>

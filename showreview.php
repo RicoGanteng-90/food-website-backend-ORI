@@ -18,7 +18,7 @@ if(isset($_SESSION['user_id'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>review</title>
+   <title>Testimoni</title>
 
    <!-- Logo Title Bar -->
    <link rel="icon" href="images/logofanny.png"
@@ -50,8 +50,8 @@ if(isset($_SESSION['user_id'])){
 <!-- header section ends -->
 
 <div class="heading">
-   <h3>review</h3>
-   <p><a href="home.php">home</a> <span> / review</span></p>
+   <h3>Testimoni</h3>
+   <p><a href="home.php">home</a> <span> / Testimoni</span></p>
 </div>
 
 <!-- START TESTIMONIAL -->
@@ -76,7 +76,7 @@ if(isset($_SESSION['user_id'])){
             <?php
                 }
                 }else{
-                    echo '<p class="empty">no review available</p>';
+                    echo '<p class="empty">Tidak ada testimoni</p>';
                 }
             ?>
 		</div>

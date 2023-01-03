@@ -853,12 +853,12 @@ section{
 .orders .box-container .box tr td{
    line-height: 1.5;
    margin:1rem 0;
-   font-size: 1rem;
+   font-size: 15px;
    color:var(--light-color);
 }
 
 .orders .box-container .box tr td span{
-   color:var(--black);
+   color:var(--black);   
 }
 
 .form-container form{
@@ -1220,4 +1220,42 @@ section{
 }
 .swiper-pagination-bullet-active{
    background-color: black;
+}
+
+
+
+.orders .box-container .upp{
+   background-color: green;
+   border:#000000;
+   color: rgb(255, 255, 255);
+   padding:10px;   
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 15px;
+   cursor:crosshair;
+}
+
+.orders .box-container .note{
+   background-color: rgb(74, 75, 74);
+   border:#000000;
+   color: rgb(255, 255, 255);
+   padding:10px;   
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 15px;
+   cursor:crosshair;
+}
+
+.orders .box-container .grade{
+   background-color: rgb(252, 193, 1);
+   border:#000000;
+   color: rgb(255, 255, 255);
+   padding:10px;   
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 15px;
+   cursor:crosshair;
 }
