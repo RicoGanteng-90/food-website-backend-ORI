@@ -95,15 +95,15 @@ if (isset($_POST['add_img'])) {
 
             if ($stat == "Diterima") {
                $bukti = "<input type=file name=img class=box accept=image/jpg, image/jpeg, image/png, image/webp required>";
-               $tomb = "<button type=submit name=add_img>Upload</button>";
+               $tomb = "<button class=upp type=submit name=add_img>Upload</button>";
             }else{
                $bukti = "";
                $tomb = "";
             }
 
             if($pay == "Lunas"){
-               $nota = "<button>Cetak nota</button>";
-               $nilai = "<button>Beri Penilaian</button>";
+               $nota = "<button class=note>Cetak nota</button>";
+               $nilai = "<button class=grade>Beri Penilaian</button>";
             }else{
                $nota = "";
                $nilai = "";
@@ -112,7 +112,8 @@ if (isset($_POST['add_img'])) {
    
    
          <div class="box">   
-         <table>      
+         <table>
+              
                <tr>
                   <td>Nama</td>
                   <td>:</td>
@@ -171,6 +172,7 @@ if (isset($_POST['add_img'])) {
                   <td><span style="color:<?php if($fetch_orders['payment_status'] == 'Belum lunas'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span></td>
                </tr>
                <br><p> </p><br>
+               
             </table>      
             <?php echo $bukti; ?> &nbsp; &nbsp; <?php echo $tomb; ?><br><br>
             <?php echo $nota; ?> &nbsp; &nbsp; <?php echo $nilai; ?>
