@@ -53,11 +53,6 @@ if(!isset($admin_id)){
    <div class="box-container">
 
    <div class="box">
-      <h3>Selamat Datang &nbsp <?= $fetch_profile['name']; ?>☺️ </h3>
-      <a href="update_profile.php" class="btn">edit profil</a>
-   </div>
-
-   <div class="box">
       <?php
          $total_belum = 0;
          $select_belum = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
@@ -152,6 +147,16 @@ if(!isset($admin_id)){
       ?>
       <h3><?= $numbers_of_partners; ?></h3>
       <a href="partners.php" class="btn">data partner</a>
+   </div>
+
+   <div class="box">
+      <?php
+         $select_review = $conn->prepare("SELECT * FROM `review`");
+         $select_review->execute();
+         $numbers_of_review = $select_review->rowCount();
+      ?>
+      <h3><?= $numbers_of_review; ?></h3>
+      <a href="review.php" class="btn">Testimoni</a>
    </div>
 
    </div>

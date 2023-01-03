@@ -64,6 +64,7 @@ if(isset($_GET['delete'])){
          <tr>
             <td>Nama</td>
             <td>Testimoni</td>
+            <td>Rating</td>
             <td>Aksi</td>
          </tr>
       </tr>
@@ -76,6 +77,7 @@ if(isset($_GET['delete'])){
     <tr>
             <td><span><?= $fetch_review['name']; ?></span></td>
             <td><span><?= $fetch_review['review']; ?></span></td>
+            <td><span><?= $fetch_review['category']; ?></span></td>
             <td><a href="review.php?delete=<?= $fetch_review['id']; ?>" class="delete-btn" onclick="return confirm('yakin ini menghapus testimoni ini?');">hapus</a></td>
          </tr>
          <?php

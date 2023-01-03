@@ -17,15 +17,17 @@ if(isset($_POST['send'])){
    $name = filter_var($name, FILTER_SANITIZE_STRING);
    $review = $_POST['review'];
    $review = filter_var($review, FILTER_SANITIZE_STRING);
+   $category = $_POST['category'];
+   $category = filter_var($category, FILTER_SANITIZE_STRING);
 
-   $select_message = $conn->prepare("SELECT * FROM `review` WHERE name = ? AND review = ?");
-   $select_message->execute([$name, $review]);
+   $select_review = $conn->prepare("SELECT * FROM `review` WHERE name = ? AND review = ? AND category =?");
+   $select_review->execute([$name, $review, $category]);
 
-   if($select_message->rowCount() > 0){
+   if($select_review->rowCount() > 0){
       $message[] = 'sudah mengirim testimoni';
    }else{
-      $insert_message = $conn->prepare("INSERT INTO `review`( user_id, name, review) VALUES(?,?,?)");
-      $insert_message->execute([$user_id, $name,$review]);
+      $insert_review = $conn->prepare("INSERT INTO `review`( user_id, name, review, category) VALUES(?,?,?,?)");
+      $insert_review->execute([$user_id, $name,$review, $category]);
 
       $message[] = 'testimoni terkirim';
    }
@@ -78,6 +80,13 @@ if(isset($_POST['send'])){
          <h3>testimoni</h3>
          <input type="text" name="name" maxlength="100" class="box" placeholder="masukan nama Anda" required>
          <textarea name="review" class="box" required placeholder="kesan Anda menggunakan layanan kami" maxlength="500" cols="30" rows="10"></textarea>
+         <select name="category" class="box" required>
+            <option value="" disabled selected>rating--</option>
+            <option value="Sangat Puas">Sangat Puas</option>
+            <option value="Puas">Puas</option>
+            <option value="Extra Wedding">Cukup Puas</option>
+            <option value="Paket Foto">Tidak Puas</option>
+         </select>
          <input type="submit" value="kirim" name="send" class="btn">
       </form>
 

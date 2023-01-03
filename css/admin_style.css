@@ -434,9 +434,9 @@ background-color: var(--red);
    color:var(--black);
    padding:1rem 0;
    width:fit-content;
-   word-break: break-all;
-   line-height: 1.7;
-   letter-spacing: .7px;
+   line-height: 1.5;
+   letter-spacing: .5px;
+   text-align: justify;
 }
 
 .show-products .box-container .box .flex{
