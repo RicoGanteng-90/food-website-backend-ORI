@@ -54,16 +54,31 @@ if(!isset($admin_id)){
 
    <div class="box">
       <?php
-         $total_belum = 0;
-         $select_belum = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
-         $select_belum->execute(['Belum Lunas']);
-         while($fetch_belum = $select_belum->fetch(PDO::FETCH_ASSOC)){
-            $total_belum += $fetch_belum['total_price'];
-         }
+         $select_products = $conn->prepare("SELECT * FROM `products`");
+         $select_products->execute();
+         $numbers_of_products = $select_products->rowCount();
       ?>
-      <h3><span>Rp. </span><?php echo " " . number_format ($total_belum,0,',','.'); ?><span></span></h3>
-      <a href="belum_lunas.php" class="btn">Order Belum Lunas</a>
+      <h3><?= $numbers_of_products; ?></h3>
+      <a href="products.php" class="btn">lihat produk</a>
    </div>
+
+
+   <div class="box">
+      <h3>Kategori</h3>
+      <a href="grafik.php" class="btn">Layanan Produk</a>
+   </div>
+
+
+   <div class="box">
+      <?php
+         $select_orders = $conn->prepare("SELECT * FROM `orders`");
+         $select_orders->execute();
+         $numbers_of_orders = $select_orders->rowCount();
+      ?>
+      <h3><?= $numbers_of_orders; ?></h3>
+      <a href="placed_orders.php" class="btn">Lihat Order</a>
+   </div>
+
 
    <div class="box">
       <?php
@@ -78,25 +93,20 @@ if(!isset($admin_id)){
       <a href="lunas.php" class="btn">Order Lunas</a>
    </div>
 
-   <div class="box">
-      <?php
-         $select_orders = $conn->prepare("SELECT * FROM `orders`");
-         $select_orders->execute();
-         $numbers_of_orders = $select_orders->rowCount();
-      ?>
-      <h3><?= $numbers_of_orders; ?></h3>
-      <a href="placed_orders.php" class="btn">Lihat Order</a>
-   </div>
 
    <div class="box">
       <?php
-         $select_products = $conn->prepare("SELECT * FROM `products`");
-         $select_products->execute();
-         $numbers_of_products = $select_products->rowCount();
+         $total_belum = 0;
+         $select_belum = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
+         $select_belum->execute(['Belum Lunas']);
+         while($fetch_belum = $select_belum->fetch(PDO::FETCH_ASSOC)){
+            $total_belum += $fetch_belum['total_price'];
+         }
       ?>
-      <h3><?= $numbers_of_products; ?></h3>
-      <a href="products.php" class="btn">lihat produk</a>
+      <h3><span>Rp. </span><?php echo " " . number_format ($total_belum,0,',','.'); ?><span></span></h3>
+      <a href="belum_lunas.php" class="btn">Order Belum Lunas</a>
    </div>
+
 
    <div class="box">
       <?php
@@ -119,15 +129,6 @@ if(!isset($admin_id)){
       <a href="admin_accounts.php" class="btn">data admin</a>
    </div>
 
-   <div class="box">
-      <?php
-         $select_messages = $conn->prepare("SELECT * FROM `messages`");
-         $select_messages->execute();
-         $numbers_of_messages = $select_messages->rowCount();
-      ?>
-      <h3><?= $numbers_of_messages; ?></h3>
-      <a href="messages.php" class="btn">lihat pesan</a>
-   </div>
 
    <div class="box">
       <?php
@@ -148,6 +149,18 @@ if(!isset($admin_id)){
       <h3><?= $numbers_of_partners; ?></h3>
       <a href="partners.php" class="btn">data partner</a>
    </div>
+
+
+   <div class="box">
+      <?php
+         $select_messages = $conn->prepare("SELECT * FROM `messages`");
+         $select_messages->execute();
+         $numbers_of_messages = $select_messages->rowCount();
+      ?>
+      <h3><?= $numbers_of_messages; ?></h3>
+      <a href="messages.php" class="btn">lihat pesan</a>
+   </div>
+
 
    <div class="box">
       <?php
