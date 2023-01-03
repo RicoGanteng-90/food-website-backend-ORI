@@ -75,7 +75,7 @@ $grand_total = 0;
 
 <div class="heading">
    <h3>Keranjang Belanja</h3>
-   <p><a href="home.php">beranda</a> <span> / keranjang</span></p>
+   <p><a href="home.php">Beranda</a> <span> / Keranjang</span></p>
 </div>
 
 <!-- shopping cart section starts  -->
@@ -111,7 +111,6 @@ $grand_total = 0;
             echo '<p class="empty">keranjang kosong</p>';
          }
       ?>
-
    </div>
 
    <div class="cart-total">

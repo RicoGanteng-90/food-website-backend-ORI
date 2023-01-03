@@ -14,10 +14,8 @@ if(isset($_SESSION['user_id'])){
 
 if (isset($_POST['add_img'])) {
 
-   $mid = $_POST['mid'];
-   $mid = filter_var($mid, FILTER_SANITIZE_STRING);
-
-   $old_image = $_POST['old_image'];
+   $iid = $_POST['id'];
+   $iid = filter_var($iid, FILTER_SANITIZE_STRING);
 
    $image = $_FILES['img']['name'];
    $image = filter_var($image, FILTER_SANITIZE_STRING);
@@ -30,9 +28,8 @@ if (isset($_POST['add_img'])) {
          $message[] = 'ukuran gambar terlalu besar';
       } else {
          $update_image = $conn->prepare("UPDATE `orders` SET proof_payment = ? WHERE id = ?");
-         $update_image->execute([$image, $mid]);
-         move_uploaded_file($image_tmp_name, $image_folder);
-         unlink('admin_img/' .$old_image);
+         $update_image->execute([$image, $iid]);
+         move_uploaded_file($image_tmp_name, $image_folder);         
          $message[] = 'gambar berhasil diperbarui!';
       }
    }
@@ -106,14 +103,15 @@ if (isset($_POST['add_img'])) {
 
             if($pay == "Lunas"){
                $nota = "<button>Cetak nota</button>";
+               $nilai = "<button>Beri Penilaian</button>";
             }else{
                $nota = "";
+               $nilai = "";
             }
    ?>
    
    <div class="box">
-   <input type="hidden" name="mid" value="<?= $fetch_products['mid']; ?>">      
-   <table>
+   <table>      
          <tr>
             <td>Nama</td>
             <td>:</td>
@@ -160,6 +158,7 @@ if (isset($_POST['add_img'])) {
             <td><span><?= $fetch_orders['method']; ?></span></td>
          </tr>
          <form action="" method="POST" enctype="multipart/form-data">
+         <input type="hidden" name="iid" value="<?= $fetch_orders['id']; ?>">
          <tr>
             <td>Status Pesanan</td>
             <td>:</td>
@@ -171,9 +170,9 @@ if (isset($_POST['add_img'])) {
             <td><span style="color:<?php if($fetch_orders['payment_status'] == 'Belum lunas'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span></td>
          </tr>
          <br><p> </p><br>
-      </table>
-      <?php echo $bukti; ?> &nbsp; <?php echo $tomb; ?><br>
-      <?php echo $nota; ?>
+      </table>      
+      <?php echo $bukti; ?> &nbsp; &nbsp; <?php echo $tomb; ?><br><br>
+      <?php echo $nota; ?> &nbsp; &nbsp; <?php echo $nilai; ?>
    </div>
    </form>
 
