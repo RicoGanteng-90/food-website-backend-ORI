@@ -985,8 +985,8 @@ section{
    font-size: 1.6rem;
    margin:.5rem 0;
    width:fit-content;
-   word-break: break-all;
    line-height: 1.7;
+   text-align: justify;
 }
 
 .quick-view form .flex .qty{
