@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Waktu pembuatan: 02 Jan 2023 pada 05.34
+-- Waktu pembuatan: 02 Jan 2023 pada 18.18
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -79,7 +79,6 @@ CREATE TABLE `employees` (
 
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `number` varchar(50) NOT NULL,
@@ -169,7 +168,6 @@ INSERT INTO `products` (`id`, `name`, `category`, `keterangan`, `price`, `image`
 
 CREATE TABLE `review` (
   `id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `review` varchar(500) NOT NULL
@@ -225,8 +223,7 @@ ALTER TABLE `employees`
 -- Indeks untuk tabel `messages`
 --
 ALTER TABLE `messages`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `Id_customer` (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `orders`
@@ -252,7 +249,6 @@ ALTER TABLE `products`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `order_id` (`order_id`),
   ADD KEY `user_id` (`user_id`);
 
 --
@@ -287,7 +283,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT untuk tabel `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders`
@@ -331,12 +327,6 @@ ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `messages`
---
-ALTER TABLE `messages`
-  ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Ketidakleluasaan untuk tabel `orders`
 --
 ALTER TABLE `orders`
@@ -346,7 +336,6 @@ ALTER TABLE `orders`
 -- Ketidakleluasaan untuk tabel `review`
 --
 ALTER TABLE `review`
-  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
