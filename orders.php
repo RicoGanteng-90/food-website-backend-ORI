@@ -14,8 +14,8 @@ if(isset($_SESSION['user_id'])){
 
 if (isset($_POST['add_img'])) {
 
-   $iid = $_POST['id'];
-   $iid = filter_var($iid, FILTER_SANITIZE_STRING);
+   $mid = $_POST['mid'];
+   $mid = filter_var($mid, FILTER_SANITIZE_STRING);
 
    $image = $_FILES['img']['name'];
    $image = filter_var($image, FILTER_SANITIZE_STRING);
@@ -28,8 +28,8 @@ if (isset($_POST['add_img'])) {
          $message[] = 'ukuran gambar terlalu besar';
       } else {
          $update_image = $conn->prepare("UPDATE `orders` SET proof_payment = ? WHERE id = ?");
-         $update_image->execute([$image, $iid]);
-         move_uploaded_file($image_tmp_name, $image_folder);         
+         $update_image->execute([$image, $mid]);         
+         move_uploaded_file($image_tmp_name, $image_folder);
          $message[] = 'gambar berhasil diperbarui!';
       }
    }
@@ -95,86 +95,89 @@ if (isset($_POST['add_img'])) {
 
             if ($stat == "Diterima") {
                $bukti = "<input type=file name=img class=box accept=image/jpg, image/jpeg, image/png, image/webp required>";
-               $tomb = "<button type=submit name=add_img>Upload</button>";
+               $tomb = "<button class=upp type=submit name=add_img>Upload</button>";
             }else{
                $bukti = "";
                $tomb = "";
             }
 
             if($pay == "Lunas"){
-               $nota = "<button>Cetak nota</button>";
-               $nilai = "<button>Beri Penilaian</button>";
+               $nota = "<button class=note>Cetak nota</button>";
+               $nilai = "<button class=grade>Beri Penilaian</button>";
             }else{
                $nota = "";
                $nilai = "";
             }
    ?>
    
-   <div class="box">
-   <table>      
-         <tr>
-            <td>Nama</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['name']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Email</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['email']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Nomor Telepon</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['number']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Alamat</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['address']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Tanggal Order</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['order_time']; ?> </span></td>
-         </tr>
-         <tr>
-            <td>Waktu Acara</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['event_time']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Total Produk</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['total_products']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Total Pembayaran</td>
-            <td>:</td>
-            <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>
-         </tr>
-         <tr>
-            <td>Metode Pembayaran</td>
-            <td>:</td>
-            <td><span><?= $fetch_orders['method']; ?></span></td>
-         </tr>
-         <form action="" method="POST" enctype="multipart/form-data">
-         <input type="hidden" name="iid" value="<?= $fetch_orders['id']; ?>">
-         <tr>
-            <td>Status Pesanan</td>
-            <td>:</td>
-            <td><span style="color:<?php if($fetch_orders['order_status'] == 'Diproses'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['order_status']; ?></span></td>
-         </tr>
-         <tr>
-            <td>Status Pembayaran</td>
-            <td>:</td>
-            <td><span style="color:<?php if($fetch_orders['payment_status'] == 'Belum lunas'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span></td>
-         </tr>
-         <br><p> </p><br>
-      </table>      
-      <?php echo $bukti; ?> &nbsp; &nbsp; <?php echo $tomb; ?><br><br>
-      <?php echo $nota; ?> &nbsp; &nbsp; <?php echo $nilai; ?>
-   </div>
-   </form>
+   
+         <div class="box">   
+         <table>
+              
+               <tr>
+                  <td>Nama</td>
+                  <td>:</td>
+                  <td><span><?= $fetch_orders['name']; ?></span></td>
+               </tr>
+               <tr>
+                  <td>Email</td>
+                  <td>:</td>
+                  <td><span><?= $fetch_orders['email']; ?></span></td>
+               </tr>
+               <tr>
+                  <td>Nomor Telepon</td>
+                  <td>:</td>
+                  <td><span><?= $fetch_orders['number']; ?></span></td>
+               </tr>
+               <tr>
+                  <td>Alamat</td>
+                  <td>:</td>
+                  <td><span><?= $fetch_orders['address']; ?></span></td>
+               </tr>
+               <tr>
+                  <td>Tanggal Order</td>
+                  <td>:</td>
+                  <td><span><?= $fetch_orders['order_time']; ?> </span></td>
+               </tr>
+               <tr>
+                  <td>Waktu Acara</td>
+                  <td>:</td>
+                  <td><span><?= $fetch_orders['event_time']; ?></span></td>
+               </tr>
+               <tr>
+                  <td>Total Produk</td>
+                  <td>:</td>
+                  <td><span><?= $fetch_orders['total_products']; ?></span></td>
+               </tr>
+               <tr>
+                  <td>Total Pembayaran</td>
+                  <td>:</td>
+                  <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>
+               </tr>
+               <tr>
+                  <td>Metode Pembayaran</td>
+                  <td>:</td>
+                  <td><span><?= $fetch_orders['method']; ?></span></td>
+               </tr>         
+               <form action="" method="POST" enctype="multipart/form-data">
+               <input type="hidden" name="mid" value="<?= $fetch_orders['id']; ?>">
+               <tr>
+                  <td>Status Pesanan</td>
+                  <td>:</td>
+                  <td><span style="color:<?php if($fetch_orders['order_status'] == 'Diproses'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['order_status']; ?></span></td>
+               </tr>
+               <tr>
+                  <td>Status Pembayaran</td>
+                  <td>:</td>
+                  <td><span style="color:<?php if($fetch_orders['payment_status'] == 'Belum lunas'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span></td>
+               </tr>
+               <br><p> </p><br>
+               
+            </table>      
+            <?php echo $bukti; ?> &nbsp; &nbsp; <?php echo $tomb; ?><br><br>
+            <?php echo $nota; ?> &nbsp; &nbsp; <?php echo $nilai; ?>
+         </div>
+         </form>
 
    <?php
       }
