@@ -63,6 +63,21 @@ if(isset($_GET['delete'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="../css/admin_style.css">
 
+         <style>      
+      .zoom {      
+      background-color: transparent;
+      transition: transform .1s;
+      width: 0px auto;
+      height: 0px auto;      
+      }
+
+      .zoom:hover {
+      -ms-transform: scale(1.5); /* IE 9 */
+      -webkit-transform: scale(1.5); /* Safari 3-8 */
+      transform: scale(6.5); 
+      }
+      </style>
+
 </head>
 <body>
 
@@ -121,9 +136,10 @@ if(isset($_GET['delete'])){
                </select>
             </td>
             <td>               
-               <span><img src="admin_img/" alt=""><?= $fetch_orders['proof_payment']; ?></span></td>
+                  <div class="zoom"><img src="../admin_img/<?= $fetch_orders['proof_payment']; ?>" width="80px" alt=""></div>
+            </td>
             <td>
-               <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
+            <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
                <select name="payment_status" class="drop-down-bayar">
                   <option hidden value="<?= $fetch_orders['payment_status']; ?>" selected><?= $fetch_orders['payment_status']; ?></option>                  
                   <option value="Belum lunas">Belum lunas</option>
@@ -151,13 +167,6 @@ if(isset($_GET['delete'])){
 </section>
 
 <!-- placed orders section ends -->
-
-
-
-
-
-
-
 
 
 <!-- custom js file link  -->
