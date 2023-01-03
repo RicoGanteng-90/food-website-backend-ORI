@@ -1232,7 +1232,7 @@ section{
    text-decoration: none;
    display: inline-block;
    font-size: 15px;
-   cursor:crosshair;
+   cursor:pointer;
 }
 
 .orders .box-container .note{
@@ -1244,7 +1244,7 @@ section{
    text-decoration: none;
    display: inline-block;
    font-size: 15px;
-   cursor:crosshair;
+   cursor:pointer;
 }
 
 .orders .box-container .grade{
@@ -1256,5 +1256,5 @@ section{
    text-decoration: none;
    display: inline-block;
    font-size: 15px;
-   cursor:crosshair;
+   cursor:pointer;
 }

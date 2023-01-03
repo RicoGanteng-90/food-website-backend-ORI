@@ -164,21 +164,5 @@ if(isset($_POST['submit'])){
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 
-    <!-- 1. Link Vue Javascript -->
-    <script src='https://unpkg.com/vue/dist/vue.js'></script>
-
-    <!-- 2. Link VCalendar Javascript (Plugin automatically installed) -->
-    <script src='https://unpkg.com/v-calendar'></script>
-
-    <!--3. Create the Vue instance-->
-    <script>
-      new Vue({
-        el: '#app',
-        data: {
-          selectedDate: null,
-        }
-      })
-    </script>
-
 </body>
 </html>
