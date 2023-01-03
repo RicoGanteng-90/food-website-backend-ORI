@@ -103,7 +103,7 @@ if (isset($_POST['add_img'])) {
 
             if($pay == "Lunas"){
                $nota = "<button class=note>Cetak nota</button>";
-               $nilai = "<button class=grade>Beri Penilaian</button>";
+               $nilai = "<button onclick = window.location.href='review.php' class=grade>Beri Penilaian</button>";
             }else{
                $nota = "";
                $nilai = "";
@@ -174,7 +174,7 @@ if (isset($_POST['add_img'])) {
                <br><p> </p><br>
                
             </table>      
-            <?php echo $bukti; ?> &nbsp; &nbsp; <?php echo $tomb; ?><br><br>
+            <br><?php echo $bukti; ?> &nbsp; &nbsp; <?php echo $tomb; ?><br><br>
             <?php echo $nota; ?> &nbsp; &nbsp; <?php echo $nilai; ?>
          </div>
          </form>
