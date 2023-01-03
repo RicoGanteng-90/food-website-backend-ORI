@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Waktu pembuatan: 02 Jan 2023 pada 18.18
+-- Waktu pembuatan: 03 Jan 2023 pada 06.23
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -84,6 +84,14 @@ CREATE TABLE `messages` (
   `number` varchar(50) NOT NULL,
   `message` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `messages`
+--
+
+INSERT INTO `messages` (`id`, `name`, `email`, `number`, `message`) VALUES
+(2, 'Nurul Azizah', 'nur@gmail.com', '08123456789', 'Apakah bisa memungkin saya memesan layanan ini, sedangkan saya lokasinya di Bali?'),
+(3, 'Marsha', 'arlin@gmail.com', '098789765456', 'Apakah bisa request jenis makeup kak?');
 
 -- --------------------------------------------------------
 
@@ -170,7 +178,8 @@ CREATE TABLE `review` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `review` varchar(500) NOT NULL
+  `review` varchar(500) NOT NULL,
+  `category` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -283,7 +292,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT untuk tabel `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders`
