@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Waktu pembuatan: 02 Jan 2023 pada 18.18
+-- Waktu pembuatan: 03 Jan 2023 pada 06.23
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -148,7 +148,8 @@ CREATE TABLE `review` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `review` varchar(500) NOT NULL
+  `review` varchar(500) NOT NULL,
+  `category` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
