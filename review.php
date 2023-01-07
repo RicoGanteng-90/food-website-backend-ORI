@@ -84,8 +84,8 @@ if(isset($_POST['send'])){
             <option value="" disabled selected>Rating--</option>
             <option value="Sangat Puas">Sangat Puas</option>
             <option value="Puas">Puas</option>
-            <option value="Extra Wedding">Cukup Puas</option>
-            <option value="Paket Foto">Tidak Puas</option>
+            <option value="Cukup Puas">Cukup Puas</option>
+            <option value="Tidak Puas">Tidak Puas</option>
          </select>
          <input type="submit" value="kirim" name="send" class="btn">
       </form>
