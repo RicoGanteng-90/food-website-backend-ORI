@@ -77,6 +77,16 @@ if(isset($_GET['delete'])){
       transform: scale(6.5); 
       }
       </style>
+<style>
+#myInput {
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+</style>
 
 </head>
 <body>
@@ -117,6 +127,7 @@ if(isset($_GET['delete'])){
       if($select_orders->rowCount() > 0){
          while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
    ?>
+    <tbody id="myTable">
          <tr>
             <td><span><?= $fetch_orders['id']; ?></td>
             <td><span><?= $fetch_orders['name']; ?></span></td>
@@ -163,6 +174,7 @@ if(isset($_GET['delete'])){
       echo '';
    }
    ?>
+    </tbody>
    </table>
    </div>
    </div>

@@ -25,12 +25,12 @@ if(isset($message)){
 
    <section class="flex">
 
-      <a class="logo" href="home.php">
+      <a class="logo" href="index.php">
         <img class="z" src="images/logofanny.png" width="35" height="35"> &nbsp; Fanny Wedding Organizer
       </a>
         
       <nav class="navbar">
-         <a href="home.php">Beranda</a>
+         <a href="index.php">Beranda</a>
          <a href="about.php">Tentang</a>
          <a href="menu.php">Produk</a>
          <a href="orders.php">Order</a>

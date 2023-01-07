@@ -51,7 +51,7 @@ if(isset($_SESSION['user_id'])){
 
 <div class="heading">
    <h3>tentang kami</h3>
-   <p><a href="home.php">Beranda</a> <span> / Tentang</span></p>
+   <p><a href="index.php">Beranda</a> <span> / Tentang</span></p>
 </div>
 
 <!-- about section starts  -->

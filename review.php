@@ -42,7 +42,7 @@ if(isset($_POST['send'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>beri penilaian</title>
+   <title>Beri penilaian</title>
 
     <!-- Logo Title Bar -->
     <link rel="icon" href="images/logofanny.png" 
@@ -77,11 +77,11 @@ if(isset($_POST['send'])){
    <div class="row">
 
       <form action="" method="post">
-         <h3>testimoni</h3>
+         <h3>Testimoni</h3>
          <input type="text" name="name" maxlength="100" class="box" placeholder="masukan nama Anda" required>
          <textarea name="review" class="box" required placeholder="kesan Anda menggunakan layanan kami" maxlength="500" cols="30" rows="10"></textarea>
          <select name="category" class="box" required>
-            <option value="" disabled selected>rating--</option>
+            <option value="" disabled selected>Rating--</option>
             <option value="Sangat Puas">Sangat Puas</option>
             <option value="Puas">Puas</option>
             <option value="Extra Wedding">Cukup Puas</option>
@@ -96,25 +96,9 @@ if(isset($_POST['send'])){
 
 <!-- contact section ends -->
 
-
-
-
-
-
-
-
-
-
 <!-- footer section starts  -->
 <?php include 'components/footer.php'; ?>
 <!-- footer section ends -->
-
-
-
-
-
-
-
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>

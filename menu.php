@@ -52,7 +52,7 @@ include 'components/add_cart.php';
 
 <div class="heading">
    <h3>Produk Kami</h3>
-   <p><a href="home.php">Beranda</a> <span> / Produk</span></p>
+   <p><a href="index.php">Beranda</a> <span> / Produk</span></p>
 </div>
 
 <!-- menu section starts  -->
