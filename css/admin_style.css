@@ -538,7 +538,7 @@ background-color: var(--red);
 .placed-orders .box-container .box tr td{
    padding: .5rem 0;
    line-height: 1.5;
-   font-size: 1rem;
+   font-size: 100%;
    color:var(--black);
    text-align: center;
 }

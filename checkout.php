@@ -89,18 +89,18 @@ if(isset($_POST['submit'])){
 <!-- header section ends -->
 
 <div class="heading">
-   <h3>belanja</h3>
-   <p><a href="index.php">beranda</a> <span> / belanja</span></p>
+   <h3>Belanja</h3>
+   <p><a href="index.php">Beranda</a> <span> / Belanja</span></p>
 </div>
 
 <section class="checkout">
 
-   <h2 class="title">ringkasan pesanan</h2>
+   <h2 class="title">Ringkasan pesanan</h2>
 
 <form action="" method="post">
 
    <div class="cart-items">
-      <h3>produk keranjang</h3>
+      <h3>Produk keranjang</h3>
       <?php
          $grand_total = 0;
          $cart_items[] = '';

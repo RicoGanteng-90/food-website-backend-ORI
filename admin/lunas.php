@@ -59,6 +59,21 @@ if(isset($_GET['delete'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="../css/admin_style.css">
 
+   <style>      
+      .zoom {      
+      background-color: transparent;
+      transition: transform .1s;
+      width: 0px auto;
+      height: 0% auto;      
+      }
+
+      .zoom:hover {
+      -ms-transform: scale(1.5); /* IE 9 */
+      -webkit-transform: scale(1.5); /* Safari 3-8 */
+      transform: scale(6.5); 
+      }
+      </style>
+
 </head>
 <body>
 
@@ -85,8 +100,7 @@ if(isset($_GET['delete'])){
             <td>Waktu Acara</td>
             <td>Total Pembayaran</td>  
             <td>Bukti Pembayaran</td>
-            <td>Status Pembayaran</td>            
-            <td>Action</td>
+            <td>Status Pembayaran</td>                     
          </tr>
       </thead>
       
@@ -105,23 +119,9 @@ if(isset($_GET['delete'])){
             <td><span><?= $fetch_orders['number']; ?></span></td>
             <td><span><?= $fetch_orders['address']; ?></span></td>
             <td><span><?= $fetch_orders['event_time']; ?></span></td>
-            <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>            
-            <form action="" method="POST" enctype="multipart/form-data">
-            <td><span><?= $fetch_orders['proof_payment']; ?></span></td>
-            <td>
-               <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
-               <select name="payment_status" class="drop-down-bayar">
-                  <option hidden value="<?= $fetch_orders['payment_status']; ?>" selected><?= $fetch_orders['payment_status']; ?></option>                  
-                  <option value="Belum lunas">Belum lunas</option>
-                  <option value="Lunas">Lunas</option>                  
-               </select>
-            </td>               
-            <td>
-               <div class="flex-btn">
-               <input type="submit" value="update" class="btn-order" name="update_payment">
-               <a href="lunas.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn-order" onclick="return confirm('delete this order?');">hapus</a>
-               </div>               
-            </td>
+            <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>                        
+            <td><div class="zoom"><img src="../admin_img/<?= $fetch_orders['proof_payment']; ?>" width="80px" alt=""></div></td>            
+            <td><span><?= $fetch_orders['payment_status']; ?></span></td>            
             </form>
          </tr>
 

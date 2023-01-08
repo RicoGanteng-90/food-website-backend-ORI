@@ -63,7 +63,7 @@ if(isset($_GET['delete'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="../css/admin_style.css">
 
-         <style>      
+      <style>      
       .zoom {      
       background-color: transparent;
       transition: transform .1s;
@@ -78,14 +78,31 @@ if(isset($_GET['delete'])){
       }
       </style>
 <style>
-#myInput {
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
+   #myInput {
+   background-repeat: no-repeat;
+   width: 100%;
+   font-size: 16px;
+   padding: 12px 20px 12px 40px;
+   border: 1px solid #ddd;
+   margin-bottom: 12px;
+   }
+
+   .btn-upp{
+      display: block;
+      margin-top: 1rem;
+      border-radius: .5rem;
+      cursor: pointer;
+      width: 50%;
+      font-size: 1rem;
+      color:var(--white);
+      padding:0.5rem 0.5rem;
+      text-transform: capitalize;
+      text-align: center;
+   }
+
+   .btn-upp{
+      background-color: #b29723;
+   }
 </style>
 
 </head>
@@ -127,7 +144,7 @@ if(isset($_GET['delete'])){
       if($select_orders->rowCount() > 0){
          while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
    ?>
-    <tbody id="myTable">
+    
          <tr>
             <td><span><?= $fetch_orders['id']; ?></td>
             <td><span><?= $fetch_orders['name']; ?></span></td>
@@ -160,9 +177,10 @@ if(isset($_GET['delete'])){
                </select>
             </td>               
             <td>
-               <div class="flex-btn">
+               <div class="flex-btn">               
                <input type="submit" value="update" class="btn-order" name="update_payment">
-               <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn-order" onclick="return confirm('delete this order?');">hapus</a>
+               <a href="placed_orders.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn-order" onclick="return confirm('Hapus order ini?');">Hapus</a>
+               <a href="date_update.php?update=<?= $fetch_orders['id']; ?>" class="btn-upp">Undur</a>
                </div>               
             </td>
             </form>
@@ -174,7 +192,7 @@ if(isset($_GET['delete'])){
       echo '';
    }
    ?>
-    </tbody>
+    
    </table>
    </div>
    </div>

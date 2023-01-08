@@ -35,6 +35,12 @@ if (isset($_POST['add_img'])) {
    }
 }
 
+if(isset($_GET['delete'])){
+   $delete_id = $_GET['delete'];
+   $delete_order = $conn->prepare("DELETE FROM `orders` WHERE id = ?");
+   $delete_order->execute([$delete_id]);
+   header('location:orders.php');
+}
 
 ?>
 
@@ -173,9 +179,11 @@ if (isset($_POST['add_img'])) {
                </tr>
                <br><p> </p><br>
                
-            </table>      
-            <br><?php echo $bukti; ?> &nbsp; &nbsp; <?php echo $tomb; ?><br><br>
-            <?php echo $nota; ?> &nbsp; &nbsp; <?php echo $nilai; ?>
+            </table>
+            <br>
+            <?php echo $bukti; ?> &nbsp; &nbsp; <?php echo $tomb; ?><br><br>
+            <a href="orders.php?delete=<?= $fetch_orders['id']; ?>" class="hap" onclick="return confirm('Hapus order ini?');">Hapus</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <?php echo $nota; ?> &nbsp; &nbsp; <?php echo $nilai; ?>            
          </div>
          </form>
 

@@ -95,7 +95,7 @@ include 'components/add_cart.php';
 <!-- menu section ends -->
 
 <!-- footer section starts  -->
-<?php include 'components/footer.php'; ?>
+<?php include 'components/footer2.php'; ?>
 <!-- footer section ends -->
 
 <!-- custom js file link  -->
