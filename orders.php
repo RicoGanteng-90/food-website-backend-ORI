@@ -182,7 +182,7 @@ if(isset($_GET['delete'])){
             </table>
             <br>
             <?php echo $bukti; ?> &nbsp; &nbsp; <?php echo $tomb; ?><br><br>
-            <a href="orders.php?delete=<?= $fetch_orders['id']; ?>" class="hap" onclick="return confirm('Hapus order ini?');">Hapus</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="orders.php?delete=<?= $fetch_orders['id']; ?>" class="hap" onclick="return confirm('Batalkan order ini?\nPesanan akan dihapus');">Batalkan</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <?php echo $nota; ?> &nbsp; &nbsp; <?php echo $nilai; ?>            
          </div>
          </form>
