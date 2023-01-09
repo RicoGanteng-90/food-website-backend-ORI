@@ -153,7 +153,7 @@ if(isset($_GET['delete'])){
             <td><span><?= $fetch_orders['address']; ?></span></td>
             <td><span><?= $fetch_orders['event_time']; ?></span></td>
             <td><span><?= $fetch_orders['total_products']; ?></span></td>
-            <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>            
+            <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td> 
             <form action="" method="POST" enctype="multipart/form-data">
             <td>
                <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">

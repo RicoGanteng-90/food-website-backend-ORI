@@ -108,7 +108,7 @@ if(isset($_GET['delete'])){
             }
 
             if($pay == "Lunas"){
-               $nota = "<button class=note>Cetak nota</button>";
+               $nota = "<button onclick = window.location.href='nota2.php' class=note>Nota</button>";
                $nilai = "<button onclick = window.location.href='review.php' class=grade>Beri Penilaian</button>";
             }else{
                $nota = "";
@@ -183,7 +183,7 @@ if(isset($_GET['delete'])){
             <br>
             <?php echo $bukti; ?> &nbsp; &nbsp; <?php echo $tomb; ?><br><br>
             <a href="orders.php?delete=<?= $fetch_orders['id']; ?>" class="hap" onclick="return confirm('Batalkan order ini?\nPesanan akan dihapus');">Batalkan</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <?php echo $nota; ?> &nbsp; &nbsp; <?php echo $nilai; ?>            
+            <a href="nota.php?id=<?= $fetch_orders['id']; ?>" class=note>Cetak nota</a> &nbsp; &nbsp; <?php echo $nilai; ?>
          </div>
          </form>
 
