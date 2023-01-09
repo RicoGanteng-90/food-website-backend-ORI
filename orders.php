@@ -158,7 +158,7 @@ if(isset($_GET['delete'])){
                <tr>
                   <td>Total Pembayaran</td>
                   <td>:</td>
-                  <td><span><?php echo " " . number_format($fetch_orders['total_price'],0,',','.'); ?></span></td>
+                  <td><span><?php echo "Rp. " . number_format($fetch_orders['total_price'],0,',','.'); echo ",00" ?></span></td>
                </tr>
                <tr>
                   <td>Metode Pembayaran</td>

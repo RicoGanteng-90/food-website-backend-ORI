@@ -36,11 +36,9 @@
               From
               <address>
                 <strong>Fani Sulistiowati</strong><br>
-                Jl. Sudirman No.3012, Palembang<br>
-                Kec. Palembang Raya, Palembang,<br>
-                Sumatera selatan 30961<br>
-                Phone : (804) 123-5432<br>
-                Email : info@sahretech.com
+                JJl. Mangga Karang Templek, Ambulu, Kabupaten Jember, Jawa Timur<br>
+                Phone : 082161171191 & 082244442422<br>
+                Email : Fannymanyun26@gmail.com
               </address>
             </div>
             <!-- /.col -->
@@ -50,7 +48,8 @@
                 <strong><?php echo $fetch_orders['name']; ?></strong><br>
                 <?php echo $fetch_orders['address']; ?><br>
                 Phone : <?php echo $fetch_orders['number']; ?><br>
-                Email &nbsp;: <?php echo $fetch_orders['email']; ?>                
+                Email &nbsp;: <?php echo $fetch_orders['email']; ?><br>
+                <b>Metode pembayaran</b> : <?php echo $fetch_orders['method']; ?>
               </address>
             </div>
           </div>
@@ -60,8 +59,7 @@
                 <thead>
                 <tr>                                    
                   <th>Tanggal acara</th>                  
-                  <th>Produk</th>                  
-                  <th>Metode pembayaran</th>                  
+                  <th>Produk</th>                                                   
                 </tr>
                 </thead>                
 
@@ -69,14 +67,11 @@
                     <tr>
                         <input type="hidden" name="order_id" value="<?= $fetch_products['id']; ?>">                                                
                         <td><?php echo $fetch_orders['event_time']; ?></td>                        
-                        <td><?php echo $fetch_orders['total_products']; ?></td>                        
-                        <td><?php echo $fetch_orders['method']; ?></td>
-                                                
+                        <td><?php echo $fetch_orders['total_products']; ?></td>                                                                                                
                     </tr>
                     <tr>
                         <td></td>
-                        <td><b>Total harga :</b></td>
-                        <td><b><?php echo "Rp. " . number_format($fetch_orders['total_price'],0,',','.'); ?></b></td>
+                        <td><b>Total harga : <b><?php echo "Rp. " . number_format($fetch_orders['total_price'],0,',','.'); echo ",00" ?></b></b></td>                        
                     </tr>
                 </tbody>
                 <?php
