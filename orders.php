@@ -98,6 +98,7 @@ if(isset($_GET['delete'])){
             while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){
                $stat=$fetch_orders["order_status"];
                $pay=$fetch_orders["payment_status"];
+               $notaa = $fetch_orders["id"];
 
             if ($stat == "Diterima") {
                $bukti = "<input type=file name=img class=box accept=image/jpg, image/jpeg, image/png, image/webp required>";
@@ -106,14 +107,16 @@ if(isset($_GET['delete'])){
                $bukti = "";
                $tomb = "";
             }
-
+            
             if($pay == "Lunas"){
-               $nota = "<button onclick = window.location.href='nota2.php' class=note>Nota</button>";
+               $nota = "<a href=\"nota.php?id=$notaa\" class=note>Cetak nota</a>";
                $nilai = "<button onclick = window.location.href='review.php' class=grade>Beri Penilaian</button>";
             }else{
                $nota = "";
                $nilai = "";
             }
+
+            
    ?>
    
    
@@ -183,7 +186,7 @@ if(isset($_GET['delete'])){
             <br>
             <?php echo $bukti; ?> &nbsp; &nbsp; <?php echo $tomb; ?><br><br>
             <a href="orders.php?delete=<?= $fetch_orders['id']; ?>" class="hap" onclick="return confirm('Batalkan order ini?\nPesanan akan dihapus');">Batalkan</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="nota.php?id=<?= $fetch_orders['id']; ?>" class=note>Cetak nota</a> &nbsp; &nbsp; <?php echo $nilai; ?>
+            <?php echo $nota; ?> &nbsp; &nbsp; <?php echo $nilai; ?>
          </div>
          </form>
 
