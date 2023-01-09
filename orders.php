@@ -25,7 +25,7 @@ if (isset($_POST['add_img'])) {
 
    if (!empty($image)) {
       if ($image_size > 2000000) {
-         $message[] = 'ukuran gambar terlalu besar';
+         $message[] = 'bukti transfer gagal dikirim, ukuran gambar terlalu besar';
       } else {
          $update_image = $conn->prepare("UPDATE `orders` SET proof_payment = ? WHERE id = ?");
          $update_image->execute([$image, $mid]);         
@@ -173,7 +173,7 @@ if(isset($_GET['delete'])){
                <tr>
                   <td>Status Pesanan</td>
                   <td>:</td>
-                  <td><span style="color:<?php if($fetch_orders['order_status'] == 'Diproses'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['order_status']; ?></span></td>
+                  <td><span style="color:<?php if($fetch_orders['order_status'] == 'Ditolak'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['order_status']; ?></span></td>
                </tr>
                <tr>
                   <td>Status Pembayaran</td>

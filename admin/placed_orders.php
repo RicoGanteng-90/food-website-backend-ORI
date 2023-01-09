@@ -160,7 +160,7 @@ if(isset($_GET['delete'])){
                <select name="order_status" class="drop-down-order">                  
                   <option hidden selected value="<?= $fetch_orders['order_status']; ?>" ><?= $fetch_orders['order_status']; ?></option>
                   <option value=""></option>
-                  <option value="Diproses">Diproses</option>
+                  <option value="Ditolak">Ditolak</option>
                   <option value="Diterima">Diterima</option>
                </select>
             </td>
