@@ -74,8 +74,7 @@ if(isset($message)){
 <section class="form-container">
 
    <form action="" method="POST">
-      <h3>login</h3>
-      <p>email = <span>admin</span> & kata sandi = <span>111</span></p>
+      <h3>login</h3>      
       <input type="text" name="name" maxlength="50" required placeholder="masukan email anda" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="pass" maxlength="20" required placeholder="masukan kata sandi anda" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="submit" value="login" name="submit" class="btn">
