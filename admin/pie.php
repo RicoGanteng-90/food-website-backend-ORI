@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="js/Chart.js"></script>
+    <script src="js/Chart.js"></script>    
 </head>
 <body>
     <br>
-    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layanan Jasa pada Fany Makeup Wedding</h4>
+    <h1 style="text-align:center">Layanan Jasa pada Fany Makeup Wedding</h1>
     <canvas id="myChart"></canvas>
     <?php
     $kon = mysqli_connect("localhost","root","","db_fani_wedding");

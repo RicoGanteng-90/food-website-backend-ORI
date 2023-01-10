@@ -71,6 +71,12 @@ include 'components/add_cart.php';
       </div>      
 </div>
 
+<section class="containers">
+
+<div class="panel-body"><iframe src="admin/pie.php" width="100%" height="700"></iframe></div>
+
+</section>
+
 <!-- category section starts  -->
 <section class="category">
 
