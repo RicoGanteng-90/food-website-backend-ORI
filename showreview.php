@@ -39,9 +39,12 @@ if(isset($_SESSION['user_id'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
-    <!-- testi --> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-
+    
+<style>
+    .container .box-area .category{
+        font-size: 17px;
+    }    
+</style>
 </head>
 <body>
    
@@ -68,7 +71,7 @@ if(isset($_SESSION['user_id'])){
 			<h5><?= $fetch_review['name']; ?></h5>
             <i class="fas fa-quote-left"></i>							
 			<p class="content">
-            <blockquote class="quote"><span><?= $fetch_review['review']; ?></span><i style="float:right" class="fas fa-quote-right"></i></blockquote>
+            <div class="rev"><blockquote class="quote"><span><?= $fetch_review['review']; ?></span><i style="float:right" class="fas fa-quote-right"></i></blockquote></div>
             <div class="category"><i><?= $fetch_review['category']; ?></i></div>
 			</p>
 		</div>	
