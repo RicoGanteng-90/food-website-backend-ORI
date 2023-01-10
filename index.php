@@ -71,6 +71,7 @@ include 'components/add_cart.php';
       </div>      
 </div>
 
+<!-- category section starts  -->
 <section class="category">
 
    <h1 class="title">Layanan Kami</h1>

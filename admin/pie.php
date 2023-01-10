@@ -5,7 +5,7 @@
 </head>
 <body>
     <br>
-    <h4>Layanan Jasa pada Fany Makeup Wedding</h4>
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layanan Jasa pada Fany Makeup Wedding</h4>
     <canvas id="myChart"></canvas>
     <?php
     $kon = mysqli_connect("localhost","root","","db_fani_wedding");
