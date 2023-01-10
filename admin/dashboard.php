@@ -64,7 +64,7 @@ if(!isset($admin_id)){
 
 
    <div class="box">
-      <h3>Kategori</h3>
+      <h3>Grafik</h3>
       <a href="grafik.php" class="btn">Layanan Produk</a>
    </div>
 
